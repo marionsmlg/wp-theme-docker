@@ -1,0 +1,20 @@
+{
+  "name": "esbuild-wordpress",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "wp:start": "wp-env start --update",
+    "wp:logs": "wp-env logs",
+    "assets:dev": "node esbuild.js --dev",
+    "assets:build": "node esbuild.js"
+  },
+  "devDependencies": {
+    "@wordpress/env": "^9.0.0",
+    "autoprefixer": "^10.4.16",
+    "esbuild": "^0.19.9",
+    "esbuild-style-plugin": "^1.6.3",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6"
+  }
+}

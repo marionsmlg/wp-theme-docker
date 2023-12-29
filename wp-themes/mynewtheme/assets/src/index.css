@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.wpcf7-select {
+  color: rgb(251 146 60);
+}
+
+.wpcf7-text {
+  color: aquamarine;
+  border-radius: 0.5rem;
+  border-color: blueviolet;
+}
