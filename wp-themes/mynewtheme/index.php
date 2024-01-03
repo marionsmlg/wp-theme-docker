@@ -13,9 +13,9 @@
                         </button>
                     </div>
 
-                    <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900"><?php the_title() ?></p>
-                    <p class="pointer-events-none block text-sm font-medium text-gray-500"><?php the_author() ?></p>
-                    <p><?php the_content() ?></p>
+                    <!-- <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900"><?php the_title() ?></p>
+                    <p class="pointer-events-none block text-sm font-medium text-gray-500"><?php the_author() ?></p> -->
+                    <!-- <p><?php the_content() ?></p> -->
                 </a>
             </li>
         <?php endwhile ?>
