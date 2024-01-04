@@ -15,7 +15,7 @@
                 <?php if (get_sub_field('subheadline')) : ?>
                     <h2 class="text-2xl sm:text-3xl text-white"><?php the_sub_field('subheadline'); ?></h2>
                 <?php endif ?>
-                <div><a href="/contactez-nous"><button type="button" class="rounded-md bg-blue-900 px-6 py-4 text-lg font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
+                <div><a href="/contact"><button type="button" class="rounded-md bg-blue-900 px-6 py-4 text-lg font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
 
             </div>
         </div>
@@ -50,7 +50,7 @@
                 </dl>
             </div>
         </div>
-        <div class="text-center py-24"><a href="/contactez-nous"><button type="button" class="rounded-md bg-blue-900 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
+        <div class="text-center py-24"><a href="/contact"><button type="button" class="rounded-md bg-blue-900 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
     <?php endwhile; ?>
 
     <?php while (have_rows('chiffres_cles')) : the_row(); ?>
@@ -64,19 +64,33 @@
                 </div>
                 <div class="w-full max-w-2xl xl:max-w-none xl:flex-auto xl:px-16 xl:py-8">
                     <figure class="relative isolate pt-6 sm:pt-4">
-                        <blockquote class="text-xl text-blue-900 font-semibold leading-8 sm:text-2xl sm:leading-9">
+                        <blockquote class="text-2xl text-blue-900 font-semibold leading-8 sm:text-3xl sm:leading-9">
                             <p> <?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?> <?php endif ?></p>
                         </blockquote>
                         <figcaption class="mt-8 text-base">
                             <div class="font-semibold"> <?php if (get_sub_field('subtitle')) : ?> <?php the_sub_field('subtitle'); ?> <?php endif ?></div>
                         </figcaption>
-                        <div class="pt-16 pb-8 gap-8 flex">
-                            <?php while (have_rows('content')) : the_row(); ?>
-                                <div class="flex flex-col text-blue-900 font-semibold">
-                                    <?php if (get_sub_field('number')) : ?> <p class="text-4xl"><?php if (get_sub_field('prefix')) : ?> <?php the_sub_field('prefix'); ?><?php endif ?><?php the_sub_field('number'); ?><?php if (get_sub_field('unit')) : ?> <?php the_sub_field('unit'); ?><?php endif ?></p><?php endif ?>
-                                    <p class="text-xl"><?php if (get_sub_field('text')) : ?><?php the_sub_field('text'); ?><?php endif ?></p>
+                        <div class="pt-16 pb-8 gap-8 flex flex-col sm:flex-row">
+                            <?php
+                            $count = 1;
+                            while (have_rows('content')) : the_row();
+                            ?>
+                                <div class="flex flex-col font-semibold text-center sm:text-left">
+                                    <?php if (get_sub_field('number')) : ?>
+                                        <p class="text-5xl text-blue-900">
+                                            <?php if (get_sub_field('prefix')) : ?> <?php the_sub_field('prefix'); ?><?php endif ?>
+                                                <span id="counter<?php echo $count; ?>"><?php the_sub_field('number'); ?></span>
+                                                <?php if (get_sub_field('unit')) : ?> <?php the_sub_field('unit'); ?><?php endif ?>
+                                        </p>
+                                    <?php endif ?>
+                                    <p class="text-xl">
+                                        <?php if (get_sub_field('text')) : ?><?php the_sub_field('text'); ?><?php endif ?>
+                                    </p>
                                 </div>
-                            <?php endwhile; ?>
+                            <?php
+                                $count++;
+                            endwhile;
+                            ?>
                         </div>
 
                     </figure>
@@ -114,7 +128,7 @@
                 </dl>
             </div>
         </div>
-        <div class="text-center py-24"><a href="/contactez-nous"><button type="button" class="rounded-md bg-blue-900 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
+        <div class="text-center py-24"><a href="/contact"><button type="button" class="rounded-md bg-blue-900 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
     <?php endwhile; ?>
 
 
@@ -257,6 +271,6 @@
         <?php endwhile; ?>
     <?php endif ?>
 
-    <div class="text-center py-24"><a href="/contactez-nous"><button type="button" class="rounded-md bg-blue-900 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
+    <div class="text-center py-24"><a href="/contact"><button type="button" class="rounded-md bg-blue-900 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
 </main>
 <?php get_footer(); ?>

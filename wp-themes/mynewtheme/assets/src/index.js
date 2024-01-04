@@ -35,4 +35,40 @@ window.addEventListener("DOMContentLoaded", () => {
       document.getElementById("cross").style.display = "block";
       menuToggleButton.dataset.menuIsOpen = "true";
     }
+
+    const counters = document.querySelectorAll('[id^="counter"]');
+    const speed = 500; 
+    
+    for (const counter of counters){
+
+        const target = +counter.innerText; // Valeur finale du compteur
+        let count = 0; // Valeur initiale du compteur
+    
+        const inc = target / speed;
+    
+       function updateCount () {
+            if (count < target) {
+                counter.innerText = Math.ceil(count);
+                count += inc;
+                setTimeout(updateCount, 1);
+            } else {
+                counter.innerText = target;
+            }
+        };
+    
+        updateCount();
+    }
+  
+ 
+    
+    
+
+
+
+
+
   });
+
+
+
+
