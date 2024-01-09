@@ -36,35 +36,81 @@ window.addEventListener("DOMContentLoaded", () => {
       menuToggleButton.dataset.menuIsOpen = "true";
     }
 
+  
+    // Compteur chiffres
+    
     const counters = document.querySelectorAll('[id^="counter"]');
-    const speed = 500; 
+    const speed = 1000; 
     
-    for (const counter of counters){
+    // Options de l'Intersection Observer
+    const options = {
+        threshold: 0.5 // La fonction sera appelée lorsque 50% de la section est visible
+    };
+    
+    const callback = (entries, observer) => {
 
-        const target = +counter.innerText; // Valeur finale du compteur
-        let count = 0; // Valeur initiale du compteur
+        for (const entry of entries){
+            if (entry.isIntersecting) {
+                const target = +entry.target.innerText;
+                let count = 0;
+                const inc = target / (speed / 16); // 16 est le nombre de millisecondes entre chaque rafraîchissement de la fonction setTimeout
     
-        const inc = target / speed;
+                function updateCount () {
+                    if (count < target) {
+                        entry.target.innerText = Math.ceil(count);
+                        count += inc;
+                        setTimeout(updateCount, 16); // Rafraîchir toutes les 16 millisecondes (pour une animation fluide)
+                    } else {
+                        entry.target.innerText = target;
+                    }
+                };
     
-       function updateCount () {
-            if (count < target) {
-                counter.innerText = Math.ceil(count);
-                count += inc;
-                setTimeout(updateCount, 1);
-            } else {
-                counter.innerText = target;
+                updateCount();
+                observer.unobserve(entry.target); // Arrête d'observer cette entrée une fois que le compteur a été démarré
             }
-        };
+        }
+      
+    };
     
-        updateCount();
+    // Initialiser l'Observer
+    const observer = new IntersectionObserver(callback, options);
+    
+    // Observer chaque compteur
+
+    for(const counter of counters){
+        observer.observe(counter);
     }
   
- 
-    
     
 
 
+// Slider
 
+const slides = document.querySelectorAll('.slide');
+let currentIndex = 0;
+
+// Fonction pour afficher le slide actif
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        if (i === index) {
+            slide.classList.add('active');
+        } else {
+            slide.classList.remove('active');
+        }
+    });
+}
+
+// Fonction pour passer au slide suivant
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+}
+
+// Afficher la première image au chargement de la page
+showSlide(currentIndex);
+
+// Changer de slide toutes les 4 secondes
+setInterval(nextSlide, 4000);
 
 
   });

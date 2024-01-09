@@ -80,3 +80,83 @@
 .wpcf7-submit:hover {
   background-color: rgb(37 99 235); 
 }
+
+
+.slider {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.style-svg {
+  stroke: #fff;
+}
+
+
+/* Styles pour la pagination */
+.navigation.pagination {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #e2e8f0; /* Correspond à border-t border-gray-200 */
+  padding: 0 1rem; /* Correspond à px-4 sm:px-0 */
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a,
+.nav-links span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-top: 2px solid transparent;
+  padding: 1rem 1rem; /* Correspond à px-4 pt-4 */
+  font-size: 0.875rem; /* Correspond à text-sm */
+  font-weight: 500; /* Correspond à font-medium */
+  color: #4a5568; /* Correspond à text-gray-500 */
+  transition: all 0.3s ease;
+
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: #2d3748; /* Texte en survol */
+  border-color: #e2e8f0; /* Bordure en survol */
+}
+
+.nav-links .current {
+  font-weight: bold;
+  color: #000080; /* Texte actuel */
+  border-color: #000080; /* Bordure actuelle */
+}
+
+.nav-links .dots {
+  color: #a0aec0; /* Couleur pour "..." */
+}
+
+
+@media (max-width: 767px) {
+  .nav-links a:not(.prev):not(.next),
+  .nav-links span {
+      display: none; /* Cacher tous les liens et les points sauf les liens "Précédent" et "Suivant" */
+  }
+}

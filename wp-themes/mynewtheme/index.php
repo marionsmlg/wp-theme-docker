@@ -1,25 +1,26 @@
 <?php get_header(); ?>
 <main class="mt-16 min-h-screen">
-    <?php if (have_posts()) : ?>
-        <ul role="list" class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
-            <?php while (have_posts()) : the_post(); ?>
-                <li class="relative">
-                    <a href="<?php the_permalink() ?>">
-                        <div class="group aspect-h-7 aspect-w-10 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-                            <?php the_post_thumbnail('medium', ['class' => 'pointer-events-none object-cover group-hover:opacity-75']) ?>
-                            <button type="button" class="absolute inset-0 focus:outline-none">
-                            </button>
-                        </div>
 
-                        <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900"><?php the_title() ?></p>
-                        <p class="pointer-events-none block text-sm font-medium text-gray-500"><?php the_author() ?></p>
-                        <p><?php the_content() ?></p>
-                    </a>
-                </li>
-            <?php endwhile ?>
-        </ul>
-    <?php else : ?>
-        <h1>Pas d'articles</h1>
+    <div class="relative h-56">
+        <?php the_post_thumbnail('full', ['class' => 'aspect-[5/2] h-56 object-center w-full object-cover']) ?>
+
+        <div class="absolute inset-0 bg-black opacity-50 shadow-xl"></div>
+        <div class="absolute inset-0 p-6 md:p-16 flex items-center justify-center ">
+
+            <h1 class="font-semibold text-4xl text-white sm:text-5xl"><?php single_post_title(); ?></h1>
+        </div>
+
+    </div>
+    <?php if (have_posts()) : ?>
+
+        <?php while (have_posts()) : the_post(); ?>
+            <div class="relative px-6 py-10">
+
+                <p><?php the_content() ?></p>
+
+            </div>
+        <?php endwhile ?>
+
     <?php endif; ?>
 
 </main>

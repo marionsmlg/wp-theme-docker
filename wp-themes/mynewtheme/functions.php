@@ -18,6 +18,7 @@ function console_log($data)
 }
 
 
+
 function montheme_supports()
 {
     add_theme_support('title-tag');
