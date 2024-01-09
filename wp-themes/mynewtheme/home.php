@@ -15,7 +15,7 @@
         <div class="bg-white py-24 sm:py-32">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl lg:max-w-4xl">
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Exploiter le futur de l'environnement de travail</h2>
+                    <h2 class="text-3xl font-bold tracking-tight text-blue-900 sm:text-4xl">Exploiter le futur de l'environnement de travail</h2>
                     <p class="mt-2 text-lg leading-8 text-gray-600">Découvrez toutes les actualités d'ESEIS</p>
                     <div class="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
                         <?php while (have_posts()) : the_post();
