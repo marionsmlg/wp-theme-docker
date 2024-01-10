@@ -26,10 +26,13 @@
     if (!empty($menuitems)) :
     ?>
         <div class="bg-blue-900 h-16 p-6 text-center text-sm font-semibold text-white flex justify-center items-center">
-            <p class="mr-2">&copy; 2024 Eseis |</p>
+            <p>&copy; 2024 Eseis |</p>
 
-            <?php foreach ($menuitems as $item) : ?>
-                <a href="<?= esc_url($item->url) ?>" class="text-white"> <?= esc_html($item->title) ?></a>
+            <?php $total_items = count($menuitems); ?>
+            <?php foreach ($menuitems as $index => $item) : ?>
+                <a href="<?= esc_url($item->url) ?>" class="text-white mx-2"> <?= esc_html($item->title) ?></a>
+                <?= ($index < $total_items - 1) ? '|' : '' ?>
+
             <?php endforeach; ?>
         </div>
     <?php endif; ?>

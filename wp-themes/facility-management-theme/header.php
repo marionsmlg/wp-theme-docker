@@ -55,7 +55,7 @@
                         <div class="hidden lg:ml-20 lg:flex lg:space-x-8">
                             <?php foreach ($menuitems as $item) : ?>
                                 <?php
-                                $current_class = (is_page($item->object_id)) || (is_home() && $item->object_id == get_option('page_for_posts')) || (is_page($item->object_id) && !is_home() && !is_front_page($item->object_id)) || (is_single() && $item->urlincludes) ? 'border-b-2 border-blue-900 text-blue-900' : 'border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-blue-900';
+                                $current_class = (is_page($item->object_id)) || (is_home() && $item->object_id == get_option('page_for_posts')) || (is_page($item->object_id) && !is_home() && !is_front_page($item->object_id)) || ($item->url === get_post_type_archive_link('post') && !is_front_page($item->object_id) && is_single()) ? 'border-b-2 border-blue-900 text-blue-900' : 'border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-blue-900';
 
                                 ?>
                                 <a href="<?= esc_url($item->url) ?>" class="inline-flex items-center px-1 pt-1 text-sm lg:text-base font-medium  <?= $current_class ?>">
@@ -76,7 +76,7 @@
                 <div class="space-y-1 pb-4 pt-2">
                     <?php foreach ($menuitems as $item) : ?>
                         <?php
-                        $current_class = (is_page($item->object_id)) || (is_home() && $item->object_id == get_option('page_for_posts')) || (is_page($item->object_id) && !is_home() && !is_front_page($item->object_id)) ? 'bg-[#D5E8F3] border-blue-900 text-blue-900' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700';
+                        $current_class = (is_page($item->object_id)) || (is_home() && $item->object_id == get_option('page_for_posts')) || (is_page($item->object_id) && !is_home() && !is_front_page($item->object_id)) || ($item->url === get_post_type_archive_link('post') && !is_front_page($item->object_id) && is_single()) ? 'bg-[#D5E8F3] border-blue-900 text-blue-900' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700';
                         ?>
                         <a href="<?= esc_url($item->url) ?>" class="block border-l-4 py-2 pl-3 pr-4 text-base font-medium <?= $current_class ?>"><?= esc_html($item->title) ?></a>
                     <?php endforeach; ?>
