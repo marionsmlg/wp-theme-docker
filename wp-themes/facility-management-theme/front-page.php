@@ -258,7 +258,7 @@
             </div>
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto flex flex-wrap max-w-lg items-center justify-center gap-x-8 gap-y-12 sm:max-w-xl sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none">
-                    <?php while (have_rows('content')) : the_row(); ?>
+                    <?php while (have_rows('certifications', 'options')) : the_row(); ?>
                         <div class="flex flex-col items-center text-center">
                             <?php if (get_sub_field('name')) : ?><p class="mb-3 font-medium text-gray-500"><?php the_sub_field('name'); ?></p><?php endif ?>
                             <?php if (get_sub_field('logo')) : ?><img class="w-48 h-28 object-contain" src="<?php the_sub_field('logo'); ?>" alt="logo-certification" width="158" height="48"><?php endif ?>

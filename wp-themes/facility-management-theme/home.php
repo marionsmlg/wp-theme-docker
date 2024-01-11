@@ -60,7 +60,12 @@
                                 </div>
                             </article>
                         <?php endwhile; ?>
-                        <?php the_posts_pagination(); ?>
+                        <?php the_posts_pagination(array(
+                            'mid_size'  => 2,
+                            'prev_text' => __('<p class="mr-1"> &larr;</p> Page précédente', 'textdomain'),
+                            'next_text' => __('Page suivante <p class="ml-1"> &rarr;</p>', 'textdomain'),
+                        )); ?>
+
                     </div>
 
                 </div>

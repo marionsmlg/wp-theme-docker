@@ -33,7 +33,7 @@
 
 
                         <nav class="flex items-center justify-between border-t border-gray-200 px-4 pb-8 sm:px-0">
-                                <div class="-mt-px flex w-0 flex-1">
+                                <div class="-mt-px w-0 flex-1 hidden sm:flex">
 
                                         <div class="inline-flex items-center h-10 border-t-2 border-transparent pr-1 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
                                                 <?php $next_post = get_next_post();
@@ -46,21 +46,21 @@
                                                 $next_post_title = $next_post->post_title;
                                                 $trim_next_title = wp_trim_words($next_post_title, 10, '...');
                                                 ?>
-                                                <div class="hidden sm:flex"><?php next_post_link("%link", $trim_next_title); ?></div>
-                                                <div class="flex sm:hidden"><?php next_post_link("%link", 'Précédent'); ?></div>
+                                                <div><?php next_post_link("%link", $trim_next_title); ?></div>
+
 
                                         </div>
                                 </div>
 
-                                <div class="-mt-px flex w-0 flex-1 justify-end">
+                                <div class="-mt-px flex w-0 flex-1 justify-center sm:justify-end">
                                         <div class="inline-flex items-center h-10 border-t-2 border-transparent pl-1 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
                                                 <?php $previous_post = get_previous_post();
                                                 $prev_post_title = $previous_post->post_title;
                                                 $trim_prev_title = wp_trim_words($prev_post_title, 10, '...');
                                                 ?>
 
-                                                <div class="hidden sm:flex"><?php previous_post_link("%link",  $trim_prev_title); ?></div>
-                                                <div class="flex sm:hidden"><?php previous_post_link("%link", 'Suivant'); ?></div>
+                                                <div><?php previous_post_link("%link",  $trim_prev_title); ?></div>
+
                                                 <?php
                                                 if (!empty($previous_post)) : ?>
                                                         <svg class="ml-3 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

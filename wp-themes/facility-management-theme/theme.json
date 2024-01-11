@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "settings": {
+        "color": {
+            "palette": [  
+                {
+                    "slug": "dark-blue",
+                    "color": "rgb(30 58 138)",
+                    "name": "Bleu marine"
+                },
+                {
+                    "slug": "light-blue",
+                    "color": "#D5E8F3",
+                    "name": "Blue clair"
+                }
+            ]
+         
+        }
+    }
+}
+

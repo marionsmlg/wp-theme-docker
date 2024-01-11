@@ -116,10 +116,18 @@
 
 .nav-links {
   display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    justify-content: center;
+  }
 }
 
 .nav-links a,
@@ -140,7 +148,6 @@
 .nav-links a:hover,
 .nav-links a:focus {
   color: #2d3748; /* Texte en survol */
-  border-color: #e2e8f0; /* Bordure en survol */
 }
 
 .nav-links .current {
@@ -160,3 +167,21 @@
       display: none; /* Cacher tous les liens et les points sauf les liens "Précédent" et "Suivant" */
   }
 }
+
+
+.navigation.pagination .nav-links a.prev {
+  margin-right: auto; /* Pousse le bouton "Précédent" à l'extrême gauche */
+}
+
+.navigation.pagination .nav-links a.next {
+  margin-left: auto; /* Pousse le bouton "Suivant" à l'extrême droite */
+}
+
+
+/* .navigation.pagination .nav-links:not(:has(a.prev)) a.next {
+  margin-left: 200px;
+}
+
+.navigation.pagination .nav-links:not(:has(a.next)) a.prev {
+  margin-right: 200px;
+} */
