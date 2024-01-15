@@ -15,7 +15,7 @@
                 <?php if (get_sub_field('subheadline')) : ?>
                     <h2 class="text-xl sm:text-2xl md:text-3xl text-white"><?php the_sub_field('subheadline'); ?></h2>
                 <?php endif ?>
-                <div><a href="/contact"><button type="button" class="rounded-md bg-blue-900 sm:px-6 sm:py-4 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
+                <div><a href="/contact"><button type="button" class="rounded-md bg-eseisblue-500 sm:px-6 sm:py-4 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-eseisblue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
 
             </div>
         </div>
@@ -27,7 +27,7 @@
 
         <div class="mx-auto mt-16 max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-3xl text-center">
-                <h2 class="text-base font-semibold leading-7 text-blue-600 uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
+                <h2 class="text-base font-semibold leading-7 text-eseisblue-400 uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
                 <p class="mt-2 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl"><?php if (get_sub_field('subtitle')) : ?> <?php the_sub_field('subtitle'); ?><?php endif ?></p>
                 <p class="mt-6 text-lg leading-8 text-gray-600"><?php if (get_sub_field('content')) : ?> <?php the_sub_field('content'); ?><?php endif ?></p>
             </div>
@@ -36,7 +36,7 @@
                     <?php while (have_rows('jobs')) : the_row(); ?>
                         <div class="relative pl-16">
                             <dt class="text-base font-semibold leading-7 text-gray-900">
-                                <div class="absolute left-0  top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600">
+                                <div class="absolute left-0  top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-eseisblue-400">
                                     <?php if (get_sub_field('icon')) : ?>
                                         <img class="style-svg h-6 w-6 text-white" src="<?php the_sub_field('icon'); ?>">
                                     <?php endif ?>
@@ -48,7 +48,7 @@
                         </div>
                     <?php endwhile; ?>
                 </dl>
-                <div class="text-blue-900 text-right mt-10 mx-auto max-w-6xl">
+                <div class="text-eseisblue-500 text-right mt-10 mx-auto max-w-6xl">
                     <a class="text-base font-semibold" href="/nos-metiers">
                         Voir plus
                         <span aria-hidden="true"> &rarr;</span>
@@ -57,11 +57,11 @@
             </div>
 
         </div>
-        <div class="text-center py-24"><a href="/contact"><button type="button" class="rounded-md bg-blue-900 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
+        <div class="text-center py-24"><a href="/contact"><button type="button" class="rounded-md bg-eseisblue-500 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-eseisblue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
     <?php endwhile; ?>
 
     <?php while (have_rows('chiffres_cles')) : the_row(); ?>
-        <div class="relative z-10 mt-14 bg-[#D5E8F3] pb-20 sm:mt-32 sm:pb-24 xl:pb-0">
+        <div class="relative z-10 mt-14 bg-eseisblue-50 pb-20 sm:mt-32 sm:pb-24 xl:pb-0">
             <div class="mx-auto flex max-w-7xl flex-col items-center gap-x-8 gap-y-10 px-6 sm:gap-y-8 lg:px-8 xl:flex-row xl:items-stretch">
                 <div class="-mt-8 w-full max-w-2xl xl:-mb-8 xl:w-96 xl:flex-none">
                     <div class="relative aspect-[2/1] h-full md:-mx-8 xl:mx-0 xl:aspect-auto">
@@ -70,7 +70,7 @@
                 </div>
                 <div class="w-full max-w-2xl xl:max-w-none xl:flex-auto xl:px-16 xl:py-8">
                     <figure class="relative isolate pt-6 sm:pt-4">
-                        <blockquote class="text-blue-900 font-semibold leading-8 text-3xl sm:leading-9">
+                        <blockquote class="text-eseisblue-500 font-semibold leading-8 text-3xl sm:leading-9">
                             <p> <?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?> <?php endif ?></p>
                         </blockquote>
                         <figcaption class="mt-8 text-base">
@@ -84,7 +84,7 @@
 
                                 <div class="flex flex-col font-semibold text-center sm:text-left">
                                     <?php if (get_sub_field('number')) : ?>
-                                        <p class="text-5xl text-blue-900">
+                                        <p class="text-5xl text-eseisblue-500">
                                             <?php if (get_sub_field('prefix')) : ?> <?php the_sub_field('prefix'); ?><?php endif ?>
                                                 <span id="counter<?php echo $count; ?>"><?php the_sub_field('number'); ?></span>
                                                 <?php if (get_sub_field('unit')) : ?> <?php the_sub_field('unit'); ?><?php endif ?>
@@ -111,7 +111,7 @@
 
         <div class="relative isolate mx-auto mt-16 lg:mt-32 max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
-                <h2 class="text-base font-semibold leading-7 text-blue-600 uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
+                <h2 class="text-base font-semibold leading-7 text-eseisblue-400 uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
                 <p class="mt-2 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl"><?php if (get_sub_field('subtitle')) : ?> <?php the_sub_field('subtitle'); ?><?php endif ?></p>
                 <p class="mt-6 text-lg leading-8 text-gray-600"><?php if (get_sub_field('content')) : ?> <?php the_sub_field('content'); ?><?php endif ?></p>
             </div>
@@ -120,7 +120,7 @@
                     <?php while (have_rows('sectors')) : the_row(); ?>
                         <div class="relative pl-16">
                             <dt class="text-base font-semibold leading-7 text-gray-900">
-                                <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600">
+                                <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-eseisblue-400">
                                     <?php if (get_sub_field('icon')) : ?>
                                         <img class="style-svg h-6 w-6 text-white" src="<?php the_sub_field('icon'); ?>">
                                     <?php endif ?>
@@ -134,14 +134,14 @@
                 </dl>
             </div>
         </div>
-        <div class="text-center py-24"><a href="/contact"><button type="button" class="rounded-md bg-blue-900 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
+        <div class="text-center py-24"><a href="/contact"><button type="button" class="rounded-md bg-eseisblue-500 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-eseisblue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
     <?php endwhile; ?>
 
 
     <?php while (have_rows('nos_valeurs')) : the_row(); ?>
-        <div class="bg-[#D5E8F3] pb-20 px-6 pt-10  sm:pb-24 shadow-md">
+        <div class="bg-eseisblue-50 pb-20 px-6 pt-10  sm:pb-24 shadow-md">
             <div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
-                <h2 class="text-base font-semibold leading-7 text-blue-600 uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
+                <h2 class="text-base font-semibold leading-7 text-eseisblue-400 uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
                 <p class="mt-2 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl"><?php if (get_sub_field('subtitle')) : ?> <?php the_sub_field('subtitle'); ?><?php endif ?></p>
                 <p class="mt-6 text-lg leading-8 text-gray-600"><?php if (get_sub_field('content')) : ?> <?php the_sub_field('content'); ?><?php endif ?></p>
             </div>
@@ -150,7 +150,7 @@
                     <?php while (have_rows('values', 'options')) : the_row(); ?>
                         <div class="relative p-8 bg-white rounded-lg shadow-md">
                             <dt class="text-base flex flex-col items-center text-center font-semibold leading-7 text-gray-900 gap-2">
-                                <div class=" flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600">
+                                <div class=" flex h-10 w-10 items-center justify-center rounded-lg bg-eseisblue-400">
                                     <?php if (get_sub_field('icon')) : ?>
                                         <img class="style-svg h-6 w-6 text-white" src="<?php the_sub_field('icon'); ?>">
                                     <?php endif ?>
@@ -175,7 +175,7 @@
 
             <div class="mt-10 pb-10 px-6 pt-10 ">
                 <div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
-                    <h2 class="text-base font-semibold leading-7 text-blue-600 uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
+                    <h2 class="text-base font-semibold leading-7 text-eseisblue-400 uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
                     <p class="mt-2 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl"><?php if (get_sub_field('subtitle')) : ?> <?php the_sub_field('subtitle'); ?><?php endif ?></p>
                     <p class="mt-6 text-lg leading-8 text-gray-600"><?php if (get_sub_field('content')) : ?> <?php the_sub_field('content'); ?><?php endif ?></p>
                 </div>
@@ -214,7 +214,7 @@
                             </a>
                         <?php endwhile; ?>
                     </ul>
-                    <div class="text-blue-900 text-right mt-10 mx-auto max-w-6xl">
+                    <div class="text-eseisblue-500 text-right mt-10 mx-auto max-w-6xl">
                         <a class="text-base font-semibold" href="<?= get_post_type_archive_link('post') ?>">
                             Voir toutes les actualités
                             <span aria-hidden="true"> &rarr;</span>
@@ -238,7 +238,7 @@
         <?php while (have_rows('partners')) : the_row(); ?>
             <div class="mt-10 pb-20 px-6 pt-10 sm:pb-16">
                 <div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
-                    <h2 class="text-base font-semibold leading-7 text-blue-600 uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
+                    <h2 class="text-base font-semibold leading-7 text-eseisblue-400 uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
                     <p class="mt-2 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl"><?php if (get_sub_field('subtitle')) : ?> <?php the_sub_field('subtitle'); ?><?php endif ?></p>
                     <p class="mt-6 text-lg leading-8 text-gray-600"><?php if (get_sub_field('content')) : ?> <?php the_sub_field('content'); ?><?php endif ?></p>
                 </div>
@@ -252,7 +252,7 @@
         <?php while (have_rows('certifications')) : the_row(); ?>
             <div class="mt-10 pb-20 px-6 pt-10 sm:pb-16">
                 <div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
-                    <h2 class="text-base font-semibold leading-7 text-blue-600 uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
+                    <h2 class="text-base font-semibold leading-7 text-eseisblue-400 uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
                     <p class="mt-2 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl"><?php if (get_sub_field('subtitle')) : ?> <?php the_sub_field('subtitle'); ?><?php endif ?></p>
                 </div>
             </div>
@@ -271,6 +271,6 @@
         <?php endwhile; ?>
     <?php endif ?>
 
-    <div class="text-center py-24"><a href="/contact"><button type="button" class="rounded-md bg-blue-900 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
+    <div class="text-center py-24"><a href="/contact"><button type="button" class="rounded-md bg-eseisblue-500 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-eseisblue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
 </main>
 <?php get_footer(); ?>

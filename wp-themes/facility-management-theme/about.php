@@ -13,7 +13,7 @@
          <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
              <div class="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
                  <?php if (get_field('title')) : ?>
-                     <h1 class="max-w-2xl text-4xl font-semibold tracking-tight text-blue-900 sm:text-6xl lg:col-span-2 xl:col-auto"><?php echo esc_html(get_field('title')); ?></h1>
+                     <h1 class="max-w-2xl text-4xl font-semibold tracking-tight text-eseisblue-500 sm:text-6xl lg:col-span-2 xl:col-auto"><?php echo esc_html(get_field('title')); ?></h1>
                  <?php endif; ?>
                  <?php if (get_field('description')) : ?>
                      <div class="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
@@ -34,7 +34,7 @@
          <div class="mx-auto max-w-7xl px-6 sm:mt-0 lg:px-8">
              <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
                  <?php if (get_sub_field('title')) : ?>
-                     <h2 class="text-3xl font-semibold tracking-tight text-blue-900 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
+                     <h2 class="text-3xl font-semibold tracking-tight text-eseisblue-500 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
                  <?php endif ?>
                  <div class="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
                      <div class="lg:w-full lg:max-w-2xl lg:flex-auto">
@@ -61,7 +61,7 @@
                                          <dt class="text-lg font-semibold leading-7 text-gray-900"><?php the_sub_field('text'); ?></dt>
                                      <?php endif ?>
                                      <?php if (get_sub_field('number')) : ?>
-                                         <dd class="text-5xl font-semibold tracking-tight text-blue-900"><?php if (get_sub_field('prefix')) : ?> <?php the_sub_field('prefix'); ?><?php endif ?>
+                                         <dd class="text-5xl font-semibold tracking-tight text-eseisblue-500"><?php if (get_sub_field('prefix')) : ?> <?php the_sub_field('prefix'); ?><?php endif ?>
                                                  <span id="counter<?php echo $count; ?>"><?php the_sub_field('number'); ?></span>
                                                  <?php if (get_sub_field('unit')) : ?> <?php the_sub_field('unit'); ?><?php endif ?>
                                          </dd>
@@ -91,7 +91,7 @@
          <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
              <div class="mx-auto max-w-2xl lg:mx-0">
                  <?php if (get_sub_field('title')) : ?>
-                     <h2 class="text-3xl font-semibold tracking-tight text-blue-900 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
+                     <h2 class="text-3xl font-semibold tracking-tight text-eseisblue-500 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
                  <?php endif ?>
                  <?php if (get_sub_field('subtitle')) : ?>
 
@@ -102,9 +102,9 @@
              <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-6xl">
                  <dl class="grid max-w-2xl grid-cols-1 gap-x-24 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
                      <?php while (have_rows('values', 'options')) : the_row(); ?>
-                         <div class="relative p-8 bg-[#D5E8F3] rounded-lg shadow-md">
+                         <div class="relative p-8 bg-eseisblue-50 rounded-lg shadow-md">
                              <dt class="text-base flex flex-col items-center text-center font-semibold leading-7 text-gray-900 gap-2">
-                                 <div class=" flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600">
+                                 <div class=" flex h-10 w-10 items-center justify-center rounded-lg bg-eseisblue-400">
                                      <?php if (get_sub_field('icon')) : ?>
                                          <img class="style-svg h-6 w-6 text-white" src="<?php the_sub_field('icon'); ?>">
                                      <?php endif ?>
@@ -124,7 +124,7 @@
 
      <div class="relative isolate -z-10 mt-32 sm:mt-48">
          <div class="mx-auto max-w-7xl px-6 lg:px-8">
-             <h2 class="text-center text-xl font-semibold leading-8 text-blue-900 mb-10">Ils nous font confiance</h2>
+             <h2 class="text-center text-xl font-semibold leading-8 text-eseisblue-500 mb-10">Ils nous font confiance</h2>
              <?php get_template_part('parts/they-trust-us'); ?>
          </div>
      </div>
@@ -134,7 +134,7 @@
          <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8 mb-24">
              <div class="mx-auto max-w-2xl lg:mx-0">
                  <?php if (get_sub_field('title')) : ?>
-                     <h2 class="text-3xl font-semibold tracking-tight text-blue-900 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
+                     <h2 class="text-3xl font-semibold tracking-tight text-eseisblue-500 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
                  <?php endif ?>
                  <?php if (get_sub_field('subtitle')) : ?>
                      <p class="mt-6 text-lg leading-8 text-gray-600"><?php the_sub_field('subtitle'); ?></p>

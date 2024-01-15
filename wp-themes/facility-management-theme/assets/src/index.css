@@ -5,13 +5,10 @@
 /* Styles formulaire de contact */
 .wpcf7 {
   margin: 0 auto;
-  max-width: 768px; /* Ajustez la largeur maximale selon vos besoins */
-  padding: 48px 0px 96px; /* Ajustez le padding selon vos besoins */
+  max-width: 768px; 
+  padding: 48px 0px 96px; 
 }
 
-.wpcf7-form {
-  /* Ajoutez des styles supplémentaires si nécessaire */
-}
 
 .wpcf7-form-control {
   margin-bottom: 1.5rem; /* Espace entre chaque champ */
@@ -29,7 +26,7 @@
   padding: 10px 14px;
   font-size: 16px;
   border-radius: 0.375rem;
-  border: 1px solid #d1d5db; /* Couleur du contour */
+  border: 1px solid #d1d5db; 
   transition: border-color 0.3s ease-in-out;
 }
 
@@ -41,8 +38,8 @@
 .wpcf7-date:focus,
 .wpcf7-textarea:focus {
   outline: none;
-  border-color: rgb(30 58 138); /* Couleur du contour lorsqu'il est en focus */
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); /* Ombre du contour lorsqu'il est en focus */
+  border-color: #053473; 
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); 
 }
 
 .wpcf7-select {
@@ -50,14 +47,14 @@
   padding: 10px 14px;
   font-size: 16px;
   border-radius: 0.375rem;
-  border: 1px solid #d1d5db; /* Couleur du contour */
+  border: 1px solid #d1d5db; 
   transition: border-color 0.3s ease-in-out;
 }
 
 .wpcf7-select:focus {
   outline: none;
-  border-color: rgb(30 58 138); /* Couleur du contour lorsqu'il est en focus */
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); /* Ombre du contour lorsqu'il est en focus */
+  border-color: #053473;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); 
 }
 
 
@@ -69,7 +66,7 @@
   font-weight: 600;
   text-align: center;
   color: #ffffff;
-  background-color: rgb(30 58 138); /* Couleur de fond */
+  background-color: #03224C; /* Couleur de fond */
   border: none;
   border-radius: 0.375rem;
   cursor: pointer;
@@ -78,7 +75,7 @@
 }
 
 .wpcf7-submit:hover {
-  background-color: rgb(37 99 235); 
+  background-color: #053473; 
 }
 
 
@@ -147,41 +144,41 @@
 
 .nav-links a:hover,
 .nav-links a:focus {
-  color: #2d3748; /* Texte en survol */
+  color: #053473;
 }
 
 .nav-links .current {
   font-weight: bold;
-  color: #000080; /* Texte actuel */
-  border-color: #000080; /* Bordure actuelle */
+  color: #03224C; 
+  border-color: #03224C; 
 }
 
 .nav-links .dots {
-  color: #a0aec0; /* Couleur pour "..." */
+  color: #a0aec0; 
+}
+.navigation.pagination .nav-links a.prev {
+  margin-right: 20px; 
+}
+
+.navigation.pagination .nav-links a.next {
+  margin-left: 20px; 
 }
 
 
 @media (max-width: 767px) {
   .nav-links a:not(.prev):not(.next),
   .nav-links span {
-      display: none; /* Cacher tous les liens et les points sauf les liens "Précédent" et "Suivant" */
+      display: none;
   }
+  .navigation.pagination .nav-links a.prev {
+    margin-right: auto; 
+  }
+  
+  .navigation.pagination .nav-links a.next {
+    margin-left: auto; 
+  }
+  
 }
 
 
-.navigation.pagination .nav-links a.prev {
-  margin-right: auto; /* Pousse le bouton "Précédent" à l'extrême gauche */
-}
 
-.navigation.pagination .nav-links a.next {
-  margin-left: auto; /* Pousse le bouton "Suivant" à l'extrême droite */
-}
-
-
-/* .navigation.pagination .nav-links:not(:has(a.prev)) a.next {
-  margin-left: 200px;
-}
-
-.navigation.pagination .nav-links:not(:has(a.next)) a.prev {
-  margin-right: 200px;
-} */

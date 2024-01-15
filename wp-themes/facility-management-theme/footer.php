@@ -1,4 +1,4 @@
-<footer class="bg-[#D5E8F3]">
+<footer class="bg-eseisblue-50">
 
     <div class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
 
@@ -27,7 +27,7 @@
     $menuitems = wp_get_nav_menu_items($menu->term_id, array('order' => 'DESC'));
     if (!empty($menuitems)) :
     ?>
-        <div class="bg-blue-900 h-fit flex justify-center items-center">
+        <div class="bg-eseisblue-500 h-fit flex justify-center items-center">
             <div class="w-full text-center text-sm font-semibold text-white flex flex-wrap justify-center items-center py-6 px-3">
                 <p>&copy; 2024 Eseis | </p>
                 <?php $total_items = count($menuitems); ?>
