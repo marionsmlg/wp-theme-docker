@@ -18,6 +18,7 @@ function console_log($data)
 }
 
 
+add_filter('wpcf7_validate_configuration', '__return_false');
 
 function montheme_supports()
 {

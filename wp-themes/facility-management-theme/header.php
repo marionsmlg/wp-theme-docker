@@ -41,7 +41,7 @@
                         <div class="flex flex-shrink-0 items-center">
                             <?php
                             $custom_logo_id = get_theme_mod('custom_logo');
-                            $image = wp_get_attachment_image_src($custom_logo_id, 'full'); ?>
+                            $image = wp_get_attachment_image_src($custom_logo_id, 'large'); ?>
 
                             <a href="<?php $url = home_url();
                                         echo $url; ?>">

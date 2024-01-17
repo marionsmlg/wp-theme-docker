@@ -9,7 +9,7 @@
 <main class="mt-16 min-h-screen">
     <?php if (get_field('image')) : ?>
         <div class="h-56 sm:h-72 relative overflow-hidden">
-            <img class="absolute inset-0 object-contain object-top sm:object-cover sm:object-center w-full h-full" src="<?php echo esc_html(get_field('image')); ?>" />
+            <img class="absolute inset-0 object-contain object-top sm:object-cover sm:object-center w-full h-full" src="<?php echo esc_html(get_field('image')); ?>" alt="image de contact" />
         </div>
     <?php endif; ?>
 

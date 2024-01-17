@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <main class="mt-16 min-h-screen">
     <div class="relative h-56">
-        <img src="http://localhost:8080/wp-content/uploads/2024/01/absolutvision-WYd_PkCa1BY-unsplash.jpg" alt="image de transition" class="aspect-[5/2] h-56 object-center w-full object-cover">
+        <img src="https://eseisdotfr.wpcomstaging.com/wp-content/uploads/2024/01/absolutvision-WYd_PkCa1BY-unsplash.jpg" alt="image des actualités" class="aspect-[5/2] h-56 object-center w-full object-cover">
         <div class="absolute inset-0 bg-black opacity-50 shadow-xl"></div>
         <div class="absolute inset-0 p-6 md:p-16 flex items-center justify-center ">
 
