@@ -77,7 +77,8 @@
 }
 
 .wpcf7-response-output {
-  color: red;
+  color: #0857c2;
+  font-weight: bold;
 }
 
 /* Styles pour le slider */

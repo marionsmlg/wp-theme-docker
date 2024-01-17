@@ -33,7 +33,10 @@
 
 
                         <nav class="flex items-center justify-between border-t border-gray-200 px-4 pb-8 sm:px-0">
-                                <div class="-mt-px w-0 flex-1 hidden sm:flex">
+                                <?php
+                                $previous_article_class = empty(get_previous_post()) ? 'flex justify-center' : 'hidden sm:flex sm:justify-start';
+                                ?>
+                                <div class="-mt-px w-0 flex-1  <?= $previous_article_class ?>">
 
                                         <div class="inline-flex items-center h-10 border-t-2 border-transparent pr-1 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
                                                 <?php $next_post = get_next_post();
@@ -51,8 +54,11 @@
 
                                         </div>
                                 </div>
+                                <?php
+                                $next_article_class = empty(get_previous_post()) ? 'hidden' : 'flex';
+                                ?>
 
-                                <div class="-mt-px flex w-0 flex-1 justify-center sm:justify-end">
+                                <div class="-mt-px w-0 flex-1 justify-center sm:justify-end <?= $next_article_class ?>">
                                         <div class="inline-flex items-center h-10 border-t-2 border-transparent pl-1 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
                                                 <?php $previous_post = get_previous_post();
                                                 $prev_post_title = $previous_post->post_title;

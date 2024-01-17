@@ -58,7 +58,7 @@
                                 $current_class = (is_page($item->object_id)) || (is_home() && $item->object_id == get_option('page_for_posts')) || (is_page($item->object_id) && !is_home() && !is_front_page($item->object_id)) || ($item->url === get_post_type_archive_link('post') && !is_front_page($item->object_id) && is_single()) ? 'border-b-2 border-eseisblue-500 text-eseisblue-500' : 'border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-eseisblue-500';
 
                                 ?>
-                                <a href="<?= esc_url($item->url) ?>" class="inline-flex items-center px-1 pt-1 text-sm lg:text-base font-medium  <?= $current_class ?>">
+                                <a href="<?= esc_url($item->url) ?>" class="inline-flex items-center px-1 pt-1 text-sm lg:text-base font-medium <?= $current_class ?>">
                                     <?= esc_html($item->title) ?>
                                 </a>
                             <?php endforeach; ?>
