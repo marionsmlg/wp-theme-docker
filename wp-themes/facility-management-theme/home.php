@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <main class="mt-16 min-h-screen">
-    <div class="relative h-56">
-        <img src="https://eseisdotfr.wpcomstaging.com/wp-content/uploads/2024/01/absolutvision-WYd_PkCa1BY-unsplash.jpg" alt="image des actualités" class="aspect-[5/2] h-56 object-center w-full object-cover">
-        <div class="absolute inset-0 bg-black opacity-50 shadow-xl"></div>
+    <div class="relative h-40 md:h-56">
+        <img src="https://eseisdotfr.wpcomstaging.com/wp-content/uploads/2024/01/absolutvision-WYd_PkCa1BY-unsplash.jpg" alt="image des actualités" class="aspect-[5/2] h-40 md:h-56 object-center w-full object-cover">
+        <div class="absolute inset-0 bg-black opacity-40 shadow-xl"></div>
         <div class="absolute inset-0 p-6 md:p-16 flex items-center justify-center ">
 
             <h1 class="font-semibold text-4xl text-white sm:text-5xl"><?php single_post_title(); ?></h1>
@@ -12,7 +12,7 @@
 
 
     <?php if (have_posts()) : ?>
-        <div class="bg-white py-24 sm:py-32">
+        <div class="bg-white py-14 md:py-32">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl lg:max-w-4xl">
                     <h2 class="text-3xl font-bold tracking-tight text-eseisblue-500 sm:text-4xl">Exploiter le futur de l'environnement de travail</h2>
@@ -44,7 +44,7 @@
                                                 <?php the_title(); ?>
                                             </a>
                                         </h3>
-                                        <p class="mt-5 text-sm leading-6 text-gray-600"><?php echo wp_trim_words(get_the_excerpt(), 50, '...'); ?></p>
+                                        <p class="mt-5 text-sm leading-6 text-gray-600"><?php echo wp_trim_words(get_the_excerpt(), 30, '...'); ?></p>
                                     </div>
                                     <div class="mt-6 flex border-t border-gray-900/5 pt-6">
                                         <!-- <div class="relative flex items-center gap-x-4">

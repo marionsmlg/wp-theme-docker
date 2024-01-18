@@ -7,7 +7,7 @@
             <?php while (have_rows('slider')) : the_row(); ?>
                 <img src="<?php the_sub_field('image'); ?>" alt="Image" class="slide aspect-[5/2] object-center object-cover">
             <?php endwhile; ?>
-            <div class="absolute inset-0 bg-black opacity-50 shadow-xl"></div>
+            <div class="absolute inset-0 bg-black opacity-35 shadow-xl"></div>
             <div class="absolute inset-0 p-6 md:p-16 flex flex-col justify-center text-center items-center lg:text-left lg:items-start gap-y-8 ">
                 <?php if (get_sub_field('headline')) : ?>
                     <h1 class="text-3xl sm:text-4xl md:text-5xl text-white font-semibold max-w-3xl"><?php the_sub_field('headline'); ?></h1>
@@ -196,7 +196,7 @@
             if ($query->have_posts()) : ?>
 
                 <div class="p-6">
-                    <ul role="list" class="flex flex-wrap justify-center gap-x-4 gap-y-8 sm:gap-x-20">
+                    <ul class="flex flex-wrap justify-center gap-x-4 gap-y-8 sm:gap-x-20">
                         <?php while ($query->have_posts()) : $query->the_post(); ?>
 
                             <a href="<?php the_permalink() ?>" class="flex flex-col items-center w-80">

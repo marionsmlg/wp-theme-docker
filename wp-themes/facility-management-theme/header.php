@@ -48,7 +48,7 @@
                                 <?php
                                 $custom_logo_id = get_theme_mod('custom_logo');
                                 $logo = wp_get_attachment_image_src($custom_logo_id, 'full'); ?>
-                                <img class="h-8 md:h-10 w-auto" src="<?= esc_url($image[0]) ?>" alt="Eseis">
+                                <img class="h-6 md:h-8 w-auto" src="<?= esc_url($image[0]) ?>" alt="Eseis">
                             </a>
 
                         </div>

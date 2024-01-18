@@ -8,9 +8,9 @@
 
  <main class="mt-16 min-h-screen">
      <!-- Hero section -->
-     <div class="relative isolate -z-10 overflow-hidden pt-8">
+     <div class="relative isolate -z-10 overflow-hidden">
          <div class="absolute inset-y-0 bg-white shadow-xl sm:-mr-80 lg:-mr-96" aria-hidden="true"></div>
-         <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+         <div class="mx-auto max-w-7xl px-6 py-14 sm:py-32 lg:px-8">
              <div class="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
                  <?php if (get_field('title')) : ?>
                      <h1 class="max-w-2xl text-4xl font-semibold tracking-tight text-eseisblue-500 sm:text-6xl lg:col-span-2 xl:col-auto"><?php echo esc_html(get_field('title')); ?></h1>
