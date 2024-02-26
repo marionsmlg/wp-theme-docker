@@ -42,7 +42,7 @@
                              <p class="text-xl leading-8 text-gray-600"><?php the_sub_field('subtitle'); ?></p>
                          <?php endif ?>
                          <?php if (get_sub_field('content')) : ?>
-                             <div class="mt-10 max-w-xl text-base leading-7 text-gray-700">
+                             <div class="mt-10 max-w-xl text-base leading-8 text-gray-600 text-xl">
                                  <p><?php the_sub_field('content'); ?></p>
                              <?php endif ?>
                              </div>
@@ -99,7 +99,7 @@
                      <p class="mt-6 text-lg leading-8 text-gray-600"><?php the_sub_field('subtitle'); ?></p>
                  <?php endif ?>
              </div>
-             <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-6xl">
+             <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-7xl">
                  <dl class="grid max-w-2xl grid-cols-1 gap-x-24 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
                      <?php while (have_rows('values', 'options')) : the_row(); ?>
                          <div class="relative p-8 bg-eseisblue-50 rounded-lg shadow-md">
@@ -111,7 +111,7 @@
                                  </div>
                                  <?php if (get_sub_field('name')) : ?> <?php the_sub_field('name'); ?> <?php endif ?>
                              </dt>
-                             <?php if (get_sub_field('description')) : ?><dd class="mt-2 text-base leading-7 text-gray-600"><?php the_sub_field('description'); ?></dd> <?php endif ?>
+                             <?php if (get_sub_field('description')) : ?><dd class="mt-2 text-base leading-7 text-gray-600 text-center"><?php the_sub_field('description'); ?></dd> <?php endif ?>
 
                          </div>
                      <?php endwhile; ?>

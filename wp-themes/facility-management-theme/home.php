@@ -15,8 +15,8 @@
         <div class="bg-white py-14 md:py-32">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl lg:max-w-4xl">
-                    <h2 class="text-3xl font-bold tracking-tight text-eseisblue-500 sm:text-4xl">Exploiter le futur de l'environnement de travail</h2>
-                    <p class="mt-2 text-lg leading-8 text-gray-600">Découvrez toutes les actualités d'ESEIS</p>
+                    <h2 class="text-3xl font-bold tracking-tight text-eseisblue-500 sm:text-4xl">Restez à la pointe de l'actualité avec ESEÏS</h2>
+                    <p class="mt-2 text-lg leading-8 text-gray-600">Découvrez les dernières nouvelles, les événements à venir et les réalisations récentes de notre entreprise dans le domaine du facility management et de la responsabilité sociale et environnementale.</p>
                     <div class="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
                         <?php while (have_posts()) : the_post();
                             $categories = get_the_category(); ?>

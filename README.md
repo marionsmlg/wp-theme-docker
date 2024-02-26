@@ -27,7 +27,7 @@ npm run wp:start
 npm run assets:dev
 ```
 
-The local environment will be available at http://localhost:8888 (Username: admin, Password: password).
+The local environment will be available at http://localhost:8080 (Username: admin, Password: password).
 
 ### Finalize Theme
 

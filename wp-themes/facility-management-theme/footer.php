@@ -5,8 +5,10 @@
         <?php
         $custom_logo_id = get_theme_mod('custom_logo');
         $image = wp_get_attachment_image_src($custom_logo_id, 'large'); ?>
-        <img class="h-10 w-auto flex" src="<?= esc_url($image[0]) ?>" alt="logo Eseis">
 
+        <?php if (get_field('logo_footer', 'option')) : ?>
+            <img class="h-40 w-auto flex" src="<?php the_field('logo_footer', 'option') ?>" alt="logo Eseis">
+        <?php endif ?>
         <div class="space-x-6 mt-8 md:mt-0">
             <p class="text-gray-700 font-semibold">Suivez-nous sur LinkedIn</p>
             <?php if (get_field('linkedin', 'option')) : ?>

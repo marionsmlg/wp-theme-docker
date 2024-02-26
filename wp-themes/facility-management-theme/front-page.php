@@ -13,7 +13,10 @@
                     <h1 class="text-3xl sm:text-4xl md:text-5xl text-white font-semibold max-w-3xl"><?php the_sub_field('headline'); ?></h1>
                 <?php endif ?>
                 <?php if (get_sub_field('subheadline')) : ?>
-                    <h2 class="text-xl sm:text-2xl md:text-3xl text-white"><?php the_sub_field('subheadline'); ?></h2>
+                    <div class="max-w-5xl">
+                        <h2 class="text-xl sm:text-2xl md:text-3xl text-white maw-w-3xl"><?php the_sub_field('subheadline'); ?></h2>
+                    </div>
+
                 <?php endif ?>
                 <div><a href="/contact"><button type="button" class="rounded-md bg-eseisblue-500 sm:px-6 sm:py-4 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-eseisblue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
 
@@ -31,7 +34,7 @@
                 <p class="mt-2 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl"><?php if (get_sub_field('subtitle')) : ?> <?php the_sub_field('subtitle'); ?><?php endif ?></p>
                 <p class="mt-6 text-lg leading-8 text-gray-600"><?php if (get_sub_field('content')) : ?> <?php the_sub_field('content'); ?><?php endif ?></p>
             </div>
-            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+            <div class="mx-auto mt-16 max-w-3xl sm:mt-20 lg:mt-24 lg:max-w-6xl">
                 <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
                     <?php while (have_rows('jobs')) : the_row(); ?>
                         <div class="relative pl-16">
@@ -73,7 +76,7 @@
                         <blockquote class="text-eseisblue-500 font-semibold leading-8 text-3xl sm:leading-9">
                             <p> <?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?> <?php endif ?></p>
                         </blockquote>
-                        <figcaption class="mt-8 text-base">
+                        <figcaption class="mt-8 text-base sm:text-lg">
                             <div class="font-semibold"> <?php if (get_sub_field('subtitle')) : ?> <?php the_sub_field('subtitle'); ?> <?php endif ?></div>
                         </figcaption>
                         <div class="pt-16 pb-8 gap-8 flex flex-col sm:flex-row">
@@ -110,12 +113,12 @@
     <?php while (have_rows('secteurs_activite')) : the_row(); ?>
 
         <div class="relative isolate mx-auto mt-16 lg:mt-32 max-w-7xl px-6 lg:px-8">
-            <div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
+            <div class="mx-auto max-w-2xl text-center lg:max-w-5xl">
                 <h2 class="text-base font-semibold leading-7 text-eseisblue-400 uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
                 <p class="mt-2 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl"><?php if (get_sub_field('subtitle')) : ?> <?php the_sub_field('subtitle'); ?><?php endif ?></p>
                 <p class="mt-6 text-lg leading-8 text-gray-600"><?php if (get_sub_field('content')) : ?> <?php the_sub_field('content'); ?><?php endif ?></p>
             </div>
-            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-6xl">
                 <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
                     <?php while (have_rows('sectors')) : the_row(); ?>
                         <div class="relative pl-16">
@@ -145,7 +148,7 @@
                 <p class="mt-2 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl"><?php if (get_sub_field('subtitle')) : ?> <?php the_sub_field('subtitle'); ?><?php endif ?></p>
                 <p class="mt-6 text-lg leading-8 text-gray-600"><?php if (get_sub_field('content')) : ?> <?php the_sub_field('content'); ?><?php endif ?></p>
             </div>
-            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-6xl">
+            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-7xl">
                 <dl class="grid max-w-2xl grid-cols-1 gap-x-24 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
                     <?php while (have_rows('values', 'options')) : the_row(); ?>
                         <div class="relative p-8 bg-white rounded-lg shadow-md">
@@ -157,7 +160,7 @@
                                 </div>
                                 <?php if (get_sub_field('name')) : ?> <?php the_sub_field('name'); ?> <?php endif ?>
                             </dt>
-                            <?php if (get_sub_field('description')) : ?><dd class="mt-2 text-base leading-7 text-gray-600"><?php the_sub_field('description'); ?></dd> <?php endif ?>
+                            <?php if (get_sub_field('description')) : ?><dd class="mt-2 text-base leading-7 text-gray-600 text-center"><?php the_sub_field('description'); ?></dd> <?php endif ?>
 
                         </div>
                     <?php endwhile; ?>
@@ -196,7 +199,7 @@
             if ($query->have_posts()) : ?>
 
                 <div class="p-6">
-                    <ul class="flex flex-wrap justify-center gap-x-4 gap-y-8 sm:gap-x-20">
+                    <div class="flex flex-wrap justify-center gap-x-4 gap-y-8 sm:gap-x-20">
                         <?php while ($query->have_posts()) : $query->the_post(); ?>
 
                             <a href="<?php the_permalink() ?>" class="flex flex-col items-center w-80">
@@ -213,7 +216,7 @@
                                 </div>
                             </a>
                         <?php endwhile; ?>
-                    </ul>
+                    </div>
                     <div class="text-eseisblue-500 text-right mt-10 mx-auto max-w-6xl">
                         <a class="text-base font-semibold" href="<?= get_post_type_archive_link('post') ?>">
                             Voir toutes les actualités
