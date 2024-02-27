@@ -7,7 +7,7 @@
         $image = wp_get_attachment_image_src($custom_logo_id, 'large'); ?>
 
         <?php if (get_field('logo_footer', 'option')) : ?>
-            <img class="h-40 w-auto flex" src="<?php the_field('logo_footer', 'option') ?>" alt="logo Eseis">
+            <img class="h-48 w-auto flex" src="<?php the_field('logo_footer', 'option') ?>" alt="logo Eseis">
         <?php endif ?>
         <div class="space-x-6 mt-8 md:mt-0">
             <p class="text-gray-700 font-semibold">Suivez-nous sur LinkedIn</p>
