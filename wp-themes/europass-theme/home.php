@@ -9,8 +9,7 @@
     <div class="relative mx-auto -mt-12 max-w-7xl px-4 pb-16 sm:px-6 sm:pb-24 lg:px-8">
         <div class="mx-auto max-w-2xl text-center lg:max-w-4xl mb-20">
             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"><?php single_post_title(); ?></h2>
-            <p class="mt-4 text-lg text-gray-500">Découvrez les dernières nouvelles, les événements à venir et les réalisations récentes de notre entreprise dans le domaine du facility management et de la responsabilité sociale et environnementale.</p>
-
+            <p class="mt-4 text-lg text-gray-500">Découvrez les dernières nouvelles, les événements à venir et les réalisations récentes de notre entreprise</p>
         </div>
 
 

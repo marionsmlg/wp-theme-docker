@@ -52,7 +52,7 @@
                     <?php endwhile; ?>
                 </dl>
                 <div class="text-eseisblue-500 text-right mt-10 mx-auto max-w-6xl">
-                    <a class="text-base font-semibold" href="/nos-metiers">
+                    <a class="text-base font-semibold" href="/nos-services">
                         Voir plus
                         <span aria-hidden="true"> &rarr;</span>
                     </a>
@@ -239,11 +239,9 @@
 
     <?php if (have_rows('partners')) : ?>
         <?php while (have_rows('partners')) : the_row(); ?>
-            <div class="mt-10 pb-20 px-6 pt-10 sm:pb-16">
-                <div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
-                    <h2 class="text-base font-semibold leading-7 text-eseisblue-400 uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
-                    <p class="mt-2 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl"><?php if (get_sub_field('subtitle')) : ?> <?php the_sub_field('subtitle'); ?><?php endif ?></p>
-                    <p class="mt-6 text-lg leading-8 text-gray-600"><?php if (get_sub_field('content')) : ?> <?php the_sub_field('content'); ?><?php endif ?></p>
+            <div class="mt-10 px-6 pt-10">
+                <div class="mx-auto max-w-2xl text-center lg:max-w-4xl mb-16">
+                    <h2 class="text-base sm:text-lg font-semibold leading-7 text-eseisblue-400 uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
                 </div>
             </div>
             <?php get_template_part('parts/they-trust-us'); ?>
@@ -253,27 +251,25 @@
 
     <?php if (have_rows('certifications')) : ?>
         <?php while (have_rows('certifications')) : the_row(); ?>
-            <div class="mt-10 pb-20 px-6 pt-10 sm:pb-16">
-                <div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
-                    <h2 class="text-base font-semibold leading-7 text-eseisblue-400 uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
-                    <p class="mt-2 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl"><?php if (get_sub_field('subtitle')) : ?> <?php the_sub_field('subtitle'); ?><?php endif ?></p>
+            <div class="mt-10 px-6 pt-16 pb-8 sm:pb-16">
+                <div class="mx-auto max-w-2xl text-center lg:max-w-4xl mb-16">
+                    <h2 class="text-base font-semibold sm:text-lg leading-7 text-eseisblue-400 uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
                 </div>
-            </div>
-            <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="mx-auto flex flex-wrap max-w-lg items-center justify-center gap-x-8 gap-y-12 sm:max-w-xl sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none">
-                    <?php while (have_rows('certifications', 'options')) : the_row(); ?>
-                        <div class="flex flex-col items-center text-center">
-                            <?php if (get_sub_field('name')) : ?><p class="mb-3 font-medium text-gray-500"><?php the_sub_field('name'); ?></p><?php endif ?>
-                            <?php if (get_sub_field('logo')) : ?><img class="w-48 h-28 object-contain" src="<?php the_sub_field('logo'); ?>" alt="logo-certification" width="158" height="48"><?php endif ?>
-                        </div>
+                <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div class="mx-auto flex flex-wrap max-w-lg items-center justify-center gap-x-8 gap-y-12 sm:max-w-xl sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none">
+                        <?php while (have_rows('certifications', 'options')) : the_row(); ?>
+                            <div class="flex flex-col items-center text-center">
+                                <?php if (get_sub_field('name')) : ?><p class="mb-3 font-medium text-gray-500"><?php the_sub_field('name'); ?></p><?php endif ?>
+                                <?php if (get_sub_field('logo')) : ?><img class="w-48 h-28 object-contain" src="<?php the_sub_field('logo'); ?>" alt="logo-certification" width="158" height="48"><?php endif ?>
+                            </div>
 
-                    <?php endwhile; ?>
+                        <?php endwhile; ?>
 
+                    </div>
                 </div>
-            </div>
-        <?php endwhile; ?>
-    <?php endif ?>
+            <?php endwhile; ?>
+        <?php endif ?>
 
-    <div class="text-center py-24"><a href="/contact"><button type="button" class="rounded-md bg-eseisblue-500 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-eseisblue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
+        <div class="text-center py-24"><a href="/contact"><button type="button" class="rounded-md bg-eseisblue-500 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-eseisblue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
 </main>
 <?php get_footer(); ?>

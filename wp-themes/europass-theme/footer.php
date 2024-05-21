@@ -1,4 +1,4 @@
-<footer class="bg-eseisblue-50">
+<footer class="bg-europassyellow-200 mt-28">
 
     <div class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
 
@@ -7,7 +7,7 @@
         $image = wp_get_attachment_image_src($custom_logo_id, 'large'); ?>
 
         <?php if (get_field('logo_footer', 'option')) : ?>
-            <img class="h-48 w-auto flex" src="<?php the_field('logo_footer', 'option') ?>" alt="logo Eseis">
+            <img class="h-48 w-auto flex" src="<?php the_field('logo_footer', 'option') ?>" alt="logo">
         <?php endif ?>
         <div class="space-x-6 mt-8 md:mt-0">
             <p class="text-gray-700 font-semibold">Suivez-nous sur LinkedIn</p>
@@ -29,9 +29,9 @@
     $menuitems = wp_get_nav_menu_items($menu->term_id, array('order' => 'DESC'));
     if (!empty($menuitems)) :
     ?>
-        <div class="bg-eseisblue-500 h-fit flex justify-center items-center">
+        <div class="bg-europassbrown h-fit flex justify-center items-center">
             <div class="w-full text-center text-sm font-semibold text-white flex flex-wrap justify-center items-center py-6 px-3">
-                <p>&copy; 2024 ESEÏS | </p>
+                <p>&copy; 2024 GROUPE EUROPASS | </p>
                 <?php $total_items = count($menuitems); ?>
                 <?php foreach ($menuitems as $index => $item) : ?>
                     <a href="<?= esc_url($item->url) ?>" class="text-white mx-2"> <?= esc_html($item->title) ?></a>
