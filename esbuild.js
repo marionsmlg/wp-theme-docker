@@ -3,7 +3,11 @@ import fs from "fs/promises";
 import path from "path";
 import esbuildStylePlugin from "esbuild-style-plugin";
 
-const themeNames = ["facility-management-theme", "europass-theme"];
+const themeNames = [
+  "facility-management-theme",
+  "europass-theme",
+  "construction",
+];
 
 const isDev = process.argv[2] === "--dev";
 

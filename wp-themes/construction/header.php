@@ -58,7 +58,7 @@
                                 $current_class = (is_page($item->object_id)) || (is_home() && $item->object_id == get_option('page_for_posts')) || (is_page($item->object_id) && !is_home() && !is_front_page($item->object_id)) || ($item->url === get_post_type_archive_link('post') && !is_front_page($item->object_id) && is_single()) ? 'border-b-2 border-europassbrown text-europassbrown' : 'border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-europassbrown';
 
                                 ?>
-                                <a href="<?= esc_url($item->url) ?>" class="inline-flex items-center px-1 pt-1 text-sm uppercase font-medium <?= $current_class ?>">
+                                <a href="<?= esc_url($item->url) ?>" class="inline-flex items-center px-1 pt-1 text-sm  uppercase font-medium <?= $current_class ?>">
                                     <?= esc_html($item->title) ?>
                                 </a>
                             <?php endforeach; ?>
@@ -66,7 +66,7 @@
 
                     </div>
                     <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                        <a href="/contact"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 lg:text-base text-sm font-semibold text-white shadow-sm bg-europassyellow-500 hover:bg-europassyellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a>
+                        <a href="/contact"><button type="button" class="uppercase sm:px-3.5 sm:py-2.5 px-3 py-2 text-sm font-semibold text-white shadow-sm bg-maincolor hover:bg-europassyellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a>
                     </div>
                 </div>
             </div>
@@ -87,13 +87,6 @@
 
 
     <?php endif; ?>
-
-
-
-
-
-
-
 
 
 </body>
