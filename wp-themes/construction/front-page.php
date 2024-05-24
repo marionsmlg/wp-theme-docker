@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="mt-16">
+<main>
 
     <?php while (have_rows('illustration')) : the_row(); ?>
         <div class="relative md:h-[700px] h-[500px]">
@@ -77,7 +77,7 @@
     <!-- Chiffres -->
     <?php while (have_rows('chiffres_cles')) : the_row(); ?>
         <div class="relative bg-gray-100">
-            <img class="h-56 w-full bg-gray-50 object-cover lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-1/2" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2850&q=80" alt="">
+            <div class="h-56 w-full bg-fixed bg-cover bg-left lg:bg-right lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-1/2" style="background-image:url('https://images.unsplash.com/photo-1485230405346-71acb9518d9c?q=80&w=2094&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"> </div>
             <div class="mx-auto grid max-w-7xl lg:grid-cols-2">
                 <div class="px-6 pb-24 pt-16 sm:pb-32 sm:pt-20 lg:col-start-2 lg:px-8 lg:pt-32">
                     <div class="mx-auto max-w-2xl lg:mr-0 lg:max-w-lg">
@@ -181,7 +181,7 @@
                                     </div>
                                     <div>
                                         <p class="pointer-events-none block truncate text-sm font-medium text-gray-900 uppercase"><?php the_title(); ?></p>
-                                        <p class="pointer-events-none block text-sm font-medium text-maincolor mt-2"><?php echo get_the_date(); ?></p>
+                                        <p class="pointer-events-none block text-sm text-maincolor mt-2"><?php echo get_the_date(); ?></p>
 
                                         <p class="post-date"><?php echo wp_trim_words(get_the_excerpt(), 14, '...'); ?></p>
                                     </div>
@@ -209,7 +209,7 @@
         <?php while (have_rows('partners')) : the_row(); ?>
             <div class="mt-10 px-6 pt-10">
                 <div class="mx-auto max-w-2xl text-center lg:max-w-4xl mb-16">
-                    <h2 class="text-base sm:text-lg font-semibold leading-7 text-secondarycolor uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
+                    <h2 class="text-base sm:text-xl font-semibold leading-7 text-secondarycolor uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
                 </div>
             </div>
             <?php get_template_part('parts/they-trust-us'); ?>

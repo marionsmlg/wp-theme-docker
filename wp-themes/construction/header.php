@@ -19,9 +19,9 @@
 
     if (!empty($menuitems)) :
     ?>
-        <nav class="bg-white shadow fixed top-0 w-full z-50">
-            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-                <div class="relative flex h-24 justify-between">
+        <nav class="fixed top-0 w-full z-50 px-2 pt-2">
+            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 rounded-md bg-white bg-opacity-70 backdrop-blur-md" id="navbar">
+                <div class="relative flex h-16 justify-between">
                     <div class="-ml-2 mr-4 flex items-center lg:hidden">
                         <!-- Mobile menu button -->
                         <button type="button" id="menuToggleButton" data-menu-is-open="false" class="relative inline-flex items-center justify-center rounded-full p-2 text-gray-400 hover:bg-maincolor-100 hover:text-gray-500 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
@@ -72,7 +72,7 @@
             </div>
 
             <!-- Mobile menu -->
-            <div class="hidden" id="mobile-menu">
+            <div class="hidden bg-white rounded-b-md bg-opacity-70 backdrop-blur-md" id="mobile-menu">
                 <div class="space-y-1 pb-4 pt-2">
                     <?php foreach ($menuitems as $item) : ?>
                         <?php
