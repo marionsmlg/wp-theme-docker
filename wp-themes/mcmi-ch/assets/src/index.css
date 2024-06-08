@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --main-color: #5271FF;
+}
+
+.style-svg {
+  stroke: var(--main-color);
+}
+/* Styles formulaire de contact */
+.wpcf7 {
+  margin: 0 auto;
+  max-width: 768px;
+  padding: 48px 0px 96px;
+}
+
+.wpcf7-form-control {
+  margin-bottom: 1.5rem; /* Espace entre chaque champ */
+}
+
+/* Styles pour les champs texte, email, URL, tel, etc. */
+.wpcf7-text,
+.wpcf7-email,
+.wpcf7-url,
+.wpcf7-tel,
+.wpcf7-number,
+.wpcf7-date,
+.wpcf7-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.wpcf7-text:focus,
+.wpcf7-email:focus,
+.wpcf7-url:focus,
+.wpcf7-tel:focus,
+.wpcf7-number:focus,
+.wpcf7-date:focus,
+.wpcf7-textarea:focus {
+  outline: none;
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+.wpcf7-list-item {
+  margin: 0;
+}
+
+.wpcf7-select {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.wpcf7-select:focus {
+  outline: none;
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* Styles pour le bouton d'envoi */
+.wpcf7-submit {
+  display: inline-block;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  background-color: var(--main-color); /* Couleur de fond */
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 1.5rem;
+}
+
+.wpcf7-submit:hover {
+  background-color: var(--main-color);
+}
+
+.wpcf7-response-output {
+  color: #0857c2;
+  font-weight: bold;
+}
+
+/* Styles pour le slider */
+.slider {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+
+/* Styles pour la pagination */
+.navigation.pagination {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #e2e8f0; /* Correspond à border-t border-gray-200 */
+  padding: 0 1rem; /* Correspond à px-4 sm:px-0 */
+}
+
+.nav-links {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    justify-content: center;
+  }
+}
+
+.nav-links a,
+.nav-links span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-top: 2px solid transparent;
+  padding: 1rem 1rem; /* Correspond à px-4 pt-4 */
+  font-size: 0.875rem; /* Correspond à text-sm */
+  font-weight: 500; /* Correspond à font-medium */
+  color: #4a5568; /* Correspond à text-gray-500 */
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: var(--main-color);
+}
+
+.nav-links .current {
+  font-weight: bold;
+  color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.nav-links .dots {
+  color: #a0aec0;
+}
+.navigation.pagination .nav-links a.prev {
+  margin-right: 20px;
+}
+
+.navigation.pagination .nav-links a.next {
+  margin-left: 20px;
+}
+
+@media (max-width: 767px) {
+  .nav-links a:not(.prev):not(.next),
+  .nav-links span {
+    display: none;
+  }
+  .navigation.pagination .nav-links a.prev {
+    margin-right: auto;
+  }
+
+  .navigation.pagination .nav-links a.next {
+    margin-left: auto;
+  }
+}
