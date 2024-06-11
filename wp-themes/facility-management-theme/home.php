@@ -22,7 +22,7 @@
                             <?php while (have_posts()) : the_post();
                                 $categories = get_the_category(); ?>
                                 <article class="relative isolate flex flex-col gap-8 lg:flex-row">
-                                    <div class="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0">
+                                    <div class="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-[16/9] lg:w-80 lg:shrink-0">
                                         <?php the_post_thumbnail('medium_large', ['class' => 'absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover']) ?>
 
                                         <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>

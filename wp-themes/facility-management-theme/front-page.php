@@ -205,7 +205,7 @@
                             <a href="<?php the_permalink() ?>" class="flex flex-col items-center w-80">
                                 <div class="w-full h-80 rounded-lg hover:opacity-75">
                                     <div class="overflow-hidden w-full h-48 rounded-lg bg-gray-100 mb-2">
-                                        <?php the_post_thumbnail('medium', ['class' => 'pointer-events-none object-cover h-48 w-full']) ?>
+                                        <?php the_post_thumbnail('medium_large', ['class' => 'pointer-events-none object-cover h-48 w-full']) ?>
                                     </div>
                                     <div>
                                         <p class="pointer-events-none block text-sm font-medium text-gray-500"><?php echo get_the_date(); ?></p>

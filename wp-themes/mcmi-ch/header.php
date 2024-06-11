@@ -19,8 +19,8 @@
 
     if (!empty($menuitems)) :
     ?>
-        <nav class="fixed top-0 w-full z-50 bg-secondarycolor bg-opacity-70 backdrop-blur-md">
-            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8" id="navbar">
+        <nav id="navbar" class="fixed top-0 w-full z-50">
+            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div class="relative flex h-16ç">
                     <div class="-ml-2 mr-4 flex items-center lg:hidden">
                         <!-- Mobile menu button -->
@@ -37,7 +37,7 @@
                             </svg>
                         </button>
                     </div>
-                    <div class="flex flex-1 items-center lg:items-stretch lg:justify-start">
+                    <div class="flex flex-1 items-center lg:items-stretch justify-between">
                         <div class="flex flex-shrink-0 items-center">
                             <?php
                             $custom_logo_id = get_theme_mod('custom_logo');
@@ -52,22 +52,25 @@
                             </a>
 
                         </div>
-                        <div class="hidden lg:ml-20 lg:flex lg:space-x-8">
-                            <?php foreach ($menuitems as $item) : ?>
-                                <?php
-                                $current_class = (is_page($item->object_id)) || (is_home() && $item->object_id == get_option('page_for_posts')) || (is_page($item->object_id) && !is_home() && !is_front_page($item->object_id)) || ($item->url === get_post_type_archive_link('post') && !is_front_page($item->object_id) && is_single()) ? 'border-b-2 border-maincolor' : 'border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-maincolor';
+                        <div class="flex">
+                            <div class="hidden lg:flex lg:ml-20  lg:space-x-8">
+                                <?php foreach ($menuitems as $item) : ?>
+                                    <?php
+                                    $current_class = (is_page($item->object_id)) || (is_home() && $item->object_id == get_option('page_for_posts')) || (is_page($item->object_id) && !is_home() && !is_front_page($item->object_id)) || ($item->url === get_post_type_archive_link('post') && !is_front_page($item->object_id) && is_single()) ? 'border-b-2 border-maincolor' : 'border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-maincolor';
 
-                                ?>
-                                <a href="<?= esc_url($item->url) ?>" class="text-white inline-flex items-center px-1 pt-1 text-sm lg:text-base font-medium <?= $current_class ?>">
-                                    <?= esc_html($item->title) ?>
-                                </a>
-                            <?php endforeach; ?>
+                                    ?>
+                                    <a href="<?= esc_url($item->url) ?>" class="text-white inline-flex items-center px-1 pt-1 text-sm lg:text-base font-medium <?= $current_class ?>">
+                                        <?= esc_html($item->title) ?>
+                                    </a>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                                <a href="/contact"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 text-sm sm:text-base font-semibold text-white shadow-sm bg-maincolor hover:bg-maincolor-400 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a>
+                            </div>
                         </div>
 
                     </div>
-                    <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                        <a href="/contact"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 text-sm sm:text-base font-semibold text-white shadow-sm bg-maincolor hover:bg-maincolor-400 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a>
-                    </div>
+
                 </div>
             </div>
 

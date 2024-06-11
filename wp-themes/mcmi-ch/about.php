@@ -6,14 +6,15 @@
 
  <?php get_header(); ?>
 
- <main class="mt-16 min-h-screen">
+ <main class="min-h-screen">
+     <?php get_template_part('parts/title-page') ?>
      <!-- Hero section -->
      <div class="relative isolate -z-10 overflow-hidden">
          <div class="absolute inset-y-0 bg-white shadow-xl sm:-mr-80 lg:-mr-96" aria-hidden="true"></div>
          <div class="mx-auto max-w-7xl px-6 py-14 sm:py-32 lg:px-8">
              <div class="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
                  <?php if (get_field('title')) : ?>
-                     <h1 class="max-w-2xl text-4xl font-semibold tracking-tight text-eseisblue-500 sm:text-6xl lg:col-span-2 xl:col-auto"><?php echo esc_html(get_field('title')); ?></h1>
+                     <h1 class="max-w-2xl text-4xl font-semibold tracking-tight text-gray-700 sm:text-6xl lg:col-span-2 xl:col-auto"><?php echo esc_html(get_field('title')); ?></h1>
                  <?php endif; ?>
 
 
@@ -39,7 +40,7 @@
          <div class="mx-auto max-w-7xl px-6 sm:mt-0 lg:px-8">
              <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
                  <?php if (get_sub_field('title')) : ?>
-                     <h2 class="text-3xl font-semibold tracking-tight text-eseisblue-500 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
+                     <h2 class="text-3xl font-semibold tracking-tight text-gray-700 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
                  <?php endif ?>
                  <div class="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
                      <div class="lg:w-full lg:max-w-2xl lg:flex-auto">
@@ -66,7 +67,7 @@
                                          <dt class="text-lg font-semibold leading-7 text-gray-900"><?php the_sub_field('text'); ?></dt>
                                      <?php endif ?>
                                      <?php if (get_sub_field('number')) : ?>
-                                         <dd class="text-5xl font-semibold tracking-tight text-eseisblue-500"><?php if (get_sub_field('prefix')) : ?> <?php the_sub_field('prefix'); ?><?php endif ?>
+                                         <dd class="text-5xl font-semibold tracking-tight text-gray-700"><?php if (get_sub_field('prefix')) : ?> <?php the_sub_field('prefix'); ?><?php endif ?>
                                                  <span id="counter<?php echo $count; ?>"><?php the_sub_field('number'); ?></span>
                                                  <?php if (get_sub_field('unit')) : ?> <?php the_sub_field('unit'); ?><?php endif ?>
                                          </dd>
@@ -91,7 +92,7 @@
          <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
              <div class="mx-auto max-w-2xl lg:mx-0">
                  <?php if (get_sub_field('title')) : ?>
-                     <h2 class="text-3xl font-semibold tracking-tight text-eseisblue-500 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
+                     <h2 class="text-3xl font-semibold tracking-tight text-gray-700 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
                  <?php endif ?>
                  <?php if (get_sub_field('subtitle')) : ?>
 
@@ -123,7 +124,7 @@
      <!-- Logo cloud -->
      <div class="relative isolate -z-10 mt-32 sm:mt-48">
          <div class="mx-auto max-w-7xl px-6 lg:px-8">
-             <h2 class="text-center text-xl font-semibold leading-8 text-eseisblue-500 mb-10">Ils nous font confiance</h2>
+             <h2 class="text-center text-xl font-semibold leading-8 text-gray-700 mb-10">Ils nous font confiance</h2>
              <?php get_template_part('parts/they-trust-us'); ?>
          </div>
      </div>
@@ -133,7 +134,7 @@
          <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8 mb-24">
              <div class="mx-auto max-w-2xl lg:mx-0">
                  <?php if (get_sub_field('title')) : ?>
-                     <h2 class="text-3xl font-semibold tracking-tight text-eseisblue-500 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
+                     <h2 class="text-3xl font-semibold tracking-tight text-gray-700 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
                  <?php endif ?>
                  <?php if (get_sub_field('subtitle')) : ?>
                      <p class="mt-6 text-lg leading-8 text-gray-600"><?php the_sub_field('subtitle'); ?></p>

@@ -26,9 +26,6 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("mobile-menu").style.display = "none";
     document.getElementById("burger").style.display = "block";
     document.getElementById("cross").style.display = "none";
-    document.getElementById("navbar").style.borderBottomRightRadius =
-      "0.375rem";
-    document.getElementById("navbar").style.borderBottomLeftRadius = "0.375rem";
     menuToggleButton.dataset.menuIsOpen = "false";
   }
 
@@ -36,8 +33,6 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("mobile-menu").style.display = "block";
     document.getElementById("burger").style.display = "none";
     document.getElementById("cross").style.display = "block";
-    document.getElementById("navbar").style.borderBottomRightRadius = "0px";
-    document.getElementById("navbar").style.borderBottomLeftRadius = "0px";
     menuToggleButton.dataset.menuIsOpen = "true";
   }
 
@@ -110,4 +105,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Changer de slide toutes les 4 secondes
   setInterval(nextSlide, 4000);
+});
+
+window.addEventListener('scroll', function() {
+  var navbar = document.getElementById('navbar');
+  if (window.scrollY > 150) {
+    navbar.classList.add('bg-secondarycolor', 'bg-opacity-70','backdrop-blur-md');
+  } else {
+    navbar.classList.remove('bg-secondarycolor', 'bg-opacity-70','backdrop-blur-md');
+  }
 });

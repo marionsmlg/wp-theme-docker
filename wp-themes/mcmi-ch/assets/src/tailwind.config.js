@@ -4,6 +4,7 @@ import typography from "@tailwindcss/typography";
 export default {
   theme: {
     extend: {
+      display: ["group-hover"],
       colors: {
         maincolor: {
           DEFAULT: '#5271FF',
