@@ -68,7 +68,7 @@
         <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
             <h2 class="text-2xl font-semibold tracking-tight text-gray-700 sm:text-4xl">Ready to dive in?<br>Start your free trial today.</h2>
             <div class="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
-                <a href="/contact"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 lg:text-base text-sm font-semibold text-white shadow-sm bg-maincolor hover:bg-europassyellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a>
+                <a href="/contact"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 lg:text-base text-sm font-semibold text-white shadow-sm bg-maincolor hover:bg-maincolor-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a>
 
             </div>
         </div>

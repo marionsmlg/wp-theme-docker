@@ -17,14 +17,14 @@ if (has_post_thumbnail()) {
 <?php
 } else {
 ?>
-    <div class="h-80 md:h-96 bg-zinc-700 mb-20 flex">
+    <div class="relative h-80 md:h-96 bg-zinc-600">
 
-        <div class="inset-0 flex flex-col justify-center p-6 max-w-7xl m-auto">
+        <div class="absolute inset-0 flex flex-col justify-center p-10 max-w-7xl m-auto">
+
             <h1 class="font-semibold text-3xl text-white sm:text-4xl mb-4"><?php single_post_title(); ?></h1>
             <?php if (get_field('subtitle_page')) : ?>
                 <p class="text-white border-l-2 border-maincolor pl-2 max-w-xl mr-auto"><?php the_field('subtitle_page'); ?></p>
             <?php endif; ?>
-
         </div>
     </div>
 <?php

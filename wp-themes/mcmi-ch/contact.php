@@ -11,7 +11,7 @@
 
     <div class="relative isolate bg-white">
         <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
-            <div class="relative px-6 pb-20 pt-4 sm:pt-20 lg:static lg:px-8 border-r">
+            <div class="relative px-6 pb-20 pt-10 sm:pt-20 lg:static lg:px-8 border-r">
                 <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
                     <?php if (get_field('title')) : ?>
                         <h2 class="text-3xl font-bold tracking-tight text-gray-700"><?php echo esc_html(get_field('title')); ?></h2>

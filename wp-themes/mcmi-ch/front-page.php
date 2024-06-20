@@ -29,7 +29,7 @@
 
     <!-- Entreprise -->
     <?php while (have_rows('chiffres_cles')) : the_row(); ?>
-        <div class="relative bg-gray-100 py-16">
+        <div class="relative bg-gray-200 py-16">
 
             <div class="mx-auto grid max-w-7xl lg:grid-cols-2">
                 <div class="px-6 lg:col-start-1 lg:px-8">
@@ -70,7 +70,7 @@
                 <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                     <?php while (have_rows('jobs')) : the_row(); ?>
                         <div class="relative group">
-                            <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Grapefruit slice atop a pile of other slices" />
+                            <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="services" />
                             <div class="absolute group-hover:invisible visible inset-0 p-6 md:p-16 flex flex-col justify-center text-center items-center gap-y-8 z-10">
                                 <?php if (get_sub_field('name')) : ?>
                                     <h1 class="uppercase text-white text-2xl font-semibold max-w-xl"><?php the_sub_field('name'); ?></h1>
@@ -89,6 +89,17 @@
                             </div>
                         </div>
                     <?php endwhile; ?>
+                    <div class="relative">
+                        <a href="/nos-services">
+                            <div class="hover:bg-secondarycolor/100 transition ease-in duration-500 absolute inset-0 p-6 md:p-16 flex flex-col justify-center text-center items-center gap-y-8 z-10">
+                                <h1 class="uppercase text-white text-2xl font-semibold max-w-xl">Voir tous nos services</h1>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-10 w-10 text-white">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                </svg>
+
+                            </div>
+                        </a>
+                    </div>
                 </dl>
                 <div class="absolute inset-0 bg-black opacity-50 shadow-xl"></div>
             </div>
@@ -102,7 +113,7 @@
         <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 flex flex-col items-center justify-center lg:px-8">
             <h2 class="text-xl font-semibold tracking-tight text-center text-white sm:text-3xl uppercase">Ready to dive in?<br>Start your free trial today.</h2>
             <div class="mt-10 gap-x-6">
-                <a href="/contact"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 lg:text-base text-sm font-semibold text-gray-700 shadow-sm bg-white hover:bg-europassyellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a>
+                <a href="/contact"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 lg:text-base text-sm font-semibold text-gray-700 shadow-sm bg-white hover:bg-maincolor-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a>
 
             </div>
         </div>
@@ -151,7 +162,7 @@
             ?>
                 <div class="inset-0 p-6 md:p-16 flex flex-col justify-center text-center items-center">
                     <?php if (get_sub_field('number')) : ?>
-                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-semibold max-w-3xl text-maincolor mb-3"><?php if (get_sub_field('prefix')) : ?> <?php the_sub_field('prefix'); ?><?php endif ?>
+                        <h1 class="text-4xl md:text-5xl font-semibold max-w-3xl text-maincolor mb-3"><?php if (get_sub_field('prefix')) : ?> <?php the_sub_field('prefix'); ?><?php endif ?>
                                 <span id="counter<?php echo $count; ?>"><?php the_sub_field('number'); ?></span>
                                 <?php if (get_sub_field('unit')) : ?> <?php the_sub_field('unit'); ?><?php endif ?>
                         </h1>
@@ -175,7 +186,7 @@
     <?php if (have_rows('actualites')) : ?>
         <?php while (have_rows('actualites')) : the_row(); ?>
 
-            <div class="pb-10 px-6 pt-10 bg-gray-100">
+            <div class="pb-10 px-6 pt-10 bg-gray-200">
                 <div class="mx-auto max-w-2xl text-center flex flex-col items-center lg:max-w-4xl">
                     <?php get_template_part('parts/title-decoration'); ?>
                     <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
@@ -197,8 +208,8 @@
 
             if ($query->have_posts()) : ?>
 
-                <div class="p-6 bg-gray-100">
-                    <div class="flex flex-wrap justify-center w-full gap-x-4 gap-y-8 sm:gap-x-20">
+                <div class="p-6 bg-gray-200">
+                    <div class="flex flex-wrap justify-center w-full gap-x-4 gap-y-10 sm:gap-x-20">
                         <?php while ($query->have_posts()) : $query->the_post(); ?>
 
                             <a href="<?php the_permalink() ?>" class="flex flex-col items-center w-full sm:w-[28rem]">

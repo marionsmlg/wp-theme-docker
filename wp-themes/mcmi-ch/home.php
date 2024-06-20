@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <div class="relative mx-auto -mt-12 max-w-7xl px-4 pb-16 sm:px-6 sm:pb-24 lg:px-8">
+    <div class="relative mx-auto mt-12 max-w-7xl px-4 pb-16 sm:px-6 sm:pb-24 lg:px-8">
 
         <?php if (have_posts()) : ?>
             <div class="bg-white pb-14 md:pb-24">

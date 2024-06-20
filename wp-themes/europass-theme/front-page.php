@@ -18,7 +18,7 @@
                     </div>
 
                 <?php endif ?>
-                <div><a href="/contact"><button type="button" class="rounded-md bg-europassyellow-500 sm:px-6 sm:py-4 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-europassyellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
+                <div><a href="/contact"><button type="button" class="rounded-md bg-maincolor-500 sm:px-6 sm:py-4 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-maincolor-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
 
             </div>
         </div>
@@ -30,7 +30,7 @@
 
         <div class="mx-auto mt-16 max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-3xl text-center">
-                <h2 class="text-lg font-semibold leading-7 text-europassbrown uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
+                <h2 class="text-lg font-semibold leading-7 text-secondarycolor uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
                 <!-- <p class="mt-2 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl"><?php if (get_sub_field('subtitle')) : ?> <?php the_sub_field('subtitle'); ?><?php endif ?></p> -->
                 <p class="mt-6 text-lg leading-8 text-gray-600"><?php if (get_sub_field('content')) : ?> <?php the_sub_field('content'); ?><?php endif ?></p>
             </div>
@@ -39,7 +39,7 @@
                     <?php while (have_rows('jobs')) : the_row(); ?>
                         <div class="flex flex-col">
                             <dt class="text-base font-semibold leading-7 text-gray-900">
-                                <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-sm bg-europassyellow-200">
+                                <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-sm bg-maincolor-200">
                                     <?php if (get_sub_field('icon')) : ?>
                                         <img class="style-svg h-6 w-6 text-white" src="<?php the_sub_field('icon'); ?>">
                                     <?php endif ?>
@@ -71,7 +71,7 @@
         <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
             <h2 class="text-2xl font-semibold tracking-tight text-gray-700 sm:text-4xl">Ready to dive in?<br>Start your free trial today.</h2>
             <div class="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
-                <a href="/contact"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 lg:text-base text-sm font-semibold text-white shadow-sm bg-europassyellow-500 hover:bg-europassyellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a>
+                <a href="/contact"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 lg:text-base text-sm font-semibold text-white shadow-sm bg-maincolor-500 hover:bg-maincolor-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a>
 
             </div>
         </div>
@@ -79,13 +79,13 @@
 
 
     <?php while (have_rows('chiffres_cles')) : the_row(); ?>
-        <div class="relative bg-europassyellow-200">
+        <div class="relative bg-maincolor-200">
             <img class="h-56 w-full bg-gray-50 object-cover lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-1/2" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2850&q=80" alt="">
             <div class="mx-auto grid max-w-7xl lg:grid-cols-2">
                 <div class="px-6 pb-24 pt-16 sm:pb-32 sm:pt-20 lg:col-start-2 lg:px-8 lg:pt-32">
                     <div class="mx-auto max-w-2xl lg:mr-0 lg:max-w-lg">
                         <?php if (get_sub_field('title')) : ?>
-                            <h2 class="text-lg font-semibold leading-7 text-europassbrown uppercase"><?php the_sub_field('title'); ?> </h2>
+                            <h2 class="text-lg font-semibold leading-7 text-secondarycolor uppercase"><?php the_sub_field('title'); ?> </h2>
                         <?php endif ?>
                         <?php if (get_sub_field('subtitle')) : ?>
                             <p class="mt-6 text-lg leading-8 text-gray-700"><?php the_sub_field('subtitle'); ?> </p>
@@ -95,10 +95,10 @@
                             $count = 1;
                             while (have_rows('key_numbers', 'option')) : the_row();
                             ?>
-                                <div class="flex flex-col gap-y-3 border-l border-europassbrown pl-6">
+                                <div class="flex flex-col gap-y-3 border-l border-secondarycolor pl-6">
                                     <dt class="text-base leading-6 font-semibold text-gray-700"><?php if (get_sub_field('text')) : ?><?php the_sub_field('text'); ?><?php endif ?></dt>
                                     <?php if (get_sub_field('number')) : ?>
-                                        <dd class="order-first text-4xl font-semibold tracking-tight text-europassbrown"> <?php if (get_sub_field('prefix')) : ?> <?php the_sub_field('prefix'); ?><?php endif ?>
+                                        <dd class="order-first text-4xl font-semibold tracking-tight text-secondarycolor"> <?php if (get_sub_field('prefix')) : ?> <?php the_sub_field('prefix'); ?><?php endif ?>
                                                 <span id="counter<?php echo $count; ?>"><?php the_sub_field('number'); ?></span>
                                                 <?php if (get_sub_field('unit')) : ?> <?php the_sub_field('unit'); ?><?php endif ?>
                                         </dd>
@@ -121,7 +121,7 @@
     <?php while (have_rows('nos_valeurs')) : the_row(); ?>
         <div class="pb-20 px-6 pt-20  sm:pb-24">
             <div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
-                <h2 class="text-lg font-semibold leading-7 text-europassbrown uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
+                <h2 class="text-lg font-semibold leading-7 text-secondarycolor uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
 
                 <p class="mt-6 text-lg leading-8 text-gray-600"><?php if (get_sub_field('content')) : ?> <?php the_sub_field('content'); ?><?php endif ?></p>
             </div>
@@ -130,7 +130,7 @@
                     <?php while (have_rows('values', 'options')) : the_row(); ?>
                         <div class="relative p-8 bg-white border-2 shadow-md">
                             <dt class="text-base flex flex-col items-center text-center font-semibold leading-7 text-gray-900 gap-2">
-                                <div class=" flex h-12 w-12 items-center justify-center bg-europassyellow-200">
+                                <div class=" flex h-12 w-12 items-center justify-center bg-maincolor-200">
                                     <?php if (get_sub_field('icon')) : ?>
                                         <img class="style-svg h-6 w-6 text-white" src="<?php the_sub_field('icon'); ?>">
                                     <?php endif ?>
@@ -155,7 +155,7 @@
 
             <div class="mt-10 pb-10 px-6 pt-10 bg-gray-100">
                 <div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
-                    <h2 class="text-lg font-semibold leading-7 text-europassbrown uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
+                    <h2 class="text-lg font-semibold leading-7 text-secondarycolor uppercase"><?php if (get_sub_field('title')) : ?> <?php the_sub_field('title'); ?><?php endif ?></h2>
                     <p class="mt-6 text-lg leading-8 text-gray-600"><?php if (get_sub_field('content')) : ?> <?php the_sub_field('content'); ?><?php endif ?></p>
                 </div>
             </div>

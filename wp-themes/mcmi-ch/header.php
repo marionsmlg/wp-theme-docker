@@ -24,7 +24,7 @@
                 <div class="relative flex h-16ç">
                     <div class="-ml-2 mr-4 flex items-center lg:hidden">
                         <!-- Mobile menu button -->
-                        <button type="button" id="menuToggleButton" data-menu-is-open="false" class="relative inline-flex items-center justify-center rounded-full p-2 text-gray-400 hover:bg-maincolor-100 hover:text-gray-500 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                        <button type="button" id="menuToggleButton" data-menu-is-open="false" class="relative inline-flex items-center justify-center rounded-full p-2 text-gray-400 hover:text-gray-500 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
                             <span class="absolute -inset-0.5"></span>
                             <span class="sr-only">Open main menu</span>
 
@@ -56,7 +56,7 @@
                             <div class="hidden lg:flex lg:ml-20  lg:space-x-8">
                                 <?php foreach ($menuitems as $item) : ?>
                                     <?php
-                                    $current_class = (is_page($item->object_id)) || (is_home() && $item->object_id == get_option('page_for_posts')) || (is_page($item->object_id) && !is_home() && !is_front_page($item->object_id)) || ($item->url === get_post_type_archive_link('post') && !is_front_page($item->object_id) && is_single()) ? 'border-b-2 border-maincolor' : 'border-b-2 border-transparent hover:border-gray-300 text-gray-500 hover:text-maincolor';
+                                    $current_class = (is_page($item->object_id)) || (is_home() && $item->object_id == get_option('page_for_posts')) || (is_page($item->object_id) && !is_home() && !is_front_page($item->object_id)) || ($item->url === get_post_type_archive_link('post') && !is_front_page($item->object_id) && is_single()) ? 'border-b-2 border-maincolor' : 'border-b-2 border-transparent hover:border-maincolor text-gray-500 hover:text-maincolor';
 
                                     ?>
                                     <a href="<?= esc_url($item->url) ?>" class="text-white inline-flex items-center px-1 pt-1 text-sm lg:text-base font-medium <?= $current_class ?>">
@@ -75,11 +75,11 @@
             </div>
 
             <!-- Mobile menu -->
-            <div class="hidden bg-white rounded-b-md bg-opacity-70 backdrop-blur-md" id="mobile-menu">
+            <div class="hidden bg-secondarycolor bg-opacity-50 rounded-b-md backdrop-blur-md" id="mobile-menu">
                 <div class="space-y-1 pb-4 pt-2">
                     <?php foreach ($menuitems as $item) : ?>
                         <?php
-                        $current_class = (is_page($item->object_id)) || (is_home() && $item->object_id == get_option('page_for_posts')) || (is_page($item->object_id) && !is_home() && !is_front_page($item->object_id)) || ($item->url === get_post_type_archive_link('post') && !is_front_page($item->object_id) && is_single()) ? 'bg-maincolor-100 border-maincolor text-secondarycolor' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700';
+                        $current_class = (is_page($item->object_id)) || (is_home() && $item->object_id == get_option('page_for_posts')) || (is_page($item->object_id) && !is_home() && !is_front_page($item->object_id)) || ($item->url === get_post_type_archive_link('post') && !is_front_page($item->object_id) && is_single()) ? 'bg-secondarycolor-300 border-maincolor text-white' : 'border-transparent text-white hover:bg-secondarycolor-400 hover:border-gray-300';
                         ?>
                         <a href="<?= esc_url($item->url) ?>" class="block border-l-4 py-2 pl-3 pr-4 text-base font-medium <?= $current_class ?>"><?= esc_html($item->title) ?></a>
                     <?php endforeach; ?>
