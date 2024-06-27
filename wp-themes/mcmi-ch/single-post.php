@@ -11,7 +11,7 @@
                         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                                         <p class="pointer-events-none block text-sm font-medium text-gray-500"><?php echo get_the_date(); ?></p>
                                         <article class="pt-4">
-                                                <h1 class="text-2xl font-extrabold text-eseisblue-500 md:text-3xl mb-6"><?php the_title(); ?></h1>
+                                                <h1 class="text-2xl font-bold text-gray-700 md:text-3xl mb-6"><?php the_title(); ?></h1>
 
                                                 <?php if (get_field('description')) : ?>
 
@@ -20,11 +20,11 @@
                                                 <?php endif; ?>
 
                                                 <div>
-                                                        <?php the_post_thumbnail('large', ['class' => 'mt-12 aspect-[6/3] w-full object-cover rounded-2xl']) ?>
+                                                        <?php the_post_thumbnail('large', ['class' => 'mt-12 aspect-[6/3] w-full object-cover rounded-md']) ?>
                                                 </div>
 
 
-                                                <div class="prose max-w-none prose-img:rounded-xl prose-a:text-eseisblue-400 hover:prose-a:text-blue-500 w-full py-12"> <?php the_content(); ?></div>
+                                                <div class="prose max-w-none prose-img:rounded-xl prose-a:text-blue-600 hover:prose-a:text-blue-500 w-full py-12"> <?php the_content(); ?></div>
                                         </article>
 
 
