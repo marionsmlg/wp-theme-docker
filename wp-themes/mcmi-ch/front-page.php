@@ -178,9 +178,6 @@
             endwhile;
             ?>
         </div>
-
-
-
     </div>
 
     <?php if (have_rows('actualites')) : ?>
