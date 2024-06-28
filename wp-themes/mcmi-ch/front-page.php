@@ -73,36 +73,43 @@
             <div class="relative mx-auto mt-16 sm:mt-20 lg:mt-24">
                 <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                     <?php while (have_rows('jobs')) : the_row(); ?>
-                        <div class="relative group">
+                        <div class="relative group h-72">
                             <?php if (get_sub_field('icon')) : ?>
-                                <img src="<?php the_sub_field('icon'); ?>" alt="services" />
+                                <img src="<?php the_sub_field('icon'); ?>" class="h-72 w-full object-cover object-center" alt="services" />
                             <?php endif ?>
-                            <div class="absolute group-hover:invisible visible inset-0 p-6 md:p-16 flex flex-col justify-center text-center items-center gap-y-8 z-10">
+
+                            <div class="absolute inset-0 p-6 md:p-16 flex flex-col justify-center items-center gap-y-8 z-10 transition-opacity duration-500 ease-in-out">
                                 <?php if (get_sub_field('name')) : ?>
-                                    <h1 class="uppercase text-white text-2xl font-semibold max-w-xl"><?php the_sub_field('name'); ?></h1>
+                                    <h1 class="uppercase text-white text-2xl font-semibold max-w-xl group-hover:invisible visible">
+                                        <?php the_sub_field('name'); ?>
+                                    </h1>
                                 <?php endif ?>
                             </div>
 
-                            <div class="absolute group-hover:bg-maincolor hover:opacity-100 transition-opacity ease-in duration-500 absolute opacity-0 inset-0 p-6 md:p-16 flex flex-col justify-center text-center items-center gap-y-8 z-10">
+                            <div class="absolute inset-0 p-6 md:p-16 flex flex-col justify-center items-center gap-y-8 z-10 bg-maincolor opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
                                 <?php if (get_sub_field('name')) : ?>
-                                    <h1 class="uppercase text-white text-2xl font-semibold max-w-xl"><?php the_sub_field('name'); ?></h1>
+                                    <h1 class="uppercase text-white text-2xl font-semibold max-w-xl">
+                                        <?php the_sub_field('name'); ?>
+                                    </h1>
                                 <?php endif ?>
                                 <?php if (get_sub_field('description')) : ?>
-                                    <div class="max-w-5xl invisible">
-                                        <h2 class="group-hover:visible text-white max-w-3xl"><?php the_sub_field('description'); ?></h2>
+                                    <div class="max-w-5xl">
+                                        <h2 class="text-white max-w-3xl group-hover:visible invisible">
+                                            <?php the_sub_field('description'); ?>
+                                        </h2>
                                     </div>
                                 <?php endif ?>
                             </div>
                         </div>
                     <?php endwhile; ?>
-                    <div class="relative">
-                        <a href="/nos-services">
+
+                    <div class="relative h-72">
+                        <a href="/services">
                             <div class="hover:bg-secondarycolor/100 transition ease-in duration-500 absolute inset-0 p-6 md:p-16 flex flex-col justify-center text-center items-center gap-y-8 z-10">
                                 <h1 class="uppercase text-white text-2xl font-semibold max-w-xl">Voir tous nos services</h1>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-10 w-10 text-white">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                                 </svg>
-
                             </div>
                         </a>
                     </div>
@@ -117,7 +124,7 @@
     <!-- CTA -->
     <div class="bg-maincolor">
         <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 flex flex-col items-center justify-center lg:px-8">
-            <h2 class="text-xl font-semibold tracking-tight text-center text-white sm:text-3xl uppercase">Ready to dive in?<br>Start your free trial today.</h2>
+            <h2 class="text-xl font-semibold tracking-tight text-center text-white sm:text-3xl uppercase">Vous avez un projet ?<br>Nous seront ravis d’échanger avec vous et répondre a vos besoins</h2>
             <div class="mt-10 gap-x-6">
                 <a href="/contact"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 lg:text-base text-sm font-semibold text-gray-700 shadow-sm bg-white hover:bg-maincolor-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a>
 
