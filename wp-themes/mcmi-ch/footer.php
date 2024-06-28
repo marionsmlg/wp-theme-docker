@@ -84,29 +84,36 @@
                         </ul>
                     </div>
                 <?php endif; ?>
-                <div class="mt-10 md:mt-0">
-                    <h3 class="text-sm font-semibold leading-6 text-maincolor uppercase">CONTACT</h3>
-                    <ul role="list" class="mt-6 space-y-4">
-                        <li>
-                            <p class="text-sm font-medium leading-6 text-secondarycolor-100">Adresse : 23 Avenue Jules Rimet,
-                                93210 Saint-Denis</p>
-                        </li>
-                        <li>
-                            <p class="text-sm font-medium leading-6 text-secondarycolor-100">Tel : +33 6 35 22 03 20</p>
-                        </li>
-                        <li>
-                            <a class="text-secondarycolor-100 text-sm font-medium leading-6" href="mailto:hello@example.com">Email : <span class="text-maincolor hover:text-maincolor-300">hello@example.com</span></a>
-                        </li>
+                <?php while (have_rows('contacts', 'options')) : the_row(); ?>
+                    <div class="mt-10 md:mt-0">
+                        <h3 class="text-sm font-semibold leading-6 text-maincolor uppercase">CONTACT</h3>
 
+                        <ul role="list" class="mt-6 space-y-4">
+                            <?php if (get_sub_field('line_1')) : ?>
+                                <li>
+                                    <p class="text-sm font-medium leading-6 text-secondarycolor-100">Adresse : <?php the_sub_field('line_1'); ?>,
+                                        <?php if (get_sub_field('line_2')) : ?><?php the_sub_field('line_2'); ?> <?php endif ?> <?php if (get_sub_field('line_3')) : ?> <?php the_sub_field('line_3'); ?> <?php endif ?><?php if (get_sub_field('line_4')) : ?> <?php the_sub_field('line_4'); ?> <?php endif ?></p>
+                                </li>
+                            <?php endif ?>
+                            <?php if (get_sub_field('phone_number')) : ?>
+                                <li>
+                                    <p class="text-sm font-medium leading-6 text-secondarycolor-100">Tel : <?php the_sub_field('phone_number'); ?></p>
+                                </li>
+                            <?php endif ?>
+                            <?php if (get_sub_field('email')) : ?>
+                                <li>
+                                    <a class="text-secondarycolor-100 text-sm font-medium leading-6" href="mailto:<?php the_sub_field('email'); ?>">Email : <span class="text-maincolor hover:text-maincolor-300"><?php the_sub_field('email'); ?></span></a>
+                                </li>
+                            <?php endif ?>
 
-                    </ul>
-                </div>
-
+                        </ul>
+                    </div>
+                <?php endwhile; ?>
 
             </div>
         </div>
         <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-            <p class="text-xs leading-5 text-gray-400">&copy; 2024 Your Company, Inc. All rights reserved.</p>
+            <p class="text-xs leading-5 text-gray-400">&copy; 2024 MCMI-CH. All rights reserved.</p>
         </div>
     </div>
 </footer>

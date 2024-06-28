@@ -20,7 +20,7 @@
                         <p class="mt-6 text-lg leading-8 text-gray-600"><?php echo esc_html(get_field('subtitle')); ?></p>
                     <?php endif; ?>
 
-                    <?php while (have_rows('contacts')) : the_row(); ?>
+                    <?php while (have_rows('contacts', 'options')) : the_row(); ?>
                         <dl class="mt-10 space-y-4 text-base leading-7 text-gray-600">
                             <div class="flex gap-x-4">
                                 <dt class="flex-none">
