@@ -254,19 +254,20 @@
             <?php endwhile; ?>
         <?php endif ?>
 
+        <?php if (get_sub_field('title')) : ?>
+            <?php if (have_rows('partners')) : ?>
+                <?php while (have_rows('partners')) : the_row(); ?>
+                    <div class="mt-10 px-6 pt-10">
+                        <div class="mx-auto max-w-2xl text-center flex flex-col items-center lg:max-w-4xl mb-16">
 
-        <?php if (have_rows('partners')) : ?>
-            <?php while (have_rows('partners')) : the_row(); ?>
-                <div class="mt-10 px-6 pt-10">
-                    <div class="mx-auto max-w-2xl text-center flex flex-col items-center lg:max-w-4xl mb-16">
-                        <?php if (get_sub_field('title')) : ?>
                             <?php get_template_part('parts/title-decoration'); ?>
                             <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"> <?php the_sub_field('title'); ?></h2>
-                        <?php endif ?>
+
+                        </div>
                     </div>
-                </div>
-                <?php get_template_part('parts/they-trust-us'); ?>
-            <?php endwhile; ?>
+                    <?php get_template_part('parts/they-trust-us'); ?>
+                <?php endwhile; ?>
+            <?php endif ?>
         <?php endif ?>
 
 </main>

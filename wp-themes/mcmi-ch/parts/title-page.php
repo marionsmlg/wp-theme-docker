@@ -17,7 +17,7 @@ if (has_post_thumbnail()) {
 <?php
 } else {
 ?>
-    <div class="relative h-80 md:h-96 bg-zinc-600">
+    <div class="relative h-80 md:h-96 bg-secondarycolor">
 
         <div class="absolute inset-0 flex flex-col justify-center p-10 max-w-7xl m-auto">
 
