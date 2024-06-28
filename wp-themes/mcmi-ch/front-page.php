@@ -45,12 +45,12 @@
                             <p class="mt-6 text-xl leading-8 text-gray-700"><?php the_sub_field('paragraph_2'); ?> </p>
                         <?php endif ?>
                     </div>
-                    <div> <a href="/nos-services"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 text-sm sm:text-base font-semibold text-white shadow-sm bg-maincolor hover:bg-maincolor-400 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">En savoir plus</button></a>
+                    <div> <a href="/entreprise"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 text-sm sm:text-base font-semibold text-white shadow-sm bg-maincolor hover:bg-maincolor-400 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">En savoir plus</button></a>
                     </div>
                 </div>
                 <?php if (get_sub_field('image')) : ?>
                     <div class="p-8">
-                        <img src="<?php the_sub_field('image'); ?>" alt="Grapefruit slice atop a pile of other slices" />
+                        <img src="<?php the_sub_field('image'); ?>" alt="company" />
                     </div>
                 <?php endif ?>
             </div>

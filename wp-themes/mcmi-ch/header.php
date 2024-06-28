@@ -98,7 +98,7 @@
                 </div>
 
                 <!-- Mobile menu -->
-                <div class="hidden bg-secondarycolor bg-opacity-50 rounded-b-md backdrop-blur-md" id="mobile-menu">
+                <div class="hidden rounded-b-md" id="mobile-menu">
                     <div class="space-y-1 pb-4 pt-2">
                         <?php foreach ($menuitems as $item) : ?>
                             <?php
