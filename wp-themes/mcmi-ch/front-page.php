@@ -38,11 +38,11 @@
                             <?php get_template_part('parts/title-decoration'); ?>
                             <h2 class="text-2xl font-semibold leading-7 text-seondarycolor uppercase"><?php the_sub_field('title'); ?> </h2>
                         <?php endif ?>
-                        <?php if (get_sub_field('subtitle')) : ?>
-                            <p class="mt-6 text-xl leading-8 text-gray-700"><?php the_sub_field('subtitle'); ?> </p>
+                        <?php if (get_sub_field('paragraph_1')) : ?>
+                            <p class="mt-6 text-xl leading-8 text-gray-700"><?php the_sub_field('paragraph_1'); ?> </p>
                         <?php endif ?>
-                        <?php if (get_sub_field('subtitle')) : ?>
-                            <p class="mt-6 text-xl leading-8 text-gray-700"><?php the_sub_field('subtitle'); ?> </p>
+                        <?php if (get_sub_field('paragraph_2')) : ?>
+                            <p class="mt-6 text-xl leading-8 text-gray-700"><?php the_sub_field('paragraph_2'); ?> </p>
                         <?php endif ?>
                     </div>
                     <div> <a href="/nos-services"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 text-sm sm:text-base font-semibold text-white shadow-sm bg-maincolor hover:bg-maincolor-400 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">En savoir plus</button></a>
@@ -66,8 +66,8 @@
                     <?php get_template_part('parts/title-decoration'); ?>
                     <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"> <?php the_sub_field('title'); ?></h2>
                 <?php endif ?>
-                <?php if (get_sub_field('content')) : ?>
-                    <p class="mt-6 text-lg leading-8 text-gray-600"> <?php the_sub_field('content'); ?></p>
+                <?php if (get_sub_field('subtitle')) : ?>
+                    <p class="mt-6 text-lg leading-8 text-gray-600"> <?php the_sub_field('subtitle'); ?></p>
                 <?php endif ?>
             </div>
             <div class="relative mx-auto mt-16 sm:mt-20 lg:mt-24">
@@ -124,9 +124,9 @@
     <!-- CTA -->
     <div class="bg-maincolor">
         <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 flex flex-col items-center justify-center lg:px-8">
-            <h2 class="text-xl font-semibold tracking-tight text-center text-white sm:text-3xl uppercase">Vous avez un projet ?<br>Nous seront ravis d’échanger avec vous et répondre a vos besoins</h2>
+            <h2 class="text-xl font-semibold tracking-tight text-center text-white sm:text-3xl">Vous avez un projet ?<br>Nous seront ravis d’échanger avec vous et répondre a vos besoins</h2>
             <div class="mt-10 gap-x-6">
-                <a href="/contact"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 lg:text-base text-sm font-semibold text-gray-700 shadow-sm bg-white hover:bg-maincolor-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a>
+                <a href="/contact"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 lg:text-base text-sm font-semibold text-gray-700 shadow-sm bg-white hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a>
 
             </div>
         </div>
@@ -139,8 +139,8 @@
                     <?php get_template_part('parts/title-decoration'); ?>
                     <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"> <?php the_sub_field('title'); ?></h2>
                 <?php endif ?>
-                <?php if (get_sub_field('content')) : ?>
-                    <p class="mt-6 text-lg leading-8 text-gray-600"> <?php the_sub_field('content'); ?></p>
+                <?php if (get_sub_field('subtitle')) : ?>
+                    <p class="mt-6 text-lg leading-8 text-gray-600"> <?php the_sub_field('subtitle'); ?></p>
                 <?php endif ?>
             </div>
             <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-7xl">
@@ -207,8 +207,8 @@
                             <?php get_template_part('parts/title-decoration'); ?>
                             <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"> <?php the_sub_field('title'); ?></h2>
                         <?php endif ?>
-                        <?php if (get_sub_field('content')) : ?>
-                            <p class="mt-6 text-lg leading-8 text-gray-600"><?php the_sub_field('content'); ?></p>
+                        <?php if (get_sub_field('subtitle')) : ?>
+                            <p class="mt-6 text-lg leading-8 text-gray-600"><?php the_sub_field('subtitle'); ?></p>
                         <?php endif ?>
                     </div>
                 </div>
@@ -261,9 +261,10 @@
             <?php endwhile; ?>
         <?php endif ?>
 
-        <?php if (get_sub_field('title')) : ?>
-            <?php if (have_rows('partners')) : ?>
-                <?php while (have_rows('partners')) : the_row(); ?>
+
+        <?php if (have_rows('partners')) : ?>
+            <?php while (have_rows('partners')) : the_row(); ?>
+                <?php if (get_sub_field('title')) : ?>
                     <div class="mt-10 px-6 pt-10">
                         <div class="mx-auto max-w-2xl text-center flex flex-col items-center lg:max-w-4xl mb-16">
 
@@ -273,9 +274,10 @@
                         </div>
                     </div>
                     <?php get_template_part('parts/they-trust-us'); ?>
-                <?php endwhile; ?>
-            <?php endif ?>
+                <?php endif ?>
+            <?php endwhile; ?>
         <?php endif ?>
+
 
 </main>
 <?php get_footer(); ?>

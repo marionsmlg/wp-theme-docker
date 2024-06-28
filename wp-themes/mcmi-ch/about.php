@@ -132,7 +132,7 @@
          <!-- Logo cloud -->
          <div class="relative isolate -z-10 mt-32 sm:mt-48">
              <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                 <h2 class="text-center text-xl font-semibold leading-8 text-gray-700 mb-10">Ils nous font confiance</h2>
+                 <h2 class="text-center text-xl font-semibold leading-8 text-gray-700 mb-10 uppercase">Ils nous font confiance</h2>
                  <?php get_template_part('parts/they-trust-us'); ?>
              </div>
          </div>
