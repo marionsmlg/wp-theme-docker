@@ -106,12 +106,3 @@ window.addEventListener("DOMContentLoaded", () => {
   // Changer de slide toutes les 4 secondes
   setInterval(nextSlide, 4000);
 });
-
-window.addEventListener('scroll', function() {
-  var navbar = document.getElementById('navbar');
-  if (window.scrollY > 150) {
-    navbar.classList.add('bg-secondarycolor', 'bg-opacity-70','backdrop-blur-md');
-  } else {
-    navbar.classList.remove('bg-secondarycolor', 'bg-opacity-70','backdrop-blur-md');
-  }
-});

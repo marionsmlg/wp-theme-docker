@@ -73,9 +73,9 @@
             <div class="relative mx-auto mt-16 sm:mt-20 lg:mt-24">
                 <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                     <?php while (have_rows('jobs')) : the_row(); ?>
-                        <div class="relative group h-72">
+                        <div class="relative group h-80">
                             <?php if (get_sub_field('icon')) : ?>
-                                <img src="<?php the_sub_field('icon'); ?>" class="h-72 w-full object-cover object-center" alt="services" />
+                                <img src="<?php the_sub_field('icon'); ?>" class="h-80 w-full object-cover object-center" alt="services" />
                             <?php endif ?>
 
                             <div class="absolute inset-0 p-6 md:p-16 flex flex-col justify-center items-center gap-y-8 z-10 transition-opacity duration-500 ease-in-out">
@@ -103,7 +103,7 @@
                         </div>
                     <?php endwhile; ?>
 
-                    <div class="relative h-72">
+                    <div class="relative h-80">
                         <a href="/services">
                             <div class="hover:bg-secondarycolor/100 transition ease-in duration-500 absolute inset-0 p-6 md:p-16 flex flex-col justify-center text-center items-center gap-y-8 z-10">
                                 <h1 class="uppercase text-white text-2xl font-semibold max-w-xl">Voir tous nos services</h1>
