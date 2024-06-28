@@ -94,9 +94,11 @@
      <?php endwhile; ?>
 
      <!-- Chiffres -->
-     <div class="mt-32 sm:mt-48 relative h-[30rem] md:h-72 w-full bg-fixed bg-cover bg-center bg-right inset-y-0 left-0" style="background-image:url('https://images.unsplash.com/photo-1485230405346-71acb9518d9c?q=80&w=2094&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-         <div class="absolute inset-0 bg-black opacity-50 shadow-xl"></div>
-         <div class="absolute grid grid-cols-1 md:grid-cols-3 w-full h-full">
+     <?php if (get_field('img_key_numbers', 'option')) : ?>
+         <div class="mt-32 sm:mt-48 relative h-[30rem] md:h-72 w-full bg-fixed bg-cover bg-center bg-right inset-y-0 left-0" style="background-image:url('<?php the_field('img_key_numbers', 'option') ?>');">
+             <div class="absolute inset-0 bg-black opacity-50 shadow-xl"></div>
+             <div class="absolute grid grid-cols-1 md:grid-cols-3 w-full h-full">
+             <?php endif ?>
 
              <?php
                 $count = 1;
@@ -119,51 +121,51 @@
                     $count++;
                 endwhile;
                 ?>
-         </div>
-
-
-
-     </div>
-
-
-
-     <!-- Logo cloud -->
-     <div class="relative isolate -z-10 mt-32 sm:mt-48">
-         <div class="mx-auto max-w-7xl px-6 lg:px-8">
-             <h2 class="text-center text-xl font-semibold leading-8 text-gray-700 mb-10">Ils nous font confiance</h2>
-             <?php get_template_part('parts/they-trust-us'); ?>
-         </div>
-     </div>
-
-     <!-- Team section -->
-     <?php while (have_rows('our_team')) : the_row(); ?>
-         <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8 mb-24">
-             <div class="mx-auto max-w-2xl lg:mx-0">
-                 <?php if (get_sub_field('title')) : ?>
-                     <h2 class="text-3xl font-semibold tracking-tight text-gray-700 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
-                 <?php endif ?>
-                 <?php if (get_sub_field('subtitle')) : ?>
-                     <p class="mt-6 text-lg leading-8 text-gray-600"><?php the_sub_field('subtitle'); ?></p>
-                 <?php endif ?>
              </div>
-             <ul role="list" class="mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6">
-                 <?php while (have_rows('members')) : the_row(); ?>
-                     <li>
-                         <?php if (get_sub_field('portrait')) : ?>
-                             <img class="mx-auto h-24 w-24 rounded-full" src="<?php the_sub_field('portrait'); ?>" alt="">
-                         <?php endif ?>
-                         <?php if (get_sub_field('name')) : ?>
-                             <h3 class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900"><?php the_sub_field('name'); ?></h3>
-                         <?php endif ?>
-                         <?php if (get_sub_field('profession')) : ?>
-                             <p class="text-sm leading-6 text-gray-600"><?php the_sub_field('profession'); ?></p>
-                         <?php endif ?>
-                     </li>
-                 <?php endwhile; ?>
 
-             </ul>
+
+
          </div>
-     <?php endwhile; ?>
+
+
+
+         <!-- Logo cloud -->
+         <div class="relative isolate -z-10 mt-32 sm:mt-48">
+             <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                 <h2 class="text-center text-xl font-semibold leading-8 text-gray-700 mb-10">Ils nous font confiance</h2>
+                 <?php get_template_part('parts/they-trust-us'); ?>
+             </div>
+         </div>
+
+         <!-- Team section -->
+         <?php while (have_rows('our_team')) : the_row(); ?>
+             <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8 mb-24">
+                 <div class="mx-auto max-w-2xl lg:mx-0">
+                     <?php if (get_sub_field('title')) : ?>
+                         <h2 class="text-3xl font-semibold tracking-tight text-gray-700 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
+                     <?php endif ?>
+                     <?php if (get_sub_field('subtitle')) : ?>
+                         <p class="mt-6 text-lg leading-8 text-gray-600"><?php the_sub_field('subtitle'); ?></p>
+                     <?php endif ?>
+                 </div>
+                 <ul role="list" class="mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6">
+                     <?php while (have_rows('members')) : the_row(); ?>
+                         <li>
+                             <?php if (get_sub_field('portrait')) : ?>
+                                 <img class="mx-auto h-24 w-24 rounded-full" src="<?php the_sub_field('portrait'); ?>" alt="">
+                             <?php endif ?>
+                             <?php if (get_sub_field('name')) : ?>
+                                 <h3 class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900"><?php the_sub_field('name'); ?></h3>
+                             <?php endif ?>
+                             <?php if (get_sub_field('profession')) : ?>
+                                 <p class="text-sm leading-6 text-gray-600"><?php the_sub_field('profession'); ?></p>
+                             <?php endif ?>
+                         </li>
+                     <?php endwhile; ?>
+
+                 </ul>
+             </div>
+         <?php endwhile; ?>
  </main>
 
 
