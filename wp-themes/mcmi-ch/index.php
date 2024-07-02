@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main class="mt-16 min-h-screen">
+<main class="min-h-screen">
 
     <?php get_template_part('parts/title-page') ?>
 

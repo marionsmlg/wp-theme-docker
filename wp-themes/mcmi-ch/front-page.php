@@ -60,8 +60,8 @@
     <!-- Services -->
     <?php while (have_rows('nos_metiers')) : the_row(); ?>
 
-        <div class="mt-16">
-            <div class="mx-auto max-w-3xl text-center flex flex-col items-center">
+        <div class="pt-16">
+            <div class="mx-auto max-w-3xl px-6 text-center flex flex-col items-center">
                 <?php if (get_sub_field('title')) : ?>
                     <?php get_template_part('parts/title-decoration'); ?>
                     <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"> <?php the_sub_field('title'); ?></h2>
@@ -94,7 +94,7 @@
                                 <?php endif ?>
                                 <?php if (get_sub_field('description')) : ?>
                                     <div class="max-w-5xl">
-                                        <h2 class="text-white max-w-3xl group-hover:visible invisible">
+                                        <h2 class="text-white text-center max-w-3xl group-hover:visible invisible">
                                             <?php the_sub_field('description'); ?>
                                         </h2>
                                     </div>
@@ -133,7 +133,7 @@
     </div>
 
     <?php while (have_rows('nos_valeurs')) : the_row(); ?>
-        <div class="pb-20 px-6 pt-20  sm:pb-24 bg-white">
+        <div class="pb-20 px-6 pt-16 sm:pb-24 bg-white">
             <div class="mx-auto max-w-2xl text-center flex justify-center items-center flex-col lg:max-w-4xl">
                 <?php if (get_sub_field('title')) : ?>
                     <?php get_template_part('parts/title-decoration'); ?>
@@ -201,7 +201,7 @@
         <?php if (have_rows('actualites')) : ?>
             <?php while (have_rows('actualites')) : the_row(); ?>
 
-                <div class="pb-10 px-6 pt-10 bg-gray-200">
+                <div class="pb-10 px-6 pt-16 bg-gray-200">
                     <div class="mx-auto max-w-2xl text-center flex flex-col items-center lg:max-w-4xl">
                         <?php if (get_sub_field('title')) : ?>
                             <?php get_template_part('parts/title-decoration'); ?>
@@ -265,15 +265,15 @@
         <?php if (have_rows('partners')) : ?>
             <?php while (have_rows('partners')) : the_row(); ?>
                 <?php if (get_sub_field('title')) : ?>
-                    <div class="mt-10 px-6 pt-10">
+                    <div class="mb-10 px-6 py-16">
                         <div class="mx-auto max-w-2xl text-center flex flex-col items-center lg:max-w-4xl mb-16">
 
                             <?php get_template_part('parts/title-decoration'); ?>
                             <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"> <?php the_sub_field('title'); ?></h2>
-
                         </div>
+                        <?php get_template_part('parts/they-trust-us'); ?>
                     </div>
-                    <?php get_template_part('parts/they-trust-us'); ?>
+
                 <?php endif ?>
             <?php endwhile; ?>
         <?php endif ?>
