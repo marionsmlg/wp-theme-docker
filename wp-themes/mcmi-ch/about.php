@@ -60,7 +60,7 @@
 
      <!-- Values section -->
      <?php while (have_rows('our_values')) : the_row(); ?>
-         <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
+         <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8 mb-10">
              <div class="mx-auto max-w-2xl lg:mx-0">
                  <?php if (get_sub_field('title')) : ?>
                      <h2 class="text-3xl font-semibold tracking-tight text-gray-700 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
@@ -94,78 +94,37 @@
      <?php endwhile; ?>
 
      <!-- Chiffres -->
-     <?php if (get_field('img_key_numbers', 'option')) : ?>
-         <div class="mt-32 sm:mt-48 relative h-[30rem] md:h-72 w-full bg-fixed bg-cover bg-center bg-right inset-y-0 left-0" style="background-image:url('<?php the_field('img_key_numbers', 'option') ?>');">
-             <div class="absolute inset-0 bg-black opacity-50 shadow-xl"></div>
-             <div class="absolute grid grid-cols-1 md:grid-cols-3 w-full h-full">
-             <?php endif ?>
+     <?php get_template_part('parts/key-numbers'); ?>
 
-             <?php
-                $count = 1;
-                while (have_rows('key_numbers', 'option')) : the_row();
-                ?>
-                 <div class="inset-0 p-6 md:p-16 flex flex-col justify-center text-center items-center">
-                     <?php if (get_sub_field('number')) : ?>
-                         <h1 class="text-4xl md:text-5xl font-semibold max-w-3xl text-maincolor mb-3"><?php if (get_sub_field('prefix')) : ?> <?php the_sub_field('prefix'); ?><?php endif ?>
-                                 <span id="counter<?php echo $count; ?>"><?php the_sub_field('number'); ?></span>
-                                 <?php if (get_sub_field('unit')) : ?> <?php the_sub_field('unit'); ?><?php endif ?>
-                         </h1>
-                     <?php endif ?>
-                     <?php if (get_sub_field('text')) : ?>
-                         <div class="max-w-5xl">
-                             <h2 class="text-xl sm:text-2xl md:text-3xl text-white maw-w-3xl uppercase"><?php the_sub_field('text'); ?></h2>
-                         </div>
-                     <?php endif ?>
-                 </div>
-             <?php
-                    $count++;
-                endwhile;
-                ?>
+     <!-- Team section -->
+     <?php while (have_rows('our_team')) : the_row(); ?>
+         <div class="mx-auto sm:mt-24 mt-16 max-w-7xl px-6 lg:px-8 mb-24">
+             <div class="mx-auto max-w-2xl lg:mx-0">
+                 <?php if (get_sub_field('title')) : ?>
+                     <h2 class="text-3xl font-semibold tracking-tight text-gray-700 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
+                 <?php endif ?>
+                 <?php if (get_sub_field('subtitle')) : ?>
+                     <p class="mt-6 text-lg leading-8 text-gray-600"><?php the_sub_field('subtitle'); ?></p>
+                 <?php endif ?>
              </div>
+             <ul role="list" class="mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6">
+                 <?php while (have_rows('members')) : the_row(); ?>
+                     <li>
+                         <?php if (get_sub_field('portrait')) : ?>
+                             <img class="mx-auto h-24 w-24 rounded-full" src="<?php the_sub_field('portrait'); ?>" alt="">
+                         <?php endif ?>
+                         <?php if (get_sub_field('name')) : ?>
+                             <h3 class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900"><?php the_sub_field('name'); ?></h3>
+                         <?php endif ?>
+                         <?php if (get_sub_field('profession')) : ?>
+                             <p class="text-sm leading-6 text-gray-600"><?php the_sub_field('profession'); ?></p>
+                         <?php endif ?>
+                     </li>
+                 <?php endwhile; ?>
 
-
-
+             </ul>
          </div>
-
-
-
-         <!-- Logo cloud -->
-         <div class="relative isolate -z-10 mt-32 sm:mt-48">
-             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                 <h2 class="text-center text-xl font-semibold leading-8 text-gray-700 mb-10 uppercase">Ils nous font confiance</h2>
-                 <?php get_template_part('parts/they-trust-us'); ?>
-             </div>
-         </div>
-
-         <!-- Team section -->
-         <?php while (have_rows('our_team')) : the_row(); ?>
-             <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8 mb-24">
-                 <div class="mx-auto max-w-2xl lg:mx-0">
-                     <?php if (get_sub_field('title')) : ?>
-                         <h2 class="text-3xl font-semibold tracking-tight text-gray-700 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
-                     <?php endif ?>
-                     <?php if (get_sub_field('subtitle')) : ?>
-                         <p class="mt-6 text-lg leading-8 text-gray-600"><?php the_sub_field('subtitle'); ?></p>
-                     <?php endif ?>
-                 </div>
-                 <ul role="list" class="mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6">
-                     <?php while (have_rows('members')) : the_row(); ?>
-                         <li>
-                             <?php if (get_sub_field('portrait')) : ?>
-                                 <img class="mx-auto h-24 w-24 rounded-full" src="<?php the_sub_field('portrait'); ?>" alt="">
-                             <?php endif ?>
-                             <?php if (get_sub_field('name')) : ?>
-                                 <h3 class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900"><?php the_sub_field('name'); ?></h3>
-                             <?php endif ?>
-                             <?php if (get_sub_field('profession')) : ?>
-                                 <p class="text-sm leading-6 text-gray-600"><?php the_sub_field('profession'); ?></p>
-                             <?php endif ?>
-                         </li>
-                     <?php endwhile; ?>
-
-                 </ul>
-             </div>
-         <?php endwhile; ?>
+     <?php endwhile; ?>
  </main>
 
 

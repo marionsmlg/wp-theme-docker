@@ -47,7 +47,7 @@
                                             </svg>
                                         </div>
                                     </dt>
-                                    <dd><a class="hover:text-gray-900" href="tel:+1 (555) 234-5678"><?php the_sub_field('phone_number'); ?></a></dd>
+                                    <dd><a class="hover:text-gray-900" href="tel:<?php the_sub_field('phone_number'); ?>"><?php the_sub_field('phone_number'); ?></a></dd>
                                 </div>
                             <?php endif ?>
                             <?php if (get_sub_field('email')) : ?>

@@ -73,46 +73,45 @@
             <div class="relative mx-auto mt-16 sm:mt-20 lg:mt-24">
                 <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                     <?php while (have_rows('jobs')) : the_row(); ?>
-                        <div class="relative group h-80">
-                            <?php if (get_sub_field('icon')) : ?>
-                                <img src="<?php the_sub_field('icon'); ?>" class="h-80 w-full object-cover object-center" alt="services" />
-                            <?php endif ?>
-
-                            <div class="absolute inset-0 p-6 md:p-16 flex flex-col justify-center items-center gap-y-8 z-10 transition-opacity duration-500 ease-in-out">
-                                <?php if (get_sub_field('name')) : ?>
-                                    <h1 class="uppercase text-white text-2xl font-semibold max-w-xl group-hover:invisible visible">
-                                        <?php the_sub_field('name'); ?>
-                                    </h1>
-                                <?php endif ?>
-                            </div>
-
-                            <div class="absolute inset-0 p-6 md:p-16 flex flex-col justify-center items-center gap-y-8 z-10 bg-maincolor opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
-                                <?php if (get_sub_field('name')) : ?>
-                                    <h1 class="uppercase text-white text-2xl font-semibold max-w-xl">
-                                        <?php the_sub_field('name'); ?>
-                                    </h1>
-                                <?php endif ?>
-                                <?php if (get_sub_field('description')) : ?>
-                                    <div class="max-w-5xl">
-                                        <h2 class="text-white text-center max-w-3xl group-hover:visible invisible">
-                                            <?php the_sub_field('description'); ?>
-                                        </h2>
-                                    </div>
-                                <?php endif ?>
-                            </div>
-                        </div>
-                    <?php endwhile; ?>
-
-                    <div class="relative h-80">
                         <a href="/services">
-                            <div class="hover:bg-secondarycolor/100 transition ease-in duration-500 absolute inset-0 p-6 md:p-16 flex flex-col justify-center text-center items-center gap-y-8 z-10">
-                                <h1 class="uppercase text-white text-2xl font-semibold max-w-xl">Voir tous nos services</h1>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-10 w-10 text-white">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                                </svg>
+                            <div class="relative group h-80">
+                                <?php if (get_sub_field('icon')) : ?>
+                                    <img src="<?php the_sub_field('icon'); ?>" class="h-80 w-full object-cover object-center" alt="services" />
+                                <?php endif ?>
+
+                                <div class="absolute inset-0 p-6 md:p-16 flex flex-col justify-center items-center gap-y-8 z-10 transition-opacity duration-500 ease-in-out">
+                                    <?php if (get_sub_field('name')) : ?>
+                                        <h1 class="uppercase text-white text-2xl font-semibold max-w-xl group-hover:invisible visible">
+                                            <?php the_sub_field('name'); ?>
+                                        </h1>
+                                    <?php endif ?>
+                                    <?php if (get_sub_field('description')) : ?>
+                                        <div class="flex lg:hidden max-w-5xl">
+                                            <h2 class="text-white text-center max-w-3xl">
+                                                <?php the_sub_field('description'); ?>
+                                            </h2>
+                                        </div>
+                                    <?php endif ?>
+                                </div>
+
+                                <div class="absolute inset-0 p-6 md:p-16 flex flex-col justify-center items-center gap-y-8 z-10 bg-maincolor opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
+                                    <?php if (get_sub_field('name')) : ?>
+                                        <h1 class="uppercase text-white text-2xl font-semibold max-w-xl">
+                                            <?php the_sub_field('name'); ?>
+                                        </h1>
+                                    <?php endif ?>
+                                    <?php if (get_sub_field('description')) : ?>
+                                        <div class="max-w-5xl">
+                                            <h2 class="text-white text-center max-w-3xl group-hover:visible invisible">
+                                                <?php the_sub_field('description'); ?>
+                                            </h2>
+                                        </div>
+                                    <?php endif ?>
+                                </div>
                             </div>
                         </a>
-                    </div>
+                    <?php endwhile; ?>
+
                 </dl>
                 <div class="absolute inset-0 bg-black opacity-50 shadow-xl"></div>
             </div>
@@ -122,15 +121,21 @@
     <?php endwhile; ?>
 
     <!-- CTA -->
-    <div class="bg-maincolor">
-        <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 flex flex-col items-center justify-center lg:px-8">
-            <h2 class="text-xl font-semibold tracking-tight text-center text-white sm:text-3xl">Vous avez un projet ?<br>Nous seront ravis d’échanger avec vous et répondre a vos besoins</h2>
-            <div class="mt-10 gap-x-6">
-                <a href="/contact"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 lg:text-base text-sm font-semibold text-gray-700 shadow-sm bg-white hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a>
-
+    <?php while (have_rows('cta')) : the_row(); ?>
+        <div class="bg-maincolor">
+            <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 flex flex-col items-center justify-center lg:px-8">
+                <h2 class="text-xl font-semibold tracking-tight text-center text-white sm:text-3xl"><?php if (get_sub_field('line_1')) : ?><?php the_sub_field('line_1'); ?><?php endif; ?><br><?php if (get_sub_field('line_2')) : ?><?php the_sub_field('line_2'); ?><?php endif; ?></h2>
+                <?php if (get_sub_field('button_text')) : ?>
+                    <?php if (get_sub_field('button_url')) : ?>
+                        <div class="mt-10 gap-x-6">
+                            <a href="<?php the_sub_field('button_url'); ?>"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 lg:text-base text-sm font-semibold text-gray-700 shadow-sm bg-white hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10"><?php the_sub_field('button_text'); ?></button></a>
+                        </div>
+                    <?php endif; ?>
+                <?php endif; ?>
             </div>
         </div>
-    </div>
+    <?php endwhile; ?>
+
 
     <?php while (have_rows('nos_valeurs')) : the_row(); ?>
         <div class="pb-20 px-6 pt-16 sm:pb-24 bg-white">
@@ -168,115 +173,87 @@
 
 
     <!-- Chiffres -->
-    <?php if (get_field('img_key_numbers', 'option')) : ?>
-        <div class="relative h-[30rem] md:h-72 w-full bg-fixed bg-cover bg-center bg-right inset-y-0 left-0" style="background-image:url('<?php the_field('img_key_numbers', 'option') ?>');">
-        <?php endif ?>
-        <div class="absolute inset-0 bg-black opacity-50 shadow-xl"></div>
-        <div class="absolute grid grid-cols-1 md:grid-cols-3 w-full h-full">
+    <?php get_template_part('parts/key-numbers'); ?>
 
-            <?php
-            $count = 1;
-            while (have_rows('key_numbers', 'option')) : the_row();
-            ?>
-                <div class="inset-0 p-6 md:p-16 flex flex-col justify-center text-center items-center">
-                    <?php if (get_sub_field('number')) : ?>
-                        <h1 class="text-4xl md:text-5xl font-semibold max-w-3xl text-maincolor mb-3"><?php if (get_sub_field('prefix')) : ?> <?php the_sub_field('prefix'); ?><?php endif ?>
-                                <span id="counter<?php echo $count; ?>"><?php the_sub_field('number'); ?></span>
-                                <?php if (get_sub_field('unit')) : ?> <?php the_sub_field('unit'); ?><?php endif ?>
-                        </h1>
+    <?php if (have_rows('actualites')) : ?>
+        <?php while (have_rows('actualites')) : the_row(); ?>
+
+            <div class="pb-10 px-6 pt-16 bg-gray-200">
+                <div class="mx-auto max-w-2xl text-center flex flex-col items-center lg:max-w-4xl">
+                    <?php if (get_sub_field('title')) : ?>
+                        <?php get_template_part('parts/title-decoration'); ?>
+                        <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"> <?php the_sub_field('title'); ?></h2>
                     <?php endif ?>
-                    <?php if (get_sub_field('text')) : ?>
-                        <div class="max-w-5xl">
-                            <h2 class="text-xl sm:text-2xl md:text-3xl text-white maw-w-3xl uppercase"><?php the_sub_field('text'); ?></h2>
-                        </div>
+                    <?php if (get_sub_field('subtitle')) : ?>
+                        <p class="mt-6 text-lg leading-8 text-gray-600"><?php the_sub_field('subtitle'); ?></p>
                     <?php endif ?>
                 </div>
+            </div>
             <?php
-                $count++;
-            endwhile;
-            ?>
-        </div>
-        </div>
+            // Récupérer les 3 derniers articles
+            $args = array(
+                'post_type' => 'post',   // Type de contenu: article
+                'posts_per_page' => 3,   // Nombre d'articles à afficher
+                'orderby' => 'date',     // Trier par date
+                'post_status' => 'publish',
+                'order' => 'DESC',       // Ordre décroissant
+            );
 
-        <?php if (have_rows('actualites')) : ?>
-            <?php while (have_rows('actualites')) : the_row(); ?>
-
-                <div class="pb-10 px-6 pt-16 bg-gray-200">
-                    <div class="mx-auto max-w-2xl text-center flex flex-col items-center lg:max-w-4xl">
-                        <?php if (get_sub_field('title')) : ?>
-                            <?php get_template_part('parts/title-decoration'); ?>
-                            <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"> <?php the_sub_field('title'); ?></h2>
-                        <?php endif ?>
-                        <?php if (get_sub_field('subtitle')) : ?>
-                            <p class="mt-6 text-lg leading-8 text-gray-600"><?php the_sub_field('subtitle'); ?></p>
-                        <?php endif ?>
-                    </div>
-                </div>
-                <?php
-                // Récupérer les 3 derniers articles
-                $args = array(
-                    'post_type' => 'post',   // Type de contenu: article
-                    'posts_per_page' => 3,   // Nombre d'articles à afficher
-                    'orderby' => 'date',     // Trier par date
-                    'post_status' => 'publish',
-                    'order' => 'DESC',       // Ordre décroissant
-                );
-
-                $query = new WP_Query($args);
+            $query = new WP_Query($args);
 
 
-                if ($query->have_posts()) : ?>
+            if ($query->have_posts()) : ?>
 
-                    <div class="p-6 bg-gray-200">
-                        <div class="flex flex-wrap justify-center w-full gap-x-4 gap-y-10 sm:gap-x-20">
-                            <?php while ($query->have_posts()) : $query->the_post(); ?>
+                <div class="p-6 bg-gray-200">
+                    <div class="flex flex-wrap justify-center w-full gap-x-4 gap-y-10 sm:gap-x-20">
+                        <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-                                <a href="<?php the_permalink() ?>" class="flex flex-col items-center w-full sm:w-[28rem]">
-                                    <div class="w-full rounded-lg hover:opacity-75">
-                                        <div class="overflow-hidden w-full bg-gray-100 mb-2">
-                                            <?php the_post_thumbnail('large', ['class' => 'pointer-events-none object-cover h-72 w-full']) ?>
-                                        </div>
-                                        <div>
-                                            <p class="pointer-events-none block truncate text-lg font-medium text-gray-900 uppercase"><?php the_title(); ?></p>
-                                            <p class="pointer-events-none block text-lg text-maincolor mt-2 italic"><?php echo get_the_date(); ?></p>
-
-                                            <p class="post-date text-lg text-gray-600"><?php echo wp_trim_words(get_the_excerpt(), 14, '...'); ?></p>
-                                        </div>
+                            <a href="<?php the_permalink() ?>" class="flex flex-col items-center w-full sm:w-[28rem]">
+                                <div class="w-full rounded-lg hover:opacity-75">
+                                    <div class="overflow-hidden w-full bg-gray-100 mb-2">
+                                        <?php the_post_thumbnail('large', ['class' => 'pointer-events-none object-cover h-72 w-full']) ?>
                                     </div>
-                                </a>
-                            <?php endwhile; ?>
-                        </div>
-                        <div class="text-center py-24"><a href="<?= get_post_type_archive_link('post') ?>"><button type="button" class="rounded-md bg-maincolor hover:bg-maincolor-400 hover:shadow-md px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Voir toutes les actualités</button></a> </div>
+                                    <div>
+                                        <p class="pointer-events-none block truncate text-lg font-medium text-gray-900 uppercase"><?php the_title(); ?></p>
+                                        <p class="pointer-events-none block text-lg text-maincolor mt-2 italic"><?php echo get_the_date(); ?></p>
 
+                                        <p class="post-date text-lg text-gray-600"><?php echo wp_trim_words(get_the_excerpt(), 14, '...'); ?></p>
+                                    </div>
+                                </div>
+                            </a>
+                        <?php endwhile; ?>
                     </div>
-                <?php
-                    // Réinitialiser la requête
-                    wp_reset_postdata();
+                    <div class="text-center py-24"><a href="<?= get_post_type_archive_link('post') ?>"><button type="button" class="rounded-md bg-maincolor hover:bg-maincolor-400 hover:shadow-md px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Voir toutes les actualités</button></a> </div>
 
-                else :
-                    echo '<p>Aucun article trouvé.</p>';
-                endif;
-                ?>
+                </div>
+            <?php
+                // Réinitialiser la requête
+                wp_reset_postdata();
 
-            <?php endwhile; ?>
-        <?php endif ?>
+            else :
+                echo '<p>Aucun article trouvé.</p>';
+            endif;
+            ?>
+
+        <?php endwhile; ?>
+    <?php endif ?>
 
 
-        <?php if (have_rows('partners')) : ?>
-            <?php while (have_rows('partners')) : the_row(); ?>
-                <?php if (get_sub_field('title')) : ?>
-                    <div class="mb-10 px-6 py-16">
-                        <div class="mx-auto max-w-2xl text-center flex flex-col items-center lg:max-w-4xl mb-16">
+    <?php if (have_rows('partners')) : ?>
+        <?php while (have_rows('partners')) : the_row(); ?>
+            <?php if (get_sub_field('title')) : ?>
+                <div class="mb-10 px-6 py-16">
+                    <div class="mx-auto max-w-2xl text-center flex flex-col items-center lg:max-w-4xl mb-16">
 
-                            <?php get_template_part('parts/title-decoration'); ?>
-                            <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"> <?php the_sub_field('title'); ?></h2>
-                        </div>
-                        <?php get_template_part('parts/they-trust-us'); ?>
+                        <?php get_template_part('parts/title-decoration'); ?>
+                        <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"> <?php the_sub_field('title'); ?></h2>
                     </div>
+                    <?php get_template_part('parts/they-trust-us'); ?>
+                </div>
 
-                <?php endif ?>
-            <?php endwhile; ?>
-        <?php endif ?>
+            <?php endif ?>
+        <?php endwhile; ?>
+    <?php endif ?>
 
 
 </main>
