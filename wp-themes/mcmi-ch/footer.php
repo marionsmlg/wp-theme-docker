@@ -85,7 +85,7 @@
                 if (!empty($menuitems)) :
                 ?>
                     <div class="mt-10 md:mt-0">
-                        <h3 class="text-sm font-semibold leading-6 text-white uppercase">Legal</h3>
+                        <h3 class="text-sm font-semibold leading-6 text-white uppercase">Légal</h3>
                         <ul role="list" class="mt-6 space-y-4">
                             <?php foreach ($menuitems as $item) : ?>
                                 <li>
@@ -104,7 +104,7 @@
                             <?php if (get_sub_field('line_1')) : ?>
                                 <li>
                                     <p class="text-sm font-medium leading-6 text-secondarycolor-100">Adresse : <?php the_sub_field('line_1'); ?>,
-                                        <?php if (get_sub_field('line_2')) : ?><?php the_sub_field('line_2'); ?> <?php endif ?> <?php if (get_sub_field('line_3')) : ?> <?php the_sub_field('line_3'); ?> <?php endif ?><?php if (get_sub_field('line_4')) : ?> <?php the_sub_field('line_4'); ?> <?php endif ?></p>
+                                        <?php if (get_sub_field('line_2')) : ?><?php the_sub_field('line_2'); ?> <?php endif ?>, <?php if (get_sub_field('line_3')) : ?> <?php the_sub_field('line_3'); ?> <?php endif ?>, <?php if (get_sub_field('line_4')) : ?> <?php the_sub_field('line_4'); ?> <?php endif ?></p>
                                 </li>
                             <?php endif ?>
                             <?php if (get_sub_field('phone_number')) : ?>
@@ -125,7 +125,7 @@
             </div>
         </div>
         <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-            <p class="text-xs leading-5 text-gray-400">&copy; 2024 MCMI-CH. All rights reserved.</p>
+            <p class="text-xs leading-5 text-gray-400">&copy; 2024 MCMI.CH. All rights reserved.</p>
         </div>
     </div>
 </footer>

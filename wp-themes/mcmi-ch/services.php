@@ -25,11 +25,19 @@
                 </div>
 
                 <div class="grid grid-cols-1 gap-x-10 gap-y-16 sm:gap-y-20 lg:grid-cols-2 items-start">
-                    <div class="w-full h-full">
-                        <?php if (get_sub_field('image')) : ?>
-                            <img src="<?php the_sub_field('image'); ?>" alt="illustration service" class="shadow-2xl rounded-lg w-full h-full object-cover object-center">
-                        <?php endif ?>
+                    <div>
+                        <div class='mb-10'>
+                            <?php if (get_sub_field('image')) : ?>
+                                <img src="<?php the_sub_field('image'); ?>" alt="illustration service" class="shadow-2xl rounded-lg w-full h-full object-cover object-center">
+                            <?php endif ?>
+                        </div>
+                        <div>
+                            <?php if (get_sub_field('image_2')) : ?>
+                                <img src="<?php the_sub_field('image_2'); ?>" alt="illustration service" class="shadow-2xl rounded-lg w-full h-full object-cover object-center">
+                            <?php endif ?>
+                        </div>
                     </div>
+
                     <div class="lg:pr-4 text-left">
                         <div class="mx-auto lg:mx-0 lg:max-w-lg space-y-6">
                             <?php if (get_sub_field('description')) : ?>
@@ -54,6 +62,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
 
                 <?php

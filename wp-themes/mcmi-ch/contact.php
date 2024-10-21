@@ -111,7 +111,7 @@
                     <?php endwhile; ?>
                 </div>
             </div>
-            <form method="POST" class="px-6 pb-24 pt-4 sm:pt-20 sm:pb-32 lg:px-8">
+            <div class="px-6 pb-24 pt-4 sm:pt-20 sm:pb-32 lg:px-8">
                 <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
                     <h2 class="text-3xl font-semibold tracking-tight text-gray-700">Formulaire de contact</h2>
 
@@ -123,7 +123,7 @@
 
 
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 
