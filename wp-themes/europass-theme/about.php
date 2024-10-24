@@ -7,6 +7,7 @@
  <?php get_header(); ?>
 
  <main class="mt-16 min-h-screen">
+ <?php get_template_part('parts/title-page') ?>
      <!-- Hero section -->
      <div class="relative isolate -z-10 overflow-hidden">
          <div class="absolute inset-y-0 bg-white shadow-xl sm:-mr-80 lg:-mr-96" aria-hidden="true"></div>
@@ -88,37 +89,36 @@
 
      <!-- Values section -->
      <?php while (have_rows('our_values')) : the_row(); ?>
-         <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
-             <div class="mx-auto max-w-2xl lg:mx-0">
-                 <?php if (get_sub_field('title')) : ?>
-                     <h2 class="text-3xl font-semibold tracking-tight text-eseisblue-500 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
-                 <?php endif ?>
-                 <?php if (get_sub_field('subtitle')) : ?>
+        <div class="pb-20 px-6 pt-20  sm:pb-24">
+            <div class="mx-auto max-w-2xl text-center lg:max-w-4xl flex flex-col items-center">
+            <?php if (get_sub_field('title')) : ?>
+            <?php get_template_part('parts/title-decoration'); ?>
+                <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase">  <?php the_sub_field('title'); ?></h2>
+               <?php endif ?>
+                <p class="mt-6 text-lg leading-8 text-gray-600"><?php if (get_sub_field('content')) : ?> <?php the_sub_field('content'); ?><?php endif ?></p>
+            </div>
+            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-7xl">
+                <dl class="grid max-w-2xl grid-cols-1 gap-x-24 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
+                    <?php while (have_rows('values', 'options')) : the_row(); ?>
+                        <div class="relative p-8 bg-white border-2 shadow-md">
+                            <dt class="text-base flex flex-col items-center text-center font-semibold leading-7 text-gray-900 gap-2">
+                                <div class=" flex h-12 w-12 items-center justify-center bg-maincolor-200">
+                                    <?php if (get_sub_field('icon')) : ?>
+                                        <img class="style-svg h-8 w-8 text-white" src="<?php the_sub_field('icon'); ?>">
+                                    <?php endif ?>
+                                </div>
+                                <?php if (get_sub_field('name')) : ?> <?php the_sub_field('name'); ?> <?php endif ?>
+                            </dt>
+                            <?php if (get_sub_field('description')) : ?><dd class="mt-2 text-base leading-7 text-gray-600 text-center"><?php the_sub_field('description'); ?></dd> <?php endif ?>
 
+                        </div>
+                    <?php endwhile; ?>
 
-                     <p class="mt-6 text-lg leading-8 text-gray-600"><?php the_sub_field('subtitle'); ?></p>
-                 <?php endif ?>
-             </div>
-             <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-7xl">
-                 <dl class="grid max-w-2xl grid-cols-1 gap-x-24 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
-                     <?php while (have_rows('values', 'options')) : the_row(); ?>
-                         <div class="relative p-8 bg-eseisblue-50 rounded-lg shadow-md">
-                             <dt class="text-base flex flex-col items-center text-center font-semibold leading-7 text-gray-900 gap-2">
-                                 <div class=" flex h-10 w-10 items-center justify-center rounded-lg bg-eseisblue-400">
-                                     <?php if (get_sub_field('icon')) : ?>
-                                         <img class="style-svg h-6 w-6 text-white" src="<?php the_sub_field('icon'); ?>">
-                                     <?php endif ?>
-                                 </div>
-                                 <?php if (get_sub_field('name')) : ?> <?php the_sub_field('name'); ?> <?php endif ?>
-                             </dt>
-                             <?php if (get_sub_field('description')) : ?><dd class="mt-2 text-base leading-7 text-gray-600 text-center"><?php the_sub_field('description'); ?></dd> <?php endif ?>
+                </dl>
+            </div>
 
-                         </div>
-                     <?php endwhile; ?>
-                 </dl>
-             </div>
-         </div>
-     <?php endwhile; ?>
+        </div>
+    <?php endwhile; ?>
      <!-- Logo cloud -->
 
 

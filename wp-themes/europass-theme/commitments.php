@@ -7,26 +7,11 @@
 <?php get_header(); ?>
 
 <main class="mt-16 min-h-screen">
-
+<?php get_template_part('parts/title-page') ?>
 
     <div class="bg-white">
-        <div aria-hidden="true" class="relative">
-            <?php the_post_thumbnail('full', ['class' => 'aspect-[5/2] h-40 md:h-96 object-center w-full object-cover']) ?>
-            <div class="absolute inset-0 bg-gradient-to-t from-white"></div>
-        </div>
+
         <div class="relative mx-auto -mt-12 max-w-7xl px-4 pb-16 sm:px-6 sm:pb-24 lg:px-8">
-
-            <div class="mx-auto max-w-2xl text-center lg:max-w-4xl mb-20">
-                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"><?php single_post_title(); ?></h2>
-                <?php if (get_field('subtitle_page')) : ?>
-                    <p class="mt-4 text-lg text-gray-500"><?php the_field('subtitle_page'); ?></p>
-                <?php endif; ?>
-            </div>
-
-            <div class="space-y-8 mb-20 mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-                <p class="mt-4 sm:text-lg text-gray-600">ESEÏS, prestataire multitechnique et second-œuvre incontournable dans le secteur Soft Services, a su développer des solutions flexibles, innovantes et sur mesure pour ses clients depuis maintenant plus de 20 ans, dans un secteur d’activité en perpétuel mouvement. </p>
-                <p class="mt-4 sm:text-lg text-gray-600">Chez ESEIS, nous comprenons les défis auxquels les entreprises du secteur de la distribution sont confrontées, notamment en ce qui concerne l'entretien des infrastructures, la gestion des installations et la mise en œuvre de projets de construction et de rénovation. C'est pourquoi nous offrons une gamme complète de services spécialisés, conçus pour répondre à ces exigences de manière <strong>efficace</strong>, <strong>durable</strong> et <strong>respectueuse de l'environnement</strong>.</p>
-            </div>
 
             <?php while (have_rows('section_1')) : the_row(); ?>
                 <div class="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
@@ -147,22 +132,6 @@
         </div>
     </div>
 <?php endwhile; ?>
-
-
-
-<div class="bg-white">
-    <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center">
-
-            <h2 class="mx-auto max-w-2xl text-2xl font-bold tracking-tight text-eseisblue-500 sm:text-3xl">Envie d'en savoir plus sur notre engagement envers l'excellence, la responsabilité sociale et environnementale ?</h2>
-            <p class="mx-auto mt-6 max-w-xl font-medium text-lg leading-8 text-eseisblue-400">Contactez-nous dès aujourd'hui pour découvrir comment nous pouvons collaborer ensemble pour un avenir durable et éthique.</p>
-            <div class="text-center pt-10"><a href="/contact"><button type="button" class="rounded-md bg-eseisblue-500 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-eseisblue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
-
-        </div>
-    </div>
-</div>
-
-
 
 
 

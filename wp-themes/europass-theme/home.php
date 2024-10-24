@@ -1,17 +1,18 @@
 <?php get_header(); ?>
-<main class="mt-16 min-h-screen">
+<main class="min-h-screen">
 
-    <div aria-hidden="true" class="relative">
-        <img src="https://eseis.fr/wp-content/uploads/2024/01/absolutvision-WYd_PkCa1BY-unsplash.jpg" alt="actualités" class="aspect-[5/2] h-40 md:h-96 object-center w-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-white"></div>
+    <div class="relative h-80 md:h-96">
+        <img src="https://mcmi-ch.com/wp-content/uploads/2024/09/absolutvision-WYd_PkCa1BY-unsplash.jpg" alt="actualités" class="aspect-[5/2] h-80 md:h-96 object-center w-full object-cover">
+        <div class="absolute inset-0 bg-black opacity-50 shadow-xl"></div>
+
+        <div class="absolute inset-0 flex flex-col justify-center p-6 max-w-7xl m-auto">
+
+            <h1 class="font-semibold text-3xl text-white sm:text-4xl mb-4"><?php single_post_title(); ?></h1>
+            <p class="text-white border-l-2 border-maincolor pl-2 max-w-xl mr-auto">Découvrez les dernières nouvelles, les événements à venir et les réalisations récentes de notre entreprise</p>
+        </div>
     </div>
 
-    <div class="relative mx-auto -mt-12 max-w-7xl px-4 pb-16 sm:px-6 sm:pb-24 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center lg:max-w-4xl mb-20">
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"><?php single_post_title(); ?></h2>
-            <p class="mt-4 text-lg text-gray-500">Découvrez les dernières nouvelles, les événements à venir et les réalisations récentes de notre entreprise</p>
-        </div>
-
+    <div class="relative mx-auto mt-12 max-w-7xl px-4 pb-16 sm:px-6 sm:pb-24 lg:px-8">
 
         <?php if (have_posts()) : ?>
             <div class="bg-white pb-14 md:pb-24">

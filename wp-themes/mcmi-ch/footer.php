@@ -103,8 +103,7 @@
                         <ul role="list" class="mt-6 space-y-4">
                             <?php if (get_sub_field('line_1')) : ?>
                                 <li>
-                                    <p class="text-sm font-medium leading-6 text-secondarycolor-100">Adresse : <?php the_sub_field('line_1'); ?>,
-                                        <?php if (get_sub_field('line_2')) : ?><?php the_sub_field('line_2'); ?> <?php endif ?>, <?php if (get_sub_field('line_3')) : ?> <?php the_sub_field('line_3'); ?> <?php endif ?>, <?php if (get_sub_field('line_4')) : ?> <?php the_sub_field('line_4'); ?> <?php endif ?></p>
+                                    <p class="text-sm font-medium leading-6 text-secondarycolor-100">Adresse : <?php the_sub_field('line_1'); ?><?php if (get_sub_field('line_2')) : ?>, <?php the_sub_field('line_2'); ?><?php endif ?><?php if (get_sub_field('line_3')) : ?>, <?php the_sub_field('line_3'); ?><?php endif ?><?php if (get_sub_field('line_4')) : ?>, <?php the_sub_field('line_4'); ?> <?php endif ?></p>
                                 </li>
                             <?php endif ?>
                             <?php if (get_sub_field('phone_number')) : ?>

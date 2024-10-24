@@ -51,7 +51,7 @@
                                     <?php while (have_rows('list')) : the_row(); ?>
                                         <?php if (get_sub_field('element')) : ?>
                                             <li class="flex gap-x-3">
-                                                <svg class="mt-1 h-5 w-5 flex-none text-eseisblue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <svg class="mt-1 h-5 w-5 flex-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                                                 </svg>
                                                 <span><?php the_sub_field('element'); ?></span>

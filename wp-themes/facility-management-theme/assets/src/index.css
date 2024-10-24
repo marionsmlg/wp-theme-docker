@@ -140,10 +140,10 @@
   justify-content: center;
   text-decoration: none;
   border-top: 2px solid transparent;
-  padding: 1rem 1rem; /* Correspond à px-4 pt-4 */
-  font-size: 0.875rem; /* Correspond à text-sm */
-  font-weight: 500; /* Correspond à font-medium */
-  color: #4a5568; /* Correspond à text-gray-500 */
+  padding: 1rem 1rem; 
+  font-size: 0.875rem; 
+  font-weight: 500; 
+  color: #4a5568; 
   transition: all 0.3s ease;
 }
 
