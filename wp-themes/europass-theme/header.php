@@ -76,7 +76,7 @@
                 <div class="space-y-1 pb-4 pt-2">
                     <?php foreach ($menuitems as $item) : ?>
                         <?php
-                        $current_class = (is_page($item->object_id)) || (is_home() && $item->object_id == get_option('page_for_posts')) || (is_page($item->object_id) && !is_home() && !is_front_page($item->object_id)) || ($item->url === get_post_type_archive_link('post') && !is_front_page($item->object_id) && is_single()) ? 'bg-maincolor-200 border-secondarycolor text-secondarycolor' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700';
+                        $current_class = (is_page($item->object_id)) || (is_home() && $item->object_id == get_option('page_for_posts')) || (is_page($item->object_id) && !is_home() && !is_front_page($item->object_id)) || ($item->url === get_post_type_archive_link('post') && !is_front_page($item->object_id) && is_single()) ? 'bg-maincolor-100 border-secondarycolor text-secondarycolor' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700';
                         ?>
                         <a href="<?= esc_url($item->url) ?>" class="block border-l-4 py-2 pl-3 pr-4 text-base uppercase font-medium <?= $current_class ?>"><?= esc_html($item->title) ?></a>
                     <?php endforeach; ?>

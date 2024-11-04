@@ -30,12 +30,12 @@
 
         <div class="mx-auto mt-16 max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-3xl text-center flex flex-col items-center">
-            <?php if (get_sub_field('title')) : ?>
-            <?php get_template_part('parts/title-decoration'); ?>
-                <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"> <?php the_sub_field('title'); ?></h2>
+                <?php if (get_sub_field('title')) : ?>
+                    <?php get_template_part('parts/title-decoration'); ?>
+                    <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"> <?php the_sub_field('title'); ?></h2>
                 <?php endif ?>
-                <?php if (get_sub_field('content')) : ?>
-                <p class="mt-6 text-lg leading-8 text-gray-600"> <?php the_sub_field('content'); ?></p>
+                <?php if (get_sub_field('subtitle')) : ?>
+                    <p class="mt-6 text-lg leading-8 text-gray-600"> <?php the_sub_field('subtitle'); ?></p>
                 <?php endif ?>
             </div>
             <div class="mx-auto mt-16 max-w-3xl sm:mt-20 lg:mt-24 lg:max-w-6xl">
@@ -71,21 +71,27 @@
     <?php endwhile; ?>
 
     <!-- CTA -->
-    <div class="bg-gray-100 mt-20">
-        <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
-            <h2 class="text-2xl font-semibold tracking-tight text-gray-700 sm:text-4xl">Protégez ce qui compte le plus<br>Contactez-nous dès aujourd'hui.</h2>
-            <div class="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
-                <a href="/contact"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 lg:text-base text-sm font-semibold text-white shadow-sm bg-maincolor-500 hover:bg-maincolor-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a>
+    <?php while (have_rows('cta')) : the_row(); ?>
+        <div class="bg-gray-100 mt-20">
+            <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
+                <h2 class="text-2xl font-semibold tracking-tight text-gray-700 sm:text-4xl"><?php if (get_sub_field('line_1')) : ?><?php the_sub_field('line_1'); ?><?php endif; ?><br><?php if (get_sub_field('line_2')) : ?><?php the_sub_field('line_2'); ?><?php endif; ?></h2>
+                <?php if (get_sub_field('button_text')) : ?>
+                    <?php if (get_sub_field('button_url')) : ?>
+                        <div class="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
+                            <a href="<?php the_sub_field('button_url'); ?>"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 lg:text-base text-sm font-semibold text-white shadow-sm bg-maincolor-500 hover:bg-maincolor-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10"><?php the_sub_field('button_text'); ?></button></a>
 
+                        </div>
+                    <?php endif; ?>
+                <?php endif; ?>
             </div>
         </div>
-    </div>
+    <?php endwhile; ?>
 
 
     <?php while (have_rows('chiffres_cles')) : the_row(); ?>
         <div class="relative bg-maincolor-200">
-        <?php if (get_sub_field('image')) : ?>
-            <img class="h-56 w-full bg-gray-50 object-cover lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-1/2" src="<?php the_sub_field('image'); ?>" alt="company">
+            <?php if (get_sub_field('image')) : ?>
+                <img class="h-56 w-full bg-gray-50 object-cover lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-1/2" src="<?php the_sub_field('image'); ?>" alt="company">
             <?php endif ?>
             <div class="mx-auto grid max-w-7xl lg:grid-cols-2">
                 <div class="px-6 pb-24 pt-16 sm:pb-32 sm:pt-20 lg:col-start-2 lg:px-8 lg:pt-32">
@@ -127,11 +133,11 @@
     <?php while (have_rows('nos_valeurs')) : the_row(); ?>
         <div class="pb-20 px-6 pt-20  sm:pb-24">
             <div class="mx-auto max-w-2xl text-center lg:max-w-4xl flex flex-col items-center">
-            <?php if (get_sub_field('title')) : ?>
-            <?php get_template_part('parts/title-decoration'); ?>
-                <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase">  <?php the_sub_field('title'); ?></h2>
-               <?php endif ?>
-                <p class="mt-6 text-lg leading-8 text-gray-600"><?php if (get_sub_field('content')) : ?> <?php the_sub_field('content'); ?><?php endif ?></p>
+                <?php if (get_sub_field('title')) : ?>
+                    <?php get_template_part('parts/title-decoration'); ?>
+                    <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"> <?php the_sub_field('title'); ?></h2>
+                <?php endif ?>
+                <p class="mt-6 text-lg leading-8 text-gray-600"><?php if (get_sub_field('subtitle')) : ?> <?php the_sub_field('subtitle'); ?><?php endif ?></p>
             </div>
             <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-7xl">
                 <dl class="grid max-w-2xl grid-cols-1 gap-x-24 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
@@ -163,11 +169,11 @@
 
             <div class="mt-10 pb-10 px-6 pt-10 bg-gray-100">
                 <div class="mx-auto max-w-2xl text-center lg:max-w-4xl flex flex-col items-center">
-                <?php if (get_sub_field('title')) : ?>
-                <?php get_template_part('parts/title-decoration'); ?>
-                    <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"> <?php the_sub_field('title'); ?></h2>
+                    <?php if (get_sub_field('title')) : ?>
+                        <?php get_template_part('parts/title-decoration'); ?>
+                        <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"> <?php the_sub_field('title'); ?></h2>
                     <?php endif ?>
-                    <p class="mt-6 text-lg leading-8 text-gray-600"><?php if (get_sub_field('content')) : ?> <?php the_sub_field('content'); ?><?php endif ?></p>
+                    <p class="mt-6 text-lg leading-8 text-gray-600"><?php if (get_sub_field('subtitle')) : ?> <?php the_sub_field('subtitle'); ?><?php endif ?></p>
                 </div>
             </div>
             <?php
@@ -226,13 +232,14 @@
 
     <?php if (have_rows('partners')) : ?>
         <?php while (have_rows('partners')) : the_row(); ?>
-        <?php if (get_sub_field('title')) : ?> 
-            <div class="mt-10 px-6 pt-10">
-                <div class="mx-auto max-w-2xl text-center lg:max-w-4xl mb-16">
-                    <h2 class="text-base sm:text-lg font-semibold leading-7 text-eseisblue-400 uppercase"><?php the_sub_field('title'); ?></h2>
+            <?php if (get_sub_field('title')) : ?>
+                <div class="mt-10 px-6 pb-20">
+                    <div class="mx-auto max-w-2xl text-center lg:max-w-4xl mb-16">
+                        <h2 class="text-base sm:text-lg font-semibold leading-7 text-eseisblue-400 uppercase"><?php the_sub_field('title'); ?></h2>
+                    </div>
+                    <?php get_template_part('parts/they-trust-us'); ?>
                 </div>
-            </div>
-            <?php get_template_part('parts/they-trust-us'); ?>
+
             <?php endif ?>
         <?php endwhile; ?>
     <?php endif ?>
