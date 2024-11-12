@@ -11,7 +11,7 @@
     <?php get_template_part('parts/title-page'); ?>
 
     <div class="bg-white">
-        <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        <div class="relative mx-auto max-w-7xl px-2 py-16 sm:px-6 sm:py-24 lg:px-8">
 
             <?php while (have_rows('services')) : the_row(); ?>
                 <div class="pb-20 px-6 sm:pb-24">
@@ -30,7 +30,7 @@
                     <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-7xl">
                         <dl class="grid max-w-2xl grid-cols-1 gap-x-16 gap-y-16 lg:max-w-none lg:grid-cols-2 lg:gap-y-20">
                             <?php while (have_rows('categories')) : the_row(); ?>
-                                <div class="relative px-8 pt-10 pb-60 sm:pb-80 bg-white border-2 shadow-md">
+                                <div class="relative px-8 pt-10 pb-48 sm:pb-80 bg-white border-2 shadow-md">
                                     <dt class="text-lg flex flex-col font-semibold leading-7 text-gray-900 gap-2">
                                         <?php if (get_sub_field('title')) : ?>
                                             <?php the_sub_field('title'); ?>
@@ -41,10 +41,12 @@
                                     <?php endif; ?>
                                     <?php if (get_sub_field('examples')) : ?>
                                         <div class="flex items-start mb-10 mt-4 ">
-                                            <svg class="h-8 w-8 text-maincolor" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                <polyline points="15 10 20 15 15 20" />
-                                                <path d="M4 4v7a4 4 0 0 0 4 4h12" />
-                                            </svg>
+                                            <div>
+                                                <svg class="h-6 w-6 text-maincolor" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <polyline points="15 10 20 15 15 20" />
+                                                    <path d="M4 4v7a4 4 0 0 0 4 4h12" />
+                                                </svg>
+                                            </div>
                                             <p class="ml-2 text-base leading-7 text-gray-600"><?php the_sub_field('examples'); ?></p>
                                         </div>
 
@@ -82,7 +84,7 @@
                     <?php while (have_rows('arguments')) : the_row(); ?>
                         <div class="relative p-8 bg-white border-2 shadow-md">
                             <dt class="text-base flex flex-col items-center text-center font-semibold leading-7 text-gray-900 gap-2">
-                                <div class="flex h-12 w-12 items-center justify-center bg-maincolor-200">
+                                <div class="flex h-12 w-12 items-center justify-center">
                                     <?php if (get_sub_field('icon')) : ?>
                                         <img class="style-svg h-8 w-8 text-white" src="<?php the_sub_field('icon'); ?>" alt="" />
                                     <?php endif; ?>
