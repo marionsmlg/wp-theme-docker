@@ -12,11 +12,11 @@
      <div class="relative isolate -z-10 overflow-hidden">
          <div class="absolute inset-y-0 bg-white shadow-xl sm:-mr-80 lg:-mr-96" aria-hidden="true"></div>
          <div class="mx-auto max-w-7xl px-6 py-14 sm:py-32 lg:px-8">
-             <div class="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
+             <div class="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:gap-x-16 lg:gap-y-6 lg:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
 
                  <?php if (get_field('title')) : ?>
                      <div><?php get_template_part('parts/title-decoration'); ?>
-                         <h1 class="max-w-2xl text-2xl font-semibold tracking-tight text-gray-700 sm:text-4xl lg:col-span-2 xl:col-auto"><?php echo esc_html(get_field('title')); ?></h1>
+                         <h1 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"><?php echo esc_html(get_field('title')); ?></h1>
                      </div>
 
                  <?php endif; ?>
@@ -46,20 +46,48 @@
 
                  <?php if (get_sub_field('title')) : ?>
                      <?php get_template_part('parts/title-decoration'); ?>
-                     <h2 class="text-3xl font-semibold tracking-tight text-gray-700 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
+                     <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"><?php the_sub_field('title'); ?></h2>
                  <?php endif ?>
                  <div class="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
-                     <div class="lg:w-full lg:max-w-2xl lg:flex-auto">
+                     <div class="lg:w-full lg:flex-auto">
                          <?php if (get_sub_field('subtitle')) : ?>
                              <p class="text-lg leading-8 text-gray-600"><?php the_sub_field('subtitle'); ?></p>
                          <?php endif ?>
-                         <?php if (get_sub_field('content')) : ?>
-                             <div class="mt-10 max-w-xl text-base leading-8 text-gray-600 text-lg">
-                                 <p><?php the_sub_field('content'); ?></p>
-                             <?php endif ?>
-                             </div>
+
+                         <!-- Feature section -->
+                         <div class="mx-auto mt-14 max-w-7xl sm:mt-16 md:mt-20">
+                             <dl class="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base/7 text-gray-500 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 lg:gap-y-16">
+                                 <?php 
+                                 $index = 1;
+                                 while (have_rows('arguments')) : the_row(); ?>
+                                     <div class="relative pl-9">
+                                         <dt class="inline font-semibold text-gray-700">
+                                     
+                                                 <p class="absolute left-1 top-1 text-4xl  text-maincolor"><?php echo $index; ?>.</p>
+                                      
+
+                                             <?php if (get_sub_field('title')) : ?>
+                                                 <?php the_sub_field('title'); ?>
+                                             <?php endif ?>
+
+                                         </dt>
+                                         <?php if (get_sub_field('description')) : ?>
+                                             <dd class="inline"> <?php the_sub_field('description'); ?></dd>
+                                         <?php endif ?>
+                                     </div>
+                                 <?php 
+                                    $index++;
+                                    endwhile; ?>
+                   
+                             </dl>
+                         </div>
+
+
+
                      </div>
                  </div>
+
+
                  <!-- Key numbers -->
                  <dl class="mt-16 grid grid-cols-1 gap-x-8 gap-y-12 sm:mt-20 sm:grid-cols-2 sm:gap-y-16 lg:mt-28 lg:grid-cols-4">
                      <?php
@@ -97,7 +125,7 @@
                  <div class="mx-auto max-w-2xl lg:mx-0 mb-20">
                      <?php if (get_sub_field('title')) : ?>
                          <?php get_template_part('parts/title-decoration'); ?>
-                         <h2 class="text-3xl font-semibold tracking-tight text-gray-700 sm:text-4xl"><?php the_sub_field('title'); ?></h2>
+                         <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"><?php the_sub_field('title'); ?></h2>
                      <?php endif ?>
                      <?php if (get_sub_field('subtitle')) : ?>
 
@@ -130,8 +158,9 @@
 
 
      <div class="relative isolate -z-10 my-16">
-         <div class="mx-auto max-w-7xl px-6 lg:px-8">
-             <h2 class="text-center text-xl font-semibold leading-8 text-gray-700 mb-10">Ils nous font confiance</h2>
+         <div class="mx-auto max-w-7xl px-6 lg:px-8 flex items-center flex-col">
+             <?php get_template_part('parts/title-decoration'); ?>
+             <h2 class="text-center text-2xl font-semibold leading-7 text-secondarycolor uppercase mb-10">Ils nous font confiance</h2>
              <?php get_template_part('parts/they-trust-us'); ?>
          </div>
      </div>

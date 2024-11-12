@@ -45,8 +45,6 @@
                             </div>
                         <?php endwhile; ?>
 
-
-
                     </div>
                     <?php if (get_sub_field('illustration')) : ?>
                         <img src="<?php the_sub_field('illustration'); ?>" alt="Illustration engagement RSE" class="mt-10 lg:aspect-[5/6] aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36">

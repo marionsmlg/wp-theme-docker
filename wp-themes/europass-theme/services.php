@@ -14,7 +14,7 @@
         <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
 
             <?php while (have_rows('services')) : the_row(); ?>
-                <div class="pb-20 px-6 pt-20 sm:pb-24">
+                <div class="pb-20 px-6 sm:pb-24">
                     <div class="mx-auto max-w-2xl text-center lg:max-w-4xl flex flex-col items-center">
                         <?php if (get_sub_field('title')) : ?>
                             <?php get_template_part('parts/title-decoration'); ?>
@@ -54,7 +54,7 @@
 
 
     <?php while (have_rows('values')) : the_row(); ?>
-        <div class="pb-20 px-6 pt-20 sm:pb-24 bg-gray-100">
+        <div class="pb-20 px-8 pt-20 sm:pb-24 bg-gray-100">
             <div class="mx-auto max-w-2xl text-center lg:max-w-4xl flex flex-col items-center">
                 <?php if (get_sub_field('title')) : ?>
                     <?php get_template_part('parts/title-decoration'); ?>
@@ -94,12 +94,12 @@
 
 
     <?php while (have_rows('choose_us')) : the_row(); ?>
-        <div class="relative bg-maincolor-200">
+        <div class="relative bg-maincolor-100">
             <?php if (get_sub_field('image')) : ?>
                 <img class="h-56 w-full bg-gray-50 object-cover lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-1/2" src="<?php the_sub_field('image'); ?>" alt="choose-us"/>
             <?php endif; ?>
             <div class="mx-auto grid max-w-7xl lg:grid-cols-2">
-                <div class="px-6 pb-24 pt-16 sm:pb-32 sm:pt-20 lg:col-start-2 lg:px-8 lg:pt-32">
+                <div class="px-6 pb-24 pt-24 sm:pb-32 sm:pt-20 lg:col-start-2 lg:px-8 lg:pt-32">
                     <div class="mx-auto max-w-2xl lg:mr-0 lg:max-w-lg">
                         <?php if (get_sub_field('title')) : ?>
                             <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"><?php the_sub_field('title'); ?></h2>
@@ -108,18 +108,20 @@
                             <p class="mt-6 text-lg leading-8 text-gray-700"><?php the_sub_field('subtitle'); ?></p>
                         <?php endif; ?>
 
-                        <ul role="list" class="mt-8 space-y-8">
-                            <?php while (have_rows('list')) : the_row(); ?>
-                                <?php if (get_sub_field('element')) : ?>
-                                    <li class="flex gap-x-3">
-                                        <svg class="mt-1 h-5 w-5 flex-none text-eseisblue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                                        </svg>
-                                        <span><?php the_sub_field('element'); ?></span>
-                                    </li>
-                                <?php endif ?>
-                            <?php endwhile; ?>
-                        </ul>
+                        <?php while (have_rows('list')) : the_row(); ?>
+                        <div class="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
+                            <div>
+                                <?php if (get_sub_field('text')) : ?>
+                                    <p class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900"><?php the_sub_field('text'); ?></p>
+                                <?php endif; ?>
+                                <?php if (get_sub_field('description')) : ?>
+                                    <p class="mt-3 text-base leading-7 text-gray-600"><?php the_sub_field('description'); ?></p>
+                                <?php endif; ?>
+                            </div>
+                    </div>
+                    <?php endwhile; ?>
+
+                 
                     </div>
 
 
@@ -128,19 +130,27 @@
         </div>
     <?php endwhile; ?>
 
-
+    <?php while (have_rows('cta')) : the_row(); ?>
     <div class="bg-white">
         <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
-                <h2 class="text-balance text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">Boost your productivity. Start using our app today.</h2>
-                <p class="mx-auto mt-6 max-w-xl text-pretty text-lg/8 text-gray-600">Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur commodo do ea.</p>
-                <div class="mt-10 flex items-center justify-center gap-x-6">
-                    <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
-                  
-                </div>
+                <h2 class="text-balance text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl"><?php if (get_sub_field('line_1')) : ?><?php the_sub_field('line_1'); ?><?php endif; ?><br><?php if (get_sub_field('line_2')) : ?><?php the_sub_field('line_2'); ?><?php endif; ?></h2>
+
+                <?php if (get_sub_field('button_text')) : ?>
+                    <?php if (get_sub_field('button_url')) : ?>
+                        <div class="mt-10 flex items-center justify-center gap-x-6">
+                            <a href="<?php the_sub_field('button_url'); ?>"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 lg:text-base text-sm font-semibold text-white shadow-sm bg-maincolor-500 hover:bg-maincolor-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10"><?php the_sub_field('button_text'); ?></button></a>
+
+                        </div>
+                    <?php endif; ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>
+    <?php endwhile; ?>
+
+
+
     </div>
 </main>
 

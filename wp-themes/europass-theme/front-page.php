@@ -89,7 +89,7 @@
 
 
     <?php while (have_rows('chiffres_cles')) : the_row(); ?>
-        <div class="relative bg-maincolor-200">
+        <div class="relative bg-maincolor-100">
             <?php if (get_sub_field('image')) : ?>
                 <img class="h-56 w-full bg-gray-50 object-cover lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-1/2" src="<?php the_sub_field('image'); ?>" alt="company">
             <?php endif ?>
@@ -234,8 +234,9 @@
         <?php while (have_rows('partners')) : the_row(); ?>
             <?php if (get_sub_field('title')) : ?>
                 <div class="mt-10 px-6 pb-20">
-                    <div class="mx-auto max-w-2xl text-center lg:max-w-4xl mb-16">
-                        <h2 class="text-base sm:text-lg font-semibold leading-7 text-eseisblue-400 uppercase"><?php the_sub_field('title'); ?></h2>
+                    <div class="mx-auto max-w-2xl text-center lg:max-w-4xl mb-16 flex flex-col items-center">
+                    <?php get_template_part('parts/title-decoration'); ?>
+                        <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"><?php the_sub_field('title'); ?></h2>
                     </div>
                     <?php get_template_part('parts/they-trust-us'); ?>
                 </div>
