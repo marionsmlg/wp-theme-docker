@@ -67,7 +67,7 @@
 
     <?php while (have_rows('values')) : the_row(); ?>
         <div class="pb-20 px-8 pt-20 sm:pb-24 bg-gray-100">
-            <div class="mx-auto max-w-2xl text-center lg:max-w-4xl flex flex-col items-center bg-maincolor-200">
+            <div class="mx-auto max-w-2xl text-center lg:max-w-4xl flex flex-col items-center">
                 <?php if (get_sub_field('title')) : ?>
                     <?php get_template_part('parts/title-decoration'); ?>
                     <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"><?php the_sub_field('title'); ?></h2>
@@ -84,7 +84,7 @@
                     <?php while (have_rows('arguments')) : the_row(); ?>
                         <div class="relative p-8 bg-white border-2 shadow-md">
                             <dt class="text-base flex flex-col items-center text-center font-semibold leading-7 text-gray-900 gap-2">
-                                <div class="flex h-12 w-12 items-center justify-center">
+                                <div class="flex h-12 w-12 items-center justify-center bg-maincolor-200">
                                     <?php if (get_sub_field('icon')) : ?>
                                         <img class="style-svg h-8 w-8 text-white" src="<?php the_sub_field('icon'); ?>" alt="" />
                                     <?php endif; ?>
