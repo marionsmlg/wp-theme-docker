@@ -57,14 +57,14 @@
                          <!-- Feature section -->
                          <div class="mx-auto mt-14 max-w-7xl sm:mt-16 md:mt-20">
                              <dl class="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base/7 text-gray-500 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 lg:gap-y-16">
-                                 <?php 
-                                 $index = 1;
-                                 while (have_rows('arguments')) : the_row(); ?>
+                                 <?php
+                                    $index = 1;
+                                    while (have_rows('arguments')) : the_row(); ?>
                                      <div class="relative pl-9">
                                          <dt class="inline font-semibold text-gray-700">
-                                     
-                                                 <p class="absolute left-1 top-1 text-4xl  text-maincolor"><?php echo $index; ?>.</p>
-                                      
+
+                                             <p class="absolute left-1 top-1 text-4xl  text-maincolor"><?php echo $index; ?>.</p>
+
 
                                              <?php if (get_sub_field('title')) : ?>
                                                  <?php the_sub_field('title'); ?>
@@ -75,10 +75,10 @@
                                              <dd class="inline"> <?php the_sub_field('description'); ?></dd>
                                          <?php endif ?>
                                      </div>
-                                 <?php 
-                                    $index++;
+                                 <?php
+                                        $index++;
                                     endwhile; ?>
-                   
+
                              </dl>
                          </div>
 
@@ -154,9 +154,8 @@
 
          </div>
      <?php endwhile; ?>
+
      <!-- Logo cloud -->
-
-
      <div class="relative isolate -z-10 my-16">
          <div class="mx-auto max-w-7xl px-6 lg:px-8 flex items-center flex-col">
              <?php get_template_part('parts/title-decoration'); ?>

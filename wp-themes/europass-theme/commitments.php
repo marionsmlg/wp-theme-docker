@@ -138,53 +138,19 @@
 
 
 
-    <?php while (have_rows('section_4')) : the_row(); ?>
-        <div class="bg-eseisblue-50">
-            <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:pb-24 lg:px-8">
-                <div class="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
-                    <?php if (get_sub_field('title')) : ?>
-                        <h1 class="max-w-2xl text-2xl font-semibold tracking-tight text-eseisblue-500 sm:text-4xl lg:col-span-2 xl:col-auto"><?php the_sub_field('title'); ?></h1>
-                    <?php endif; ?>
-                    <div class="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
-                        <?php if (get_sub_field('subtitle')) : ?>
-                            <p class="text-base sm:text-lg leading-7 text-gray-900"><?php the_sub_field('subtitle'); ?>
-                            </p>
-                        <?php endif; ?>
-                        <ul class="mt-10 lg:mt-16 space-y-5">
-                            <?php while (have_rows('arguments')) : the_row(); ?>
-                                <?php if (get_sub_field('text')) : ?>
-                                    <li class="flex gap-x-3">
-                                        <svg class="mt-1 h-5 w-5 flex-none text-eseisblue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                                        </svg>
-                                        <span class="md:text-lg font-semibold"><?php the_sub_field('text'); ?></span>
-                                    </li>
-                                <?php endif; ?>
-                            <?php endwhile; ?>
-                        </ul>
-                    </div>
-                    <?php if (get_sub_field('illustration')) : ?>
-                        <img src="<?php the_sub_field('illustration'); ?>" alt="Illustration environnement" class="mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36">
-                    <?php endif; ?>
-                </div>
-            </div>
-        </div>
-    <?php endwhile; ?>
-
-
     <!-- CTA -->
     <?php while (have_rows('cta')) : the_row(); ?>
         <div class="bg-gray-100">
             <div class="mx-auto max-w-7xl px-6 py-14 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
                 <div class="flex flex-col">
-                <?php if (get_sub_field('line_1')) : ?>
-                <h2 class="text-xl font-semibold tracking-tight text-gray-700 sm:text-3xl"><?php the_sub_field('line_1'); ?></h2>
-                <?php endif; ?>
-                <?php if (get_sub_field('line_2')) : ?>
-                    <p class=" mt-6 max-w-xl text-lg/8 text-gray-600"><?php the_sub_field('line_2'); ?></p>
-                <?php endif; ?>
+                    <?php if (get_sub_field('line_1')) : ?>
+                        <h2 class="text-xl font-semibold tracking-tight text-gray-700 sm:text-3xl"><?php the_sub_field('line_1'); ?></h2>
+                    <?php endif; ?>
+                    <?php if (get_sub_field('line_2')) : ?>
+                        <p class=" mt-6 max-w-xl text-lg/8 text-gray-600"><?php the_sub_field('line_2'); ?></p>
+                    <?php endif; ?>
                 </div>
-              
+
                 <?php if (get_sub_field('button_text')) : ?>
                     <?php if (get_sub_field('button_url')) : ?>
                         <div class="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
