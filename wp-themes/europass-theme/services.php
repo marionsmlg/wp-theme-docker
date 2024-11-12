@@ -67,7 +67,7 @@
 
     <?php while (have_rows('values')) : the_row(); ?>
         <div class="pb-20 px-8 pt-20 sm:pb-24 bg-gray-100">
-            <div class="mx-auto max-w-2xl text-center lg:max-w-4xl flex flex-col items-center">
+            <div class="mx-auto max-w-2xl text-center lg:max-w-4xl flex flex-col items-center bg-maincolor-200">
                 <?php if (get_sub_field('title')) : ?>
                     <?php get_template_part('parts/title-decoration'); ?>
                     <h2 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"><?php the_sub_field('title'); ?></h2>

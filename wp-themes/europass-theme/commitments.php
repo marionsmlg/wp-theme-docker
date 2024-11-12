@@ -81,7 +81,7 @@
                     <?php while (have_rows('arguments')) : the_row(); ?>
                         <div class="relative p-8 bg-white border-2 shadow-md">
                             <dt class="text-base flex flex-col items-center text-center font-semibold leading-7 text-gray-900 gap-2">
-                                <div class="flex h-12 w-12 items-center justify-center bg-maincolor-200">
+                                <div class="flex h-12 w-12 items-center justify-center">
                                     <?php if (get_sub_field('icon')) : ?>
                                         <img class="style-svg h-20 w-20 text-white" src="<?php the_sub_field('icon'); ?>" alt="" />
                                     <?php endif; ?>
