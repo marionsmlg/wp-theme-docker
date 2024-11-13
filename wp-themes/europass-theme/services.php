@@ -40,7 +40,7 @@
                                         <dd class="mt-4 text-base leading-7 text-gray-600 mb-10"><?php the_sub_field('description'); ?></dd>
                                     <?php endif; ?>
                                     <?php if (get_sub_field('examples')) : ?>
-                                        <div class="flex items-start mb-10 mt-4 ">
+                                        <div class="flex items-start mb-10 mt-4">
                                             <div>
                                                 <svg class="h-6 w-6 text-maincolor" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                     <polyline points="15 10 20 15 15 20" />
@@ -84,7 +84,7 @@
                     <?php while (have_rows('arguments')) : the_row(); ?>
                         <div class="relative p-8 bg-white border-2 shadow-md">
                             <dt class="text-base flex flex-col items-center text-center font-semibold leading-7 text-gray-900 gap-2">
-                                <div class="flex h-12 w-12 items-center justify-center">
+                                <div class="flex h-12 w-12 items-center justify-center bg-maincolor-200">
                                     <?php if (get_sub_field('icon')) : ?>
                                         <img class="style-svg h-8 w-8 text-white" src="<?php the_sub_field('icon'); ?>" alt="" />
                                     <?php endif; ?>
