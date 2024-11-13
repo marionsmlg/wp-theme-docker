@@ -76,7 +76,7 @@
                         <ul role="list" class="mt-6 space-y-4">
                             <?php foreach ($menuitems as $item) : ?>
                                 <li>
-                                    <a href="<?= esc_url($item->url) ?>" class="text-sm leading-6 text-secondarycolor-300 hover:text-secondarycolor-100"><?= esc_html($item->title) ?></a>
+                                    <a href="<?= esc_url($item->url) ?>" class="text-sm leading-6 text-secondarycolor-400 hover:text-secondarycolor-300"><?= esc_html($item->title) ?></a>
                                 </li>
                             <?php endforeach; ?>
 
@@ -97,7 +97,7 @@
                         <ul role="list" class="mt-6 space-y-4">
                             <?php foreach ($menuitems as $item) : ?>
                                 <li>
-                                    <a href="<?= esc_url($item->url) ?>" class="text-sm leading-6 text-secondarycolor-300 hover:text-secondarycolor-100"><?= esc_html($item->title) ?></a>
+                                    <a href="<?= esc_url($item->url) ?>" class="text-sm leading-6 text-secondarycolor-400 hover:text-secondarycolor-300"><?= esc_html($item->title) ?></a>
                                 </li>
                             <?php endforeach; ?>
 
@@ -111,17 +111,17 @@
                         <ul role="list" class="mt-6 space-y-4">
                             <?php if (get_sub_field('line_1')) : ?>
                                 <li>
-                                    <p class="text-sm font-medium leading-6 text-secondarycolor-100">Adresse : <?php the_sub_field('line_1'); ?><?php if (get_sub_field('line_2')) : ?>, <?php the_sub_field('line_2'); ?><?php endif ?><?php if (get_sub_field('line_3')) : ?>, <?php the_sub_field('line_3'); ?><?php endif ?><?php if (get_sub_field('line_4')) : ?>, <?php the_sub_field('line_4'); ?> <?php endif ?></p>
+                                    <p class="text-sm font-medium leading-6 text-secondarycolor-400">Adresse : <?php the_sub_field('line_1'); ?><?php if (get_sub_field('line_2')) : ?>, <?php the_sub_field('line_2'); ?><?php endif ?><?php if (get_sub_field('line_3')) : ?>, <?php the_sub_field('line_3'); ?><?php endif ?><?php if (get_sub_field('line_4')) : ?>, <?php the_sub_field('line_4'); ?> <?php endif ?></p>
                                 </li>
                             <?php endif ?>
                             <?php if (get_sub_field('phone_number')) : ?>
                                 <li>
-                                    <a class="text-sm font-medium leading-6 text-secondarycolor-300" href="tel:<?php the_sub_field('phone_number'); ?>">Tél : <span class="text-maincolor hover:text-maincolor-300"><?php the_sub_field('phone_number'); ?></span></a>
+                                    <a class="text-sm font-medium leading-6 text-secondarycolor-400" href="tel:<?php the_sub_field('phone_number'); ?>">Tél : <span class="text-secondarycolor-400 hover:text-secondarycolor-200"><?php the_sub_field('phone_number'); ?></span></a>
                                 </li>
                             <?php endif ?>
                             <?php if (get_sub_field('email')) : ?>
                                 <li>
-                                    <a class="text-secondarycolor-100 text-sm font-medium leading-6" href="mailto:<?php the_sub_field('email'); ?>">Email : <span class="text-maincolor hover:text-maincolor-300"><?php the_sub_field('email'); ?></span></a>
+                                    <a class="text-secondarycolor-400 text-sm font-medium leading-6" href="mailto:<?php the_sub_field('email'); ?>">Email : <span class="text-secondarycolor-400 hover:text-secondarycolor-200"><?php the_sub_field('email'); ?></span></a>
                                 </li>
                             <?php endif ?>
 
