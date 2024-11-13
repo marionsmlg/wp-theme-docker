@@ -116,7 +116,7 @@
                             <?php endif ?>
                             <?php if (get_sub_field('phone_number')) : ?>
                                 <li>
-                                    <a class="text-sm font-medium leading-6 text-secondarycolor-300" href="tel:<?php the_sub_field('phone_number'); ?>">Tel : <span class="text-maincolor hover:text-maincolor-300"><?php the_sub_field('phone_number'); ?></span></a>
+                                    <a class="text-sm font-medium leading-6 text-secondarycolor-300" href="tel:<?php the_sub_field('phone_number'); ?>">Tél : <span class="text-maincolor hover:text-maincolor-300"><?php the_sub_field('phone_number'); ?></span></a>
                                 </li>
                             <?php endif ?>
                             <?php if (get_sub_field('email')) : ?>
