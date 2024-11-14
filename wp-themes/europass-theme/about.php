@@ -18,7 +18,6 @@
                      <div><?php get_template_part('parts/title-decoration'); ?>
                          <h1 class="text-2xl font-semibold leading-7 text-secondarycolor uppercase"><?php echo esc_html(get_field('title')); ?></h1>
                      </div>
-
                  <?php endif; ?>
 
 
