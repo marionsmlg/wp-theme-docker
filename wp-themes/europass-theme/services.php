@@ -53,7 +53,7 @@
                                     <?php endif; ?>
                                     <?php if (get_sub_field('image')) : ?>
                                         <div class="absolute w-full left-6 -bottom-7">
-                                            <img class="object-cover object-center aspect-[5/3] " src="<?php the_sub_field('image'); ?>" alt="" />
+                                            <img class="object-cover object-center aspect-[5/3]" src="<?php the_sub_field('image'); ?>" alt="Illustration service" />
                                         </div>
                                     <?php endif; ?>
                                 </div>
