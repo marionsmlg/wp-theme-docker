@@ -10,9 +10,7 @@
 }
 
 
-.style-svg {
-  stroke: var(--secondary-color);
-}
+
 /* Styles formulaire de contact */
 .wpcf7 {
   margin: 0 auto;

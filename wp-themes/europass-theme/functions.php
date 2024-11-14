@@ -24,13 +24,22 @@ function montheme_supports() {
 add_action('after_setup_theme', 'montheme_supports');
 
 
-function load_commitments_stylesheet() {
-    if (is_page_template('commitments.php')) {
-        wp_enqueue_style('commitments-style', get_template_directory_uri() . '/assets/src/commitments.css');
-    }
-}
+// function load_commitments_stylesheet() {
+//     if (is_page_template('commitments.php')) {
+//         wp_enqueue_style('commitments-style', get_template_directory_uri() . '/assets/src/commitments.css');
+//     }
+// }
 
-add_action('wp_enqueue_scripts', 'load_commitments_stylesheet');
+// function load_front_page_stylesheet() {
+//     if (is_page_template('front-page.php')) {
+//         wp_enqueue_style('front-page-style', get_template_directory_uri() . '/assets/src/front-page.css');
+//     }
+// }
+
+// add_action('wp_enqueue_scripts', 'load_front_page_stylesheet');
+
+
+// add_action('wp_enqueue_scripts', 'load_commitments_stylesheet');
 
 // -- ESBUILD FILES INTEGRATION -- //
 add_action('wp_enqueue_scripts', 'esbuild_js');

@@ -83,7 +83,7 @@
                             <dt class="text-base flex flex-col items-center text-center font-semibold leading-7 text-gray-900 gap-2">
                                 <div class="flex h-12 w-12 items-center justify-center">
                                     <?php if (get_sub_field('icon')) : ?>
-                                        <img class="style-svg h-20 w-20 text-white" src="<?php the_sub_field('icon'); ?>" alt="" />
+                                        <img class="style-svg h-20 w-20 text-maincolor" src="<?php the_sub_field('icon'); ?>" alt="" />
                                     <?php endif; ?>
                                 </div>
                                 <?php if (get_sub_field('title')) : ?>
