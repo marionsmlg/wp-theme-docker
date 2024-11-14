@@ -1,7 +1,7 @@
 <?php
 if (has_post_thumbnail()) {
 ?>
-    <div class="relative h-96 md:h-[450px]">
+    <div class="relative h-96 md:h-[450px] mt-24">
 
         <?php the_post_thumbnail('full', ['class' => 'aspect-[5/2] h-96 md:h-[450px] object-center w-full object-cover']) ?>
         <div class="absolute inset-0 bg-black opacity-50 shadow-xl"></div>
@@ -17,7 +17,7 @@ if (has_post_thumbnail()) {
 <?php
 } else {
 ?>
-    <div class="relative h-96 md:h-[450px] bg-secondarycolor">
+    <div class="relative h-96 md:h-[450px] bg-secondarycolor mt-24">
 
         <div class="absolute inset-0 flex flex-col justify-center p-10 max-w-7xl m-auto">
 

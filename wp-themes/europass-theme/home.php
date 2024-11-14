@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <main class="min-h-screen">
 
-    <div class="relative h-96 md:h-[450px]">
+    <div class="relative h-96 md:h-[450px] mt-24">
         <img src="https://mcmi-ch.com/wp-content/uploads/2024/09/absolutvision-WYd_PkCa1BY-unsplash.jpg" alt="actualités" class="aspect-[5/2] h-96 md:h-[450px] object-center w-full object-cover">
         <div class="absolute inset-0 bg-black opacity-50 shadow-xl"></div>
 

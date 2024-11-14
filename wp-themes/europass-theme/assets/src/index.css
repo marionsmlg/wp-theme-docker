@@ -9,15 +9,6 @@
   --secondary-color: #2F2F2F;
 }
 
-#svg-commitments > #svg-replaced-0,
-#svg-commitments > #svg-replaced-1,
-#svg-commitments > #svg-replaced-2,
-#svg-commitments > #svg-replaced-3 {
-  stroke: var(--main-color);
-}
-
-
-
 
 .style-svg {
   stroke: var(--secondary-color);

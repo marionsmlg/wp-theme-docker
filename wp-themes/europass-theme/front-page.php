@@ -3,7 +3,7 @@
 <main class="mt-16">
 
     <?php while (have_rows('illustration')) : the_row(); ?>
-        <div class="relative md:h-[700px] h-[500px]">
+        <div class="relative md:h-[700px] h-[500px] mt-24">
             <?php while (have_rows('slider')) : the_row(); ?>
                 <img src="<?php the_sub_field('image'); ?>" alt="Image" class="slide aspect-[5/2] object-center object-cover">
             <?php endwhile; ?>
