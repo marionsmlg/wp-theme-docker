@@ -24,102 +24,11 @@
                 <?php endif; ?>
             </div>
 
-            <?php while (have_rows('hard_services')) : the_row(); ?>
-                <div class="mx-auto max-w-6xl px-2 lg:px-8 mt-16 lg:mt-24">
-                    <div class="pb-16 sm:pb-24">
-                        <div class="mt-4">
-                            <?php if (get_sub_field('title')) : ?>
-                                <h2 class="text-2xl font-bold tracking-tight text-eseisblue-500 sm:text-3xl"><?php the_sub_field('title'); ?></h2>
-                            <?php endif; ?>
-                            <?php if (get_sub_field('subtitle')) : ?>
-                                <p class="mt-2 text-lg leading-8 text-gray-600"><?php the_sub_field('subtitle'); ?></p>
-                            <?php endif; ?>
-                        </div>
-
-                        <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-                            <?php while (have_rows('categories')) : the_row(); ?>
-
-                                <div class="flex flex-col items-start justify-between border border-2 rounded-2xl bg-gray-100 pb-4 shadow-lg">
-                                    <?php if (get_sub_field('illustration')) : ?>
-                                        <div class="relative w-full">
-                                            <img src="<?php the_sub_field('illustration'); ?>" alt="Illustration hard-services" class="aspect-[16/9] w-full rounded-t-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]">
-                                            <div class="absolute inset-0 rounded-2xl"></div>
-                                        </div>
-                                    <?php endif; ?>
-                                    <div class="w-full h-full p-6">
-                                        <div class="group relative flex flex-col items-center justify-center">
-                                            <?php if (get_sub_field('title')) : ?>
-                                                <h3 class="mt-3 text-lg md:text-xl font-semibold leading-6 text-gray-900 text-center">
-                                                    <?php the_sub_field('title'); ?>
-                                                </h3>
-                                            <?php endif; ?>
-                                            <ul class="mt-5 font-semibold leading-6 text-gray-600 text-center space-y-2">
-                                                <?php while (have_rows('jobs')) : the_row(); ?>
-                                                    <?php if (get_sub_field('job')) : ?>
-                                                        <li> <?php the_sub_field('job'); ?></li>
-                                                    <?php endif; ?>
-                                                <?php endwhile; ?>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php endwhile; ?>
-                        </div>
-                    </div>
-                </div>
-            <?php endwhile; ?>
-
-            <?php while (have_rows('soft_services')) : the_row(); ?>
-                <div class="mx-auto max-w-6xl px-2 lg:px-8 mt-16 lg:mt-24">
-                    <div class="pb-16 sm:pb-24">
-                        <div class="mt-4">
-                            <?php if (get_sub_field('title')) : ?>
-                                <h2 class="text-2xl font-bold tracking-tight text-eseisblue-500 sm:text-3xl"><?php the_sub_field('title'); ?></h2>
-                            <?php endif; ?>
-                            <?php if (get_sub_field('subtitle')) : ?>
-                                <p class="mt-2 text-lg leading-8 text-gray-600"><?php the_sub_field('subtitle'); ?></p>
-                            <?php endif; ?>
-                        </div>
-
-                        <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-                            <?php while (have_rows('categories')) : the_row(); ?>
-
-                                <div class="flex flex-col items-start justify-between border border-2 rounded-2xl bg-gray-100 pb-4 shadow-lg">
-                                    <?php if (get_sub_field('illustration')) : ?>
-                                        <div class="relative w-full">
-                                            <img src="<?php the_sub_field('illustration'); ?>" alt="Illustration soft-services" class="aspect-[16/9] w-full rounded-t-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]">
-                                            <div class="absolute inset-0 rounded-2xl"></div>
-                                        </div>
-                                    <?php endif; ?>
-                                    <div class="w-full h-full p-6">
-                                        <div class="group relative flex flex-col items-center justify-center">
-                                            <?php if (get_sub_field('title')) : ?>
-                                                <h3 class="mt-3 text-lg md:text-xl font-semibold leading-6 text-gray-900 text-center">
-                                                    <?php the_sub_field('title'); ?>
-                                                </h3>
-                                            <?php endif; ?>
-                                            <ul class="mt-5 font-semibold leading-6 text-gray-600 text-center space-y-2">
-                                                <?php while (have_rows('jobs')) : the_row(); ?>
-                                                    <?php if (get_sub_field('job')) : ?>
-                                                        <li> <?php the_sub_field('job'); ?></li>
-                                                    <?php endif; ?>
-                                                <?php endwhile; ?>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            <?php endwhile; ?>
-                        </div>
-                    </div>
-                </div>
-            <?php endwhile; ?>
-
 
 
             <?php while (have_rows('pilotage')) : the_row(); ?>
                 <div class="pb-16 sm:pb-24">
-                    <div class="mt-4 mb-10">
+                    <div class="mt-20 mb-10">
                         <?php if (get_sub_field('title')) : ?>
                             <h2 class="text-2xl font-bold tracking-tight text-eseisblue-500 sm:text-3xl"><?php the_sub_field('title'); ?></h2>
                         <?php endif ?>
@@ -212,22 +121,119 @@
 
                     <?php endwhile; ?>
 
-
                 </div>
 
+            <?php endwhile; ?>
 
+            <?php while (have_rows('hard_services')) : the_row(); ?>
+                <div class="mx-auto max-w-6xl px-2 lg:px-8 mt-16 lg:mt-24">
+                    <div class="pb-16 sm:pb-24">
+                        <div class="mt-4">
+                            <?php if (get_sub_field('title')) : ?>
+                                <h2 class="text-2xl font-bold tracking-tight text-eseisblue-500 sm:text-3xl"><?php the_sub_field('title'); ?></h2>
+                            <?php endif; ?>
+                            <?php if (get_sub_field('subtitle')) : ?>
+                                <p class="mt-2 text-lg leading-8 text-gray-600"><?php the_sub_field('subtitle'); ?></p>
+                            <?php endif; ?>
+                        </div>
 
+                        <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+                            <?php while (have_rows('categories')) : the_row(); ?>
+
+                                <div class="flex flex-col items-start justify-between border border-2 rounded-2xl bg-gray-100 pb-4 shadow-lg">
+                                    <?php if (get_sub_field('illustration')) : ?>
+                                        <div class="relative w-full">
+                                            <img src="<?php the_sub_field('illustration'); ?>" alt="Illustration hard-services" class="aspect-[16/9] w-full rounded-t-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]">
+                                            <div class="absolute inset-0 rounded-2xl"></div>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="w-full h-full p-6">
+                                        <div class="group relative flex flex-col items-center justify-center">
+                                            <?php if (get_sub_field('title')) : ?>
+                                                <h3 class="mt-3 text-lg md:text-xl font-semibold leading-6 text-gray-900 text-center">
+                                                    <?php the_sub_field('title'); ?>
+                                                </h3>
+                                            <?php endif; ?>
+                                            <div class="mt-5 font-semibold leading-6 text-gray-600 text-center space-y-3">
+                                                <?php while (have_rows('jobs')) : the_row(); ?>
+                                                    <div class="flex flex-col items-center gap-5">
+                                                        <?php if (get_sub_field('job')) : ?>
+                                                            <p> <?php the_sub_field('job'); ?></p>
+                                                        <?php endif; ?>
+                                                        <?php if (get_sub_field('logo')) : ?>
+                                                            <img src="<?php the_sub_field('logo'); ?>" alt="logo du métier" class="w-32">
+                                                        <?php endif; ?>
+
+                                                    </div>
+                                                <?php endwhile; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endwhile; ?>
+
+            <?php while (have_rows('soft_services')) : the_row(); ?>
+                <div class="mx-auto max-w-6xl px-2 lg:px-8 mt-16 lg:mt-24">
+                    <div class="pb-16 sm:pb-24">
+                        <div class="mt-4">
+                            <?php if (get_sub_field('title')) : ?>
+                                <h2 class="text-2xl font-bold tracking-tight text-eseisblue-500 sm:text-3xl"><?php the_sub_field('title'); ?></h2>
+                            <?php endif; ?>
+                            <?php if (get_sub_field('subtitle')) : ?>
+                                <p class="mt-2 text-lg leading-8 text-gray-600"><?php the_sub_field('subtitle'); ?></p>
+                            <?php endif; ?>
+                        </div>
+
+                        <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+                            <?php while (have_rows('categories')) : the_row(); ?>
+
+                                <div class="flex flex-col items-start justify-between border border-2 rounded-2xl bg-gray-100 pb-4 shadow-lg">
+                                    <?php if (get_sub_field('illustration')) : ?>
+                                        <div class="relative w-full">
+                                            <img src="<?php the_sub_field('illustration'); ?>" alt="Illustration soft-services" class="aspect-[16/9] w-full rounded-t-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]">
+                                            <div class="absolute inset-0 rounded-2xl"></div>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="w-full h-full p-6">
+                                        <div class="group relative flex flex-col items-center justify-center">
+                                            <?php if (get_sub_field('title')) : ?>
+                                                <h3 class="mt-3 text-lg md:text-xl font-semibold leading-6 text-gray-900 text-center">
+                                                    <?php the_sub_field('title'); ?>
+                                                </h3>
+                                            <?php endif; ?>
+                                            <div class="mt-5 font-semibold leading-6 text-gray-600 text-center space-y-3">
+                                                <?php while (have_rows('jobs')) : the_row(); ?>
+                                                    <div class="flex flex-col items-center gap-5">
+                                                        <?php if (get_sub_field('job')) : ?>
+                                                            <p> <?php the_sub_field('job'); ?></p>
+                                                        <?php endif; ?>
+                                                        <?php if (get_sub_field('logo')) : ?>
+                                                            <img src="<?php the_sub_field('logo'); ?>" alt="logo du métier" class="w-32">
+                                                        <?php endif; ?>
+
+                                                    </div>
+                                                <?php endwhile; ?>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endwhile; ?>
 
 
         </div>
 
-    <?php endwhile; ?>
+
 
     </div>
-
-
-
-
 
 
     </div>

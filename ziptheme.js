@@ -4,7 +4,7 @@ import path from "path";
 import { temporaryDirectory } from "tempy";
 import archiver from "archiver";
 
-const dirname = "europass-theme";
+const dirname = "facility-management-theme";
 
 const rootPath = path.dirname(new URL(import.meta.url).pathname);
 const dirPath = path.join(rootPath, "wp-themes", dirname);
