@@ -1,0 +1,73 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+          "slug": "helvetica-arial",
+          "name": "Helvetica or Arial"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "1000px",
+      "wideSize": "1000px"
+    },
+    "color": {
+      "palette": [
+        {
+          "slug": "eseisblue-50",
+          "color": "#C2DBFD",
+          "name": "Bleu Eseis 50"
+        },
+        {
+          "slug": "eseisblue-100",
+          "color": "#0968E9",
+          "name": "Bleu eseis 100"
+        },
+        {
+          "slug": "eseisblue-200",
+          "color": "#0857C2",
+          "name": "Bleu eseis 200"
+        },
+        {
+          "slug": "eseisblue-300",
+          "color": "#06459B",
+          "name": "Bleu eseis 300"
+        },
+        {
+          "slug": "eseisblue-400",
+          "color": "#053473",
+          "name": "Bleu eseis 400"
+        },
+        {
+          "slug": "eseisblue-500",
+          "color": "#03224C",
+          "name": "Bleu eseis"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "elements": { "link": { "typography": { "textDecoration": "none" } } },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--ubuntu-sansserif)"
+    },
+    "blocks": {
+      "core/image": {
+        "border": {
+          "radius": "12px"
+        },
+        "variations": {
+          "rounded": {
+            "border": {
+              "radius": "24px"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+    "intelephense.stubs": [
+        "bcmath",
+        "bz2",
+        "calendar",
+        "Core",
+        "curl",
+        "zip",
+        "zlib",
+        "wordpress"
+    ]
+}

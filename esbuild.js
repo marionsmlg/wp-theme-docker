@@ -7,7 +7,8 @@ const themeNames = [
   "facility-management-theme",
   "europass-theme",
   "construction",
-  "mcmi-ch"
+  "mcmi-ch",
+  "als-theme"
 ];
 
 const isDev = process.argv[2] === "--dev";
