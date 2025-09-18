@@ -1,7 +1,7 @@
 <?php if (get_field('img_key_numbers', 'option')) : ?>
     <div class="relative h-[30rem] md:h-72 w-full bg-fixed bg-cover bg-center inset-y-0 left-0" style="background-image:url('<?php the_field('img_key_numbers', 'option') ?>');">
     <?php endif ?>
-    <div class="absolute inset-0 bg-black opacity-60 shadow-xl"></div>
+    <div class="absolute inset-0 bg-secondarycolor opacity-50 shadow-xl"></div>
     <div class="absolute grid grid-cols-1 md:grid-cols-3 w-full h-full">
 
         <?php

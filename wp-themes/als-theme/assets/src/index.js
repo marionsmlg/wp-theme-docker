@@ -106,3 +106,29 @@ window.addEventListener("DOMContentLoaded", () => {
   // Changer de slide toutes les 4 secondes
   setInterval(nextSlide, 4000);
 });
+
+
+//Title decoration
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Observer pour détecter quand les éléments entrent dans le viewport
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Ajouter la classe animate avec un petit délai pour l'effet
+                setTimeout(() => {
+                    entry.target.classList.add('animate');
+                }, 200);
+            }
+        });
+    }, {
+        threshold: 0.5, // L'animation se déclenche quand 50% de l'élément est visible
+        rootMargin: '0px 0px -50px 0px' // Déclenche un peu avant que l'élément soit complètement visible
+    });
+
+    // Observer toutes les décorations de titre
+    const titleDecorations = document.querySelectorAll('.title-decoration');
+    titleDecorations.forEach(decoration => {
+        observer.observe(decoration);
+    });
+});

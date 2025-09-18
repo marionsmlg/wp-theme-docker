@@ -1,4 +1,4 @@
-<footer class="bg-secondarycolor" aria-labelledby="footer-heading">
+<footer class="bg-secondarycolor-700" aria-labelledby="footer-heading">
     <h2 id="footer-heading" class="sr-only">Footer</h2>
     <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
@@ -103,17 +103,17 @@
                         <ul role="list" class="mt-6 space-y-4">
                             <?php if (get_sub_field('line_1')) : ?>
                                 <li>
-                                    <p class="text-sm font-medium leading-6 text-secondarycolor-100">Adresse : <?php the_sub_field('line_1'); ?><?php if (get_sub_field('line_2')) : ?>, <?php the_sub_field('line_2'); ?><?php endif ?><?php if (get_sub_field('line_3')) : ?>, <?php the_sub_field('line_3'); ?><?php endif ?><?php if (get_sub_field('line_4')) : ?>, <?php the_sub_field('line_4'); ?> <?php endif ?></p>
+                                    <p class="text-sm font-medium leading-6 text-white">Adresse : <?php the_sub_field('line_1'); ?><?php if (get_sub_field('line_2')) : ?>, <?php the_sub_field('line_2'); ?><?php endif ?><?php if (get_sub_field('line_3')) : ?>, <?php the_sub_field('line_3'); ?><?php endif ?><?php if (get_sub_field('line_4')) : ?>, <?php the_sub_field('line_4'); ?> <?php endif ?></p>
                                 </li>
                             <?php endif ?>
                             <?php if (get_sub_field('phone_number')) : ?>
                                 <li>
-                                    <a class="text-sm font-medium leading-6 text-secondarycolor-100" href="tel:<?php the_sub_field('phone_number'); ?>">Tel : <span class="text-maincolor hover:text-maincolor-300"><?php the_sub_field('phone_number'); ?></span></a>
+                                    <a class="text-sm font-medium leading-6 text-white" href="tel:<?php the_sub_field('phone_number'); ?>">Tel : <span class="text-maincolor hover:text-maincolor-300"><?php the_sub_field('phone_number'); ?></span></a>
                                 </li>
                             <?php endif ?>
                             <?php if (get_sub_field('email')) : ?>
                                 <li>
-                                    <a class="text-secondarycolor-100 text-sm font-medium leading-6" href="mailto:<?php the_sub_field('email'); ?>">Email : <span class="text-maincolor hover:text-maincolor-300"><?php the_sub_field('email'); ?></span></a>
+                                    <a class="text-white text-sm font-medium leading-6" href="mailto:<?php the_sub_field('email'); ?>">Email : <span class="text-maincolor hover:text-maincolor-300"><?php the_sub_field('email'); ?></span></a>
                                 </li>
                             <?php endif ?>
 
@@ -124,7 +124,7 @@
             </div>
         </div>
         <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-            <p class="text-xs leading-5 text-gray-400">&copy; 2024 MCMI.CH. All rights reserved.</p>
+            <p class="text-xs leading-5 text-gray-400">&copy; 2025 Airport & Logistics Services. All rights reserved.</p>
         </div>
     </div>
 </footer>

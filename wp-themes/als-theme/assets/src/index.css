@@ -204,6 +204,7 @@ body {
 }
 
 
+/* Animation pour le soulignement au survol */
 .nav-link {
     position: relative;
     transition: color 0.3s ease;
@@ -216,7 +217,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--maincolor, #0EC5FF); /* Utilisez votre couleur maincolor */
+    background-color: var(--maincolor, #0EC5FF);
     transition: width 0.3s ease;
 }
 
@@ -225,10 +226,33 @@ body {
 }
 
 .nav-link:hover {
-    color: var(--maincolor, #0EC5FF); /* Utilisez votre couleur maincolor */
+    color: var(--maincolor, #0EC5FF);
 }
 
-/* Style pour les liens actifs (page courante) */
 .nav-link.active::after {
     width: 100%;
+}
+
+.title-decoration {
+    position: relative;
+    width: 4rem;
+    height: 4px;
+    margin-top: 1.5rem;
+    /* background-color: rgba(59, 130, 246, 0.2);  */
+    overflow: hidden;
+}
+
+.title-decoration::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--maincolor, #0EC5FF);
+    transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.title-decoration.animate::after {
+    left: 0;
 }
