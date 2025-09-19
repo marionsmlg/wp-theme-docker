@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
+    
+    <!-- Script pour la page d'accueil seulement (scroll navbar) -->
     <?php if (is_front_page()) : ?>
         <script>
             window.addEventListener("scroll", function() {
@@ -51,14 +53,19 @@
                     menuToggle.classList.add('text-gray-400');
                 }
             });
+        </script>
+    <?php endif; ?>
+    
+    <!-- Script pour le menu burger sur toutes les pages -->
+    <script>
+        // Toggle menu mobile avec background adaptatif
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById("menuToggleButton");
+            const mobileMenu = document.getElementById("mobile-menu");
+            const burger = document.getElementById("burger");
+            const cross = document.getElementById("cross");
 
-            // Toggle menu mobile avec background adaptatif
-            document.addEventListener('DOMContentLoaded', function() {
-                const menuToggle = document.getElementById("menuToggleButton");
-                const mobileMenu = document.getElementById("mobile-menu");
-                const burger = document.getElementById("burger");
-                const cross = document.getElementById("cross");
-
+            if (menuToggle && mobileMenu && burger && cross) {
                 menuToggle.addEventListener("click", function() {
                     const isOpen = mobileMenu.classList.contains("hidden");
 
@@ -68,12 +75,17 @@
                         burger.classList.add("hidden");
                         cross.classList.remove("hidden");
 
-                        // Style du menu selon le scroll
+                        // Style du menu selon la page et le scroll
+                        <?php if (is_front_page()) : ?>
                         if (window.scrollY <= 100) {
                             mobileMenu.classList.add("bg-white", "bg-opacity-70", "backdrop-blur-md");
                         } else {
                             mobileMenu.classList.remove("bg-white", "bg-opacity-70", "backdrop-blur-md");
                         }
+                        <?php else : ?>
+                        // Sur les autres pages, toujours le même style
+                        mobileMenu.classList.add("bg-white", "bg-opacity-90", "backdrop-blur-md");
+                        <?php endif; ?>
                     } else {
                         // Fermer le menu
                         mobileMenu.classList.add("hidden");
@@ -82,9 +94,9 @@
                         mobileMenu.classList.remove("bg-white", "bg-opacity-70", "bg-opacity-90", "backdrop-blur-md");
                     }
                 });
-            });
-        </script>
-    <?php endif; ?>
+            }
+        });
+    </script>
 </head>
 
 <body>

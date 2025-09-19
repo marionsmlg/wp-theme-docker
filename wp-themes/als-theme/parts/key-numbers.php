@@ -17,7 +17,7 @@
                 <?php endif ?>
                 <?php if (get_sub_field('text')) : ?>
                     <div class="max-w-5xl">
-                        <h2 class="text-xl sm:text-2xl md:text-3xl text-white maw-w-3xl uppercase"><?php the_sub_field('text'); ?></h2>
+                        <h2 class="text-xl sm:text-2xl  text-white maw-w-3xl"><?php the_sub_field('text'); ?></h2>
                     </div>
                 <?php endif ?>
             </div>
