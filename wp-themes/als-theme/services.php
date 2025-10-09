@@ -23,7 +23,7 @@
                                 </h2>
                                 <?php get_template_part('parts/title-decoration'); ?>
                             <?php endif; ?>
-                            
+
                             <?php if (get_sub_field('description')) : ?>
                                 <p class="mt-6 text-lg leading-8 text-gray-600 text-center max-w-3xl">
                                     <?php the_sub_field('description'); ?>
@@ -74,20 +74,20 @@
             <?php if (have_rows('commitments_section')) : ?>
                 <?php while (have_rows('commitments_section')) : the_row(); ?>
                     <section class="py-20">
-                          <div class="flex flex-col items-center justify-center">
-                        <?php if (get_sub_field('title')) : ?>
-                            <h2 class="text-3xl font-semibold leading-tight tracking-tight text-slate-900 px-4 text-center">
-                                <?php the_sub_field('title'); ?>
-                            </h2>
-                            <?php get_template_part('parts/title-decoration'); ?>
-                        <?php endif; ?>
-                    </div>
+                        <div class="flex flex-col items-center justify-center">
+                            <?php if (get_sub_field('title')) : ?>
+                                <h2 class="text-3xl font-semibold leading-tight tracking-tight text-slate-900 px-4 text-center">
+                                    <?php the_sub_field('title'); ?>
+                                </h2>
+                                <?php get_template_part('parts/title-decoration'); ?>
+                            <?php endif; ?>
+                        </div>
 
 
                         <div class="flex flex-wrap justify-center gap-6 mt-8">
                             <?php if (have_rows('commitments')) : ?>
                                 <?php while (have_rows('commitments')) : the_row(); ?>
-                                    <div class="flex flex-col gap-4 rounded-xl border border-maincolor/20 bg-white/50 p-6 text-center items-center w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+                                    <div class="flex flex-col gap-4 rounded-xl border border-maincolor-50 bg-white/50 p-6 text-center items-center w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
                                         <div class="text-maincolor">
                                             <?php if (get_sub_field('icon_svg')) : ?>
                                                 <?php the_sub_field('icon_svg'); ?>
@@ -100,7 +100,7 @@
                                         </div>
                                         <div class="flex flex-col gap-1">
                                             <?php if (get_sub_field('title')) : ?>
-                                                <h3 class="text-lg font-semibold leading-tight text-slate-900">
+                                                <h3 class="text-lg font-semibold leading-tight text-slate-900 mb-3">
                                                     <?php the_sub_field('title'); ?>
                                                 </h3>
                                             <?php endif; ?>
@@ -153,7 +153,7 @@
                                         <?php while (have_rows('advantages')) : the_row(); ?>
                                             <?php if (get_sub_field('text')) : ?>
                                                 <li class="flex gap-x-3">
-                                                    <svg class="text-maincolor" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <svg class="text-maincolor flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                         <path d="M20 6 9 17l-5-5" />
                                                     </svg>
                                                     <span class="md:text-lg font-semibold"><?php the_sub_field('text'); ?></span>
@@ -188,19 +188,19 @@
             <?php if (have_rows('performance_section')) : ?>
                 <?php while (have_rows('performance_section')) : the_row(); ?>
                     <section>
-                          <div class="flex flex-col items-center justify-center">
-                        <?php if (get_sub_field('title')) : ?>
-                            <h2 class="text-3xl font-semibold leading-tight tracking-tight text-slate-900 px-4 text-center">
-                                <?php the_sub_field('title'); ?>
-                            </h2>
-                            <?php get_template_part('parts/title-decoration'); ?>
-                        <?php endif; ?>
-                    </div>
+                        <div class="flex flex-col items-center justify-center">
+                            <?php if (get_sub_field('title')) : ?>
+                                <h2 class="text-3xl font-semibold leading-tight tracking-tight text-slate-900 px-4 text-center">
+                                    <?php the_sub_field('title'); ?>
+                                </h2>
+                                <?php get_template_part('parts/title-decoration'); ?>
+                            <?php endif; ?>
+                        </div>
 
                         <div class="flex flex-wrap justify-center gap-6 mt-8">
                             <?php if (have_rows('indicators')) : ?>
                                 <?php while (have_rows('indicators')) : the_row(); ?>
-                                    <div class="flex flex-col gap-4 rounded-xl border border-maincolor/20 bg-white/50 p-6 text-center items-center w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+                                    <div class="flex flex-col gap-4 rounded-xl border border-maincolor-50 bg-white/50 p-6 text-center items-center w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
                                         <div class="text-maincolor">
                                             <?php if (get_sub_field('icon_svg')) : ?>
                                                 <?php the_sub_field('icon_svg'); ?>
@@ -213,7 +213,7 @@
                                         </div>
                                         <div class="flex flex-col gap-1">
                                             <?php if (get_sub_field('title')) : ?>
-                                                <h3 class="text-lg font-semibold leading-tight text-slate-900">
+                                                <h3 class="text-lg font-semibold leading-tight text-slate-900 mb-3">
                                                     <?php the_sub_field('title'); ?>
                                                 </h3>
                                             <?php endif; ?>

@@ -39,7 +39,7 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <?php if (have_rows('qse_items')) : ?>
                                     <?php while (have_rows('qse_items')) : the_row(); ?>
-                                        <div class="bg-white p-6 rounded-xl border border-maincolor/20">
+                                        <div class="bg-white p-6 rounded-xl border border-maincolor-50">
                                             <?php if (get_sub_field('title')) : ?>
                                                 <h3 class="text-xl font-bold mb-4"><?php the_sub_field('title'); ?></h3>
                                             <?php endif; ?>
@@ -124,7 +124,7 @@
                                     <?php the_sub_field('title'); ?>
                                 <?php endif; ?>
                             </h2>
-                            <div class="bg-white p-6 rounded-xl border border-maincolor/20">
+                            <div class="bg-white p-6 rounded-xl border border-maincolor-50">
                                 <?php if (get_sub_field('content')) : ?>
                                     <p class="text-slate-600"><?php the_sub_field('content'); ?></p>
                                 <?php endif; ?>

@@ -53,7 +53,7 @@
                 </div>
                 <?php if (get_sub_field('image')) : ?>
                     <div class="p-8">
-                        <img src="<?php the_sub_field('image'); ?>" alt="company" />
+                        <img class="rounded-xl" src="<?php the_sub_field('image'); ?>" alt="company" />
                     </div>
                 <?php endif ?>
             </div>
