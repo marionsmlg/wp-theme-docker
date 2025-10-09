@@ -43,12 +43,12 @@
                                 </h2>
                                 <?php get_template_part('parts/title-decoration'); ?>
                             <?php endif; ?>
-                            <div class="relative pl-8 border-l-2 border-slate-200 mt-8">
+                            <div class="relative pl-8 ml-4 border-l-2 border-slate-200 mt-8">
                                 <div class="space-y-12">
                                     <?php if (have_rows('timeline_items')) : ?>
                                         <?php while (have_rows('timeline_items')) : the_row(); ?>
                                             <div class="flex items-start gap-6">
-                                                <div class="absolute -left-5 flex h-10 w-10 items-center justify-center rounded-full bg-maincolor text-white">
+                                                <div class="absolute -left-5 flex h-10 w-10 items-center justify-center rounded-full bg-maincolor text-white flex-shrink-0">
                                                     <?php if (get_sub_field('icon_svg')) : ?>
                                                         <?php the_sub_field('icon_svg'); ?>
                                                     <?php else : ?>
