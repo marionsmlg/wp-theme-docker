@@ -90,13 +90,20 @@
                             <div class="space-y-6">
                                 <?php if (have_rows('certifications')) : ?>
                                     <?php while (have_rows('certifications')) : the_row(); ?>
-                                        <div class="bg-maincolor-50 p-6 rounded-xl">
-                                            <?php if (get_sub_field('title')) : ?>
-                                                <h3 class="text-xl font-bold mb-2"><?php the_sub_field('title'); ?></h3>
+                                        <div class="bg-maincolor-50 p-6 rounded-xl flex items-start gap-6">
+                                            <?php if (get_sub_field('logo')) : ?>
+                                                <img alt="<?php echo get_sub_field('logo_alt') ?: get_sub_field('title') . ' Logo'; ?>" 
+                                                     class="h-24 w-24 object-contain flex-shrink-0" 
+                                                     src="<?php the_sub_field('logo'); ?>">
                                             <?php endif; ?>
-                                            <?php if (get_sub_field('description')) : ?>
-                                                <p class="text-slate-800"><?php the_sub_field('description'); ?></p>
-                                            <?php endif; ?>
+                                            <div class="flex-1">
+                                                <?php if (get_sub_field('title')) : ?>
+                                                    <h3 class="text-xl font-bold mb-2"><?php the_sub_field('title'); ?></h3>
+                                                <?php endif; ?>
+                                                <?php if (get_sub_field('description')) : ?>
+                                                    <p class="text-slate-800"><?php the_sub_field('description'); ?></p>
+                                                <?php endif; ?>
+                                            </div>
                                         </div>
                                     <?php endwhile; ?>
                                 <?php endif; ?>
@@ -124,10 +131,17 @@
                                     <?php the_sub_field('title'); ?>
                                 <?php endif; ?>
                             </h2>
-                            <div class="bg-white p-6 rounded-xl border border-maincolor-50">
-                                <?php if (get_sub_field('content')) : ?>
-                                    <p class="text-slate-600"><?php the_sub_field('content'); ?></p>
+                            <div class="bg-white p-6 rounded-xl border border-maincolor-50 flex items-start gap-6">
+                                <?php if (get_sub_field('logo')) : ?>
+                                    <img alt="<?php echo get_sub_field('logo_alt') ?: 'EcoVadis Logo'; ?>" 
+                                         class="h-28 w-28 object-contain flex-shrink-0" 
+                                         src="<?php the_sub_field('logo'); ?>">
                                 <?php endif; ?>
+                                <div class="flex-1">
+                                    <?php if (get_sub_field('content')) : ?>
+                                        <p class="text-slate-600"><?php the_sub_field('content'); ?></p>
+                                    <?php endif; ?>
+                                </div>
                             </div>
                         </div>
                     <?php endwhile; ?>

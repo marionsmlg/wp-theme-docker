@@ -283,10 +283,10 @@
                     <div class="flex flex-wrap justify-center w-full gap-x-4 gap-y-10 sm:gap-x-20">
                         <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-                            <a href="<?php the_permalink() ?>" class="flex flex-col items-center w-full sm:w-[28rem]">
-                                <div class="w-full rounded-lg hover:opacity-75">
-                                    <div class="overflow-hidden w-full bg-gray-100 mb-2">
-                                        <?php the_post_thumbnail('large', ['class' => 'pointer-events-none object-cover h-72 w-full']) ?>
+                            <a href="<?php the_permalink() ?>" class="flex flex-col items-center w-full sm:w-[28rem] group">
+                                <div class="w-full rounded-lg">
+                                    <div class="overflow-hidden w-full bg-gray-100 mb-2 rounded-lg">
+                                        <?php the_post_thumbnail('large', ['class' => 'pointer-events-none object-cover h-72 w-full transition-transform duration-500 ease-in-out group-hover:scale-110']) ?>
                                     </div>
                                     <div>
                                         <p class="pointer-events-none block truncate text-lg font-medium text-gray-900 uppercase"><?php the_title(); ?></p>
