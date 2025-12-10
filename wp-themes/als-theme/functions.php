@@ -170,43 +170,36 @@ function als_get_languages() {
     return array();
 }
 
-// Fonction helper pour récupérer les champs ACF selon la langue
-function als_get_field($field_name, $post_id = false) {
-    $current_lang = als_current_language();
-
-    // Si c'est une option et qu'elle existe avec suffixe de langue
-    if ($post_id === 'option' || $post_id === 'options') {
-        $field_with_lang = $field_name . '_' . $current_lang;
-        $value = get_field($field_with_lang, 'option');
-
-        // Si pas trouvé avec la langue, essayer sans suffixe (fallback)
-        if (empty($value)) {
-            $value = get_field($field_name, 'option');
-        }
-
-        return $value;
-    }
-
-    // Pour les autres cas, utiliser get_field normalement
-    return get_field($field_name, $post_id);
-}
-
-// Fonction helper pour have_rows avec support multilingue
-function als_have_rows($field_name, $post_id = false) {
+// Fonction helper pour récupérer le nom du champ avec support multilingue
+function als_get_field_name($field_name, $post_id = false) {
     $current_lang = als_current_language();
 
     // Si c'est une option
     if ($post_id === 'option' || $post_id === 'options') {
         $field_with_lang = $field_name . '_' . $current_lang;
 
-        // Essayer d'abord avec le suffixe de langue
-        if (have_rows($field_with_lang, 'option')) {
-            return true;
-        }
+        // Vérifier si le champ avec langue existe et a des données
+        $field_with_lang_value = get_field($field_with_lang, 'option');
 
-        // Sinon fallback sur le champ sans suffixe
-        return have_rows($field_name, 'option');
+        // Si le champ avec langue existe et n'est pas vide, retourner son nom
+        if ($field_with_lang_value !== false && $field_with_lang_value !== null && !empty($field_with_lang_value)) {
+            return $field_with_lang;
+        }
     }
 
-    return have_rows($field_name, $post_id);
+    // Sinon retourner le nom du champ sans suffixe
+    return $field_name;
+}
+
+// Fonction helper pour récupérer les champs ACF selon la langue
+function als_get_field($field_name, $post_id = false) {
+    $field_to_use = als_get_field_name($field_name, $post_id);
+    return get_field($field_to_use, $post_id);
+}
+
+// Fonction pour have_rows avec support multilingue
+// Retourne le résultat de have_rows avec le bon nom de champ
+function als_have_rows($field_name, $post_id = false) {
+    $field_to_use = als_get_field_name($field_name, $post_id);
+    return have_rows($field_to_use, $post_id);
 }
