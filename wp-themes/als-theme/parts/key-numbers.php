@@ -6,7 +6,8 @@
 
         <?php
         $count = 1;
-        while (als_have_rows('key_numbers', 'option')) : the_row();
+        $key_numbers_field = als_get_field_name('key_numbers', 'option');
+        while (have_rows($key_numbers_field, 'option')) : the_row();
         ?>
             <div class="inset-0 p-6 md:p-16 flex flex-col justify-center text-center items-center">
                 <?php if (get_sub_field('number')) : ?>

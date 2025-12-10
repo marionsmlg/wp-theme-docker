@@ -142,6 +142,20 @@ function als_theme_polylang_support() {
         pll_register_string('x_label', 'X', 'als-theme');
         pll_register_string('github_label', 'GitHub', 'als-theme');
         pll_register_string('youtube_label', 'YouTube', 'als-theme');
+
+        // Front page strings
+        pll_register_string('learn_more', 'En savoir plus', 'als-theme');
+        pll_register_string('view_all_news', 'Voir toutes les actualités', 'als-theme');
+        pll_register_string('no_articles_found', 'Aucun article trouvé.', 'als-theme');
+
+        // 404 page strings
+        pll_register_string('page_not_found', 'Page introuvable', 'als-theme');
+        pll_register_string('page_not_found_description', "Désolé, nous n'avons pas trouvé la page que vous recherchez.", 'als-theme');
+        pll_register_string('back_to_home', "Retour à l'accueil", 'als-theme');
+
+        // Blog/News strings
+        pll_register_string('back_to_news', 'Retour aux actualités', 'als-theme');
+        pll_register_string('home_blog_description', 'Découvrez les dernières nouvelles, les événements à venir et les réalisations récentes de notre entreprise', 'als-theme');
     }
 }
 add_action('init', 'als_theme_polylang_support');
