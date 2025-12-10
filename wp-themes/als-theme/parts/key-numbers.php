@@ -1,12 +1,12 @@
-<?php if (get_field('img_key_numbers', 'option')) : ?>
-    <div class="relative h-[30rem] md:h-72 w-full bg-fixed bg-cover bg-center inset-y-0 left-0" style="background-image:url('<?php the_field('img_key_numbers', 'option') ?>');">
+<?php if (als_get_field('img_key_numbers', 'option')) : ?>
+    <div class="relative h-[30rem] md:h-72 w-full bg-fixed bg-cover bg-center inset-y-0 left-0" style="background-image:url('<?php echo esc_url(als_get_field('img_key_numbers', 'option')); ?>');">
     <?php endif ?>
     <div class="absolute inset-0 bg-secondarycolor opacity-50 shadow-xl"></div>
     <div class="absolute grid grid-cols-1 md:grid-cols-3 w-full h-full">
 
         <?php
         $count = 1;
-        while (have_rows('key_numbers', 'option')) : the_row();
+        while (als_have_rows('key_numbers', 'option')) : the_row();
         ?>
             <div class="inset-0 p-6 md:p-16 flex flex-col justify-center text-center items-center">
                 <?php if (get_sub_field('number')) : ?>

@@ -220,7 +220,7 @@
             <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-7xl">
                 <!-- Grid adapté pour 4 colonnes avec tailles réduites -->
                 <dl class="grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 lg:max-w-none lg:grid-cols-4 lg:gap-y-12">
-                    <?php while (have_rows('values', 'options')) : the_row(); ?>
+                    <?php while (als_have_rows('values', 'options')) : the_row(); ?>
                         <div class="relative p-6 bg-white hover:shadow-lg transition-shadow duration-300">
                             <dt class="text-base flex flex-col items-center text-center font-semibold leading-7 text-gray-900 gap-2">
                                 <div class="mb-3">
