@@ -115,3 +115,57 @@ function read_assets_meta()
 
     return false;
 }
+
+// -- POLYLANG INTEGRATION -- //
+
+// Support Polylang
+function als_theme_polylang_support() {
+    // Déclarer les strings traduisibles
+    if (function_exists('pll_register_string')) {
+        // Header strings
+        pll_register_string('contact_button', 'Contactez-nous', 'als-theme');
+        pll_register_string('open_menu', 'Open main menu', 'als-theme');
+
+        // Footer strings
+        pll_register_string('footer_heading', 'Footer', 'als-theme');
+        pll_register_string('navigation_title', 'Navigation', 'als-theme');
+        pll_register_string('legal_title', 'Légal', 'als-theme');
+        pll_register_string('contact_title', 'CONTACT', 'als-theme');
+        pll_register_string('address_label', 'Adresse :', 'als-theme');
+        pll_register_string('phone_label', 'Tel :', 'als-theme');
+        pll_register_string('email_label', 'Email :', 'als-theme');
+        pll_register_string('copyright', '© 2025 Airport & Logistics Services. All rights reserved.', 'als-theme');
+
+        // Social media labels
+        pll_register_string('facebook_label', 'Facebook', 'als-theme');
+        pll_register_string('instagram_label', 'Instagram', 'als-theme');
+        pll_register_string('x_label', 'X', 'als-theme');
+        pll_register_string('github_label', 'GitHub', 'als-theme');
+        pll_register_string('youtube_label', 'YouTube', 'als-theme');
+    }
+}
+add_action('init', 'als_theme_polylang_support');
+
+// Fonction helper pour récupérer les traductions
+function als_translate($string, $context = 'als-theme') {
+    if (function_exists('pll__')) {
+        return pll__($string);
+    }
+    return $string;
+}
+
+// Fonction pour obtenir la langue courante
+function als_current_language() {
+    if (function_exists('pll_current_language')) {
+        return pll_current_language();
+    }
+    return 'fr';
+}
+
+// Fonction pour obtenir toutes les langues
+function als_get_languages() {
+    if (function_exists('pll_the_languages')) {
+        return pll_the_languages(array('raw' => 1));
+    }
+    return array();
+}
