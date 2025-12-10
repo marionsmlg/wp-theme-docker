@@ -147,7 +147,7 @@ function als_theme_polylang_support() {
 add_action('init', 'als_theme_polylang_support');
 
 // Fonction helper pour récupérer les traductions
-function als_translate($string, $context = 'als-theme') {
+function als_translate($string) {
     if (function_exists('pll__')) {
         return pll__($string);
     }
@@ -168,4 +168,45 @@ function als_get_languages() {
         return pll_the_languages(array('raw' => 1));
     }
     return array();
+}
+
+// Fonction helper pour récupérer les champs ACF selon la langue
+function als_get_field($field_name, $post_id = false) {
+    $current_lang = als_current_language();
+
+    // Si c'est une option et qu'elle existe avec suffixe de langue
+    if ($post_id === 'option' || $post_id === 'options') {
+        $field_with_lang = $field_name . '_' . $current_lang;
+        $value = get_field($field_with_lang, 'option');
+
+        // Si pas trouvé avec la langue, essayer sans suffixe (fallback)
+        if (empty($value)) {
+            $value = get_field($field_name, 'option');
+        }
+
+        return $value;
+    }
+
+    // Pour les autres cas, utiliser get_field normalement
+    return get_field($field_name, $post_id);
+}
+
+// Fonction helper pour have_rows avec support multilingue
+function als_have_rows($field_name, $post_id = false) {
+    $current_lang = als_current_language();
+
+    // Si c'est une option
+    if ($post_id === 'option' || $post_id === 'options') {
+        $field_with_lang = $field_name . '_' . $current_lang;
+
+        // Essayer d'abord avec le suffixe de langue
+        if (have_rows($field_with_lang, 'option')) {
+            return true;
+        }
+
+        // Sinon fallback sur le champ sans suffixe
+        return have_rows($field_name, 'option');
+    }
+
+    return have_rows($field_name, $post_id);
 }

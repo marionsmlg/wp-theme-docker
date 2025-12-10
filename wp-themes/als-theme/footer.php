@@ -3,10 +3,10 @@
     <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
             <div class="space-y-8">
-                <?php if (get_field('logo_footer', 'option')) : ?>
-                    <img class="h-36 w-auto flex style-svg" src="<?php the_field('logo_footer', 'option') ?>" alt="logo">
+                <?php if (als_get_field('logo_footer', 'option')) : ?>
+                    <img class="h-36 w-auto flex style-svg" src="<?php echo esc_url(als_get_field('logo_footer', 'option')); ?>" alt="logo">
                 <?php endif ?>
-                <?php while (have_rows('social_media', 'options')) : the_row(); ?>
+                <?php while (als_have_rows('social_media', 'options')) : the_row(); ?>
                     <div class="flex space-x-6">
                         <?php if (get_sub_field('facebook')) : ?>
                             <a href="<?php the_sub_field('facebook'); ?>" target="_blank" class="text-gray-500 hover:text-gray-400">
@@ -96,7 +96,7 @@
                         </ul>
                     </div>
                 <?php endif; ?>
-                <?php while (have_rows('contacts', 'options')) : the_row(); ?>
+                <?php while (als_have_rows('contacts', 'options')) : the_row(); ?>
                     <div class="mt-10 md:mt-0">
                         <h3 class="text-sm font-semibold leading-6 text-maincolor uppercase"><?= als_translate('CONTACT') ?></h3>
 

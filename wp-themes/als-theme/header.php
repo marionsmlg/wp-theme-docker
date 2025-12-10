@@ -98,7 +98,7 @@
                                 </div>
                                 <div class="absolute inset-y-0 right-0 flex items-center gap-3 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                                     <?php if (function_exists('pll_the_languages')) : ?>
-                                        <div class="language-switcher">
+                                        <div class="language-switcher hidden lg:block">
                                             <?php
                                             $languages = pll_the_languages(array(
                                                 'raw' => 1,
@@ -149,6 +149,40 @@
                                 <?= esc_html($item->title) ?>
                             </a>
                         <?php endforeach; ?>
+
+                        <?php if (function_exists('pll_the_languages')) : ?>
+                            <?php
+                            $languages = pll_the_languages(array(
+                                'raw' => 1,
+                                'hide_if_empty' => 0
+                            ));
+                            if ($languages) :
+                            ?>
+                                <!-- Séparateur -->
+                                <div class="border-t border-gray-200 my-2"></div>
+
+                                <!-- Sélecteur de langue mobile -->
+                                <div class="px-3 py-2">
+                                    <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Langue</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <?php foreach ($languages as $lang) : ?>
+                                            <a href="<?= esc_url($lang['url']) ?>"
+                                               class="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 <?= $lang['current_lang'] ? 'bg-maincolor text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200' ?>"
+                                               hreflang="<?= esc_attr($lang['slug']) ?>">
+                                                <?php if (!empty($lang['flag'])) : ?>
+                                                    <img src="<?= esc_url($lang['flag']) ?>"
+                                                         alt="<?= esc_attr($lang['name']) ?>"
+                                                         width="20"
+                                                         height="14"
+                                                         class="inline-block" />
+                                                <?php endif; ?>
+                                                <span class="uppercase font-semibold"><?= esc_html($lang['slug']) ?></span>
+                                            </a>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                        <?php endif; ?>
                     </div>
                 </div>
         </nav>
