@@ -127,7 +127,7 @@
                                         </div>
                                     <?php endif; ?>
 
-                                    <a href="/contact">
+                                    <a href="<?= als_get_page_url('contact') ?>">
                                         <button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 text-sm sm:text-base font-semibold text-white shadow-sm bg-maincolor hover:bg-maincolor-400 hover:shadow-md transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">
                                             <?= als_translate('Contactez-nous') ?>
                                         </button>
@@ -163,7 +163,7 @@
 
                                 <!-- Sélecteur de langue mobile -->
                                 <div class="px-3 py-2">
-                                    <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Langue</p>
+                                    <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2"><?= als_translate('Langue') ?></p>
                                     <div class="flex flex-wrap gap-2">
                                         <?php foreach ($languages as $lang) : ?>
                                             <a href="<?= esc_url($lang['url']) ?>"

@@ -63,8 +63,8 @@
                             <?php endwhile; ?>
                             <?php the_posts_pagination(array(
                                 'mid_size'  => 2,
-                                'prev_text' => __('<p class="mr-1"> &larr;</p> Page précédente', 'textdomain'),
-                                'next_text' => __('Page suivante <p class="ml-1"> &rarr;</p>', 'textdomain'),
+                                'prev_text' => '<p class="mr-1"> &larr;</p> ' . als_translate('Page précédente'),
+                                'next_text' => als_translate('Page suivante') . ' <p class="ml-1"> &rarr;</p>',
 
                             )); ?>
 
@@ -75,7 +75,7 @@
                 </div>
             </div>
         <?php else : ?>
-            <h1>Pas d'articles</h1>
+            <h1><?= als_translate("Pas d'articles") ?></h1>
         <?php endif; ?>
 
 

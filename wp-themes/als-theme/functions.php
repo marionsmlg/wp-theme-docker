@@ -125,6 +125,7 @@ function als_theme_polylang_support() {
         // Header strings
         pll_register_string('contact_button', 'Contactez-nous', 'als-theme');
         pll_register_string('open_menu', 'Open main menu', 'als-theme');
+        pll_register_string('language_label', 'Langue', 'als-theme');
 
         // Footer strings
         pll_register_string('footer_heading', 'Footer', 'als-theme');
@@ -156,6 +157,9 @@ function als_theme_polylang_support() {
         // Blog/News strings
         pll_register_string('back_to_news', 'Retour aux actualités', 'als-theme');
         pll_register_string('home_blog_description', 'Découvrez les dernières nouvelles, les événements à venir et les réalisations récentes de notre entreprise', 'als-theme');
+        pll_register_string('previous_page', 'Page précédente', 'als-theme');
+        pll_register_string('next_page', 'Page suivante', 'als-theme');
+        pll_register_string('no_posts', "Pas d'articles", 'als-theme');
     }
 }
 add_action('init', 'als_theme_polylang_support');
@@ -209,6 +213,26 @@ function als_get_field_name($field_name, $post_id = false) {
 function als_get_field($field_name, $post_id = false) {
     $field_to_use = als_get_field_name($field_name, $post_id);
     return get_field($field_to_use, $post_id);
+}
+
+// Fonction helper pour obtenir l'URL d'une page selon le slug
+function als_get_page_url($page_slug) {
+    // Récupérer la page par son slug
+    $page = get_page_by_path($page_slug);
+
+    if ($page) {
+        // Si Polylang est activé, obtenir la version traduite de la page
+        if (function_exists('pll_get_post')) {
+            $translated_page_id = pll_get_post($page->ID);
+            if ($translated_page_id) {
+                return get_permalink($translated_page_id);
+            }
+        }
+        return get_permalink($page->ID);
+    }
+
+    // Fallback
+    return home_url('/' . $page_slug);
 }
 
 // Fonction pour have_rows avec support multilingue

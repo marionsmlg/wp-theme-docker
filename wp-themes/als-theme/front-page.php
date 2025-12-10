@@ -18,7 +18,7 @@
                     </div>
 
                 <?php endif ?>
-                <div><a href="/contact"><button type="button" class="rounded-md text-lg bg-maincolor hover:bg-maincolor-400 hover:shadow-md sm:px-6 sm:py-4 px-3.5 py-2.5 font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10"><?= als_translate('Contactez-nous') ?></button></a> </div>
+                <div><a href="<?= als_get_page_url('contact') ?>"><button type="button" class="rounded-md text-lg bg-maincolor hover:bg-maincolor-400 hover:shadow-md sm:px-6 sm:py-4 px-3.5 py-2.5 font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10"><?= als_translate('Contactez-nous') ?></button></a> </div>
             </div>
         </div>
 
@@ -48,7 +48,7 @@
                             <p class="mt-6 text-xl leading-8 text-gray-700"><?php the_sub_field('paragraph_2'); ?> </p>
                         <?php endif ?>
                     </div>
-                    <div> <a href="/a-propos"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 text-sm sm:text-base font-semibold text-white shadow-sm bg-maincolor hover:bg-maincolor-400 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">  <?= als_translate('En savoir plus') ?></button></a>
+                    <div> <a href="<?= als_get_page_url('a-propos') ?>"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 text-sm sm:text-base font-semibold text-white shadow-sm bg-maincolor hover:bg-maincolor-400 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">  <?= als_translate('En savoir plus') ?></button></a>
                     </div>
                 </div>
                 <?php if (get_sub_field('image')) : ?>
@@ -78,7 +78,7 @@
             <div class="relative mx-auto mt-16 sm:mt-20 lg:mt-24">
                 <dl class="grid grid-cols-1 lg:grid-cols-3">
                     <?php while (have_rows('jobs')) : the_row(); ?>
-                        <a href="/services">
+                        <a href="<?= als_get_page_url('services') ?>">
                             <div class="relative group h-[700px]">
                                 <?php if (get_sub_field('icon')) : ?>
                                     <img src="<?php the_sub_field('icon'); ?>" class="h-[700px] w-full object-cover object-center" alt="services" />
