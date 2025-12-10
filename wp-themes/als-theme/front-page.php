@@ -18,7 +18,7 @@
                     </div>
 
                 <?php endif ?>
-                <div><a href="/contact"><button type="button" class="rounded-md text-lg bg-maincolor hover:bg-maincolor-400 hover:shadow-md sm:px-6 sm:py-4 px-3.5 py-2.5 font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Contactez-nous</button></a> </div>
+                <div><a href="/contact"><button type="button" class="rounded-md text-lg bg-maincolor hover:bg-maincolor-400 hover:shadow-md sm:px-6 sm:py-4 px-3.5 py-2.5 font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10"><?= als_translate('Contactez-nous') ?></button></a> </div>
             </div>
         </div>
 
@@ -48,7 +48,7 @@
                             <p class="mt-6 text-xl leading-8 text-gray-700"><?php the_sub_field('paragraph_2'); ?> </p>
                         <?php endif ?>
                     </div>
-                    <div> <a href="/a-propos"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 text-sm sm:text-base font-semibold text-white shadow-sm bg-maincolor hover:bg-maincolor-400 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">En savoir plus</button></a>
+                    <div> <a href="/a-propos"><button type="button" class="rounded-md sm:px-3.5 sm:py-2.5 px-3 py-2 text-sm sm:text-base font-semibold text-white shadow-sm bg-maincolor hover:bg-maincolor-400 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">  <?= als_translate('En savoir plus') ?></button></a>
                     </div>
                 </div>
                 <?php if (get_sub_field('image')) : ?>
@@ -300,7 +300,7 @@
                             </a>
                         <?php endwhile; ?>
                     </div>
-                    <div class="text-center py-24"><a href="<?= get_post_type_archive_link('post') ?>"><button type="button" class="rounded-md bg-maincolor hover:bg-maincolor-400 hover:shadow-md px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10">Voir toutes les actualités</button></a> </div>
+                    <div class="text-center py-24"><a href="<?= get_post_type_archive_link('post') ?>"><button type="button" class="rounded-md bg-maincolor hover:bg-maincolor-400 hover:shadow-md px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 z-10"><?= als_translate('Voir toutes les actualités') ?></button></a> </div>
 
                 </div>
             <?php
@@ -308,7 +308,7 @@
                 wp_reset_postdata();
 
             else :
-                echo '<p>Aucun article trouvé.</p>';
+                echo '<p>' . als_translate('Aucun article trouvé.') . '</p>';
             endif;
             ?>
 

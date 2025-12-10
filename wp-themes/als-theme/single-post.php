@@ -5,7 +5,7 @@
 
         <div class="flex px-4 pt-8 pb-10 lg:px-8"><a class="group flex font-semibold text-sm leading-6 text-slate-600 hover:text-slate-400 " href="<?= get_post_type_archive_link('post') ?>"><svg viewBox="0 -9 3 24" class="overflow-visible mr-3 text-slate-600 w-auto h-6 group-hover:text-slate-400">
                                 <path d="M3 0L0 3L3 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                        </svg>Retour aux actualités</a></div>
+                        </svg><?= als_translate('Retour aux actualités') ?></a></div>
         <div class="px-4 sm:px-6 md:px-8">
                 <div class="max-w-3xl mx-auto">
                         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>

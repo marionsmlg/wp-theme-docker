@@ -8,7 +8,7 @@
         <div class="absolute inset-0 flex flex-col justify-center p-6 max-w-7xl m-auto">
 
             <h1 class="font-semibold text-3xl text-white sm:text-4xl mb-4"><?php single_post_title(); ?></h1>
-            <p class="text-white border-l-2 border-maincolor pl-2 max-w-xl mr-auto">Découvrez les dernières nouvelles, les événements à venir et les réalisations récentes de notre entreprise</p>
+            <p class="text-white border-l-2 border-maincolor pl-2 max-w-xl mr-auto"><?= als_translate('Découvrez les dernières nouvelles, les événements à venir et les réalisations récentes de notre entreprise') ?></p>
         </div>
     </div>
 
