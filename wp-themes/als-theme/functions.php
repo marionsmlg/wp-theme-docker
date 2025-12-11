@@ -160,6 +160,9 @@ function als_theme_polylang_support() {
         pll_register_string('previous_page', 'Page précédente', 'als-theme');
         pll_register_string('next_page', 'Page suivante', 'als-theme');
         pll_register_string('no_posts', "Pas d'articles", 'als-theme');
+
+        // Contact page strings
+        pll_register_string('contact_form_title', 'Formulaire de contact', 'als-theme');
     }
 }
 add_action('init', 'als_theme_polylang_support');
